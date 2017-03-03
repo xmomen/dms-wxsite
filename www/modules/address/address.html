@@ -1,0 +1,14 @@
+<ion-header-bar>
+  </div>
+    <button class="button button-icon icon ion-chevron-left" ui-sref="tab.account"></button>
+  <div class="title">收货地址</div>
+</ion-header-bar>
+<ion-view>
+  <ion-content>
+    <div class="card" ng-repeat="item in address">
+      <div class="item item-divider" ng-bind="item.name"></div>
+      <div class="item item-text-wrap" ng-bind="item.address">
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

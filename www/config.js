@@ -1,0 +1,45 @@
+/**
+ * Created by tanxinzheng on 16/8/11.
+ */
+require.config({
+    baseUrl:"./",
+    paths: {
+        "ionic":"lib/ionic/js/ionic",
+        "ionic-angular":"lib/ionic/js/ionic-angular",
+        "angular": "lib/angular/angular",
+        "angularAMD": "lib/angularAMD/angularAMD",
+        "angular-ui-router": "lib/angular-ui-router/release/angular-ui-router",
+        "permission":"lib/angular-permission/dist/angular-permission",
+        "angular-translate":"lib/angular-translate/angular-translate",
+        "angular-resource":"lib/angular-resource/angular-resource",
+        "angular-sanitize":"lib/angular-sanitize/angular-sanitize",
+        "angular-animate":"lib/angular-animate/angular-animate",
+        "app-module": "js/app.module",
+        "main":"main"
+    },
+    shim: {
+        "permission" : ["angular"],
+        "angular": { exports: "angular" },
+        "ionic": ['angular'],
+        "ionic-angular": ["angular", "ionic" ],
+        "angularAMD": ["angular"],
+        "angular-ui-router": ["angular"],
+        "ui-bootstrap-tpls": ["angular"],
+        "angular-resource": ["angular"],
+        "angular-sanitize": ["angular"],
+        "angular-animate": ["angular"],
+        "angular-translate": ["angular"],
+        "main": [
+            "ionic",
+            "ionic-angular",
+            "angular-resource",
+            "angular-animate",
+            "angular-ui-router",
+            "angular",
+            "angularAMD",
+            "permission",
+            'angular-sanitize',
+            "app-module"
+        ]
+    }
+});

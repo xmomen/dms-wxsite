@@ -1,0 +1,26 @@
+{
+  "data":[
+    {
+      "id":"ffff",
+      "name":"张三",
+      "phoneNumber":"15000084483",
+      "address":"上海市",
+      "isDefault":true
+    },
+    {
+      "id":"ffff",
+      "name":"张三",
+      "phoneNumber":"15000084483",
+      "address":"上海市",
+      "isDefault":false
+    }
+  ],
+  "pageInfo":{
+    "pageNum": 1,
+    "pageSize": 10,
+    "startRow": 0,
+    "endRow": 10,
+    "total": 2,
+    "pages": 1
+  }
+}

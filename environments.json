@@ -1,0 +1,10 @@
+{
+  "development":{
+    "port":8000,
+    "serverPath":"www"
+  },
+  "production":{
+    "port":8001,
+    "serverPath":"build"
+  }
+}
