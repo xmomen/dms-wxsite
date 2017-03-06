@@ -3,6 +3,9 @@
  */
 define(function(require){
   return ['$scope', 'AddressAPI', '$stateParams', function($scope, AddressAPI, $stateParams){
+    $scope.pageSettingInfo = {
+      title:"收货地址"
+    };
     $scope.getAddressInfo = function(){
       AddressAPI.get({id:$stateParams.id}, function(data){
         $scope.address = data.data;
@@ -16,9 +19,11 @@ define(function(require){
     };
     var init = function(){
       if($stateParams.id){
+        $scope.pageSettingInfo.title = "修改收货地址";
         $scope.getAddressInfo();
+      }else{
+        $scope.pageSettingInfo.title = "添加收货地址"
       }
-      $scope.getAddressInfo();
     };
     init();
   }]
