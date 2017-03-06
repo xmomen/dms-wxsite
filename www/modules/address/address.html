@@ -6,9 +6,12 @@
 <ion-view>
   <ion-content>
     <div class="card" ng-repeat="item in address">
-      <div class="item item-divider" ng-bind="item.name"></div>
-      <div class="item item-text-wrap" ng-bind="item.address">
-      </div>
+      <a ui-sref="address_detail({id:item.id})">
+        <div class="item item-divider">
+          <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary">默认地址</span>
+        </div>
+        <div class="item item-text-wrap small" ng-bind="item.address"></div>
+      </a>
     </div>
   </ion-content>
 </ion-view>

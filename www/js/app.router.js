@@ -41,15 +41,7 @@ define(function (require) {
           }
         }
       })
-      .state('tab.product', {
-        url: '/product/:projectId',
-        views: {
-          'tab-account': {
-            templateUrl: 'modules/product.html',
-            controller: 'ProductCtrl'
-          }
-        }
-      })
+
       .state('tab.account', {
         url: '/account',
         views: {
@@ -58,7 +50,7 @@ define(function (require) {
             controller: accountCrtl
           }
         }
-      })
+      });
 
 
     // if none of the above states are matched, use this as the fallback
