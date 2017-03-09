@@ -16,7 +16,7 @@ define([
         }
       }
     }).state('product_detail', {
-      url:'/product/:id',
+      url:'/product/{id}',
       templateUrl: 'modules/product/product.detail.html',
       controller: detail
     });

@@ -3,21 +3,20 @@
  */
 define(function (require) {
   var angular = require('angular');
+  var tabsCtrl = require('../modules/tabs');
   var accountCrtl = require('../modules/account');
+  var loginCtrl = require('../modules/login');
 
   angular.module('app.router',['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
-    // Ionic uses AngularUI Router which uses the concept of states
-    // Learn more here: https://github.com/angular-ui/ui-router
-    // Set up the various states which the app can be in.
-    // Each state's controller can be found in controllers.js
     $stateProvider
 
       // setup an abstract state for the tabs directive
       .state('tab', {
         url: '/tab',
         abstract: true,
-        templateUrl: 'modules/tabs.html'
+        templateUrl: 'modules/tabs.html',
+        controller: tabsCtrl
       })
 
       // Each tab has its own nav history stack:
@@ -50,6 +49,11 @@ define(function (require) {
             controller: accountCrtl
           }
         }
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'modules/login.html',
+        controller: loginCtrl
       });
 
 

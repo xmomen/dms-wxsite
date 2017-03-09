@@ -4,8 +4,10 @@ Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
 <ion-nav-bar class="bar-stable">
-  <ion-nav-back-button>
-  </ion-nav-back-button>
+  <ion-nav-back-button></ion-nav-back-button>
+  <ion-nav-buttons>
+    <button class="button button-icon icon ion-ios-location-outline" ng-click="getLocation()" ng-bind="locationInfo.name"></button>
+  </ion-nav-buttons>
 </ion-nav-bar>
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 

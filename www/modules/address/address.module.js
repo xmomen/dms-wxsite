@@ -12,11 +12,9 @@ define([
       templateUrl: 'modules/address/address.html',
       controller: address
     }).state('address_detail', {
-      url:'/address_detail',
+      url:'/address_detail/{id}',
       templateUrl: 'modules/address/address.detail.html',
-      params:{
-        id:{}
-      },
+      //params:{id:{}},
       controller: detail
     });
   }]);

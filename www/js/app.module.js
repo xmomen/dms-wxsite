@@ -8,7 +8,7 @@ define([
 ], function(){
   angular.module('app.module', [
      'address.module',
-    'product.module',
+     'product.module',
      'app.router' ,
      'app.rest',
      'starter.controllers'
