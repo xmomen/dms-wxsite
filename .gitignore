@@ -4,4 +4,13 @@
 node_modules/
 platforms/
 plugins/
-www/lib/
+www/lib/angular-ui-router/src
+www/lib/bootstrap/grunt
+www/lib/bootstrap/js
+www/lib/bootstrap/less
+www/lib/bootstrap/nuget
+www/lib/bootstrap/fonts
+www/lib/jquery/external
+www/lib/jquery/src
+www/lib/jquery-validation/src
+www/lib/jquery-validation/build
