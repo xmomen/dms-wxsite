@@ -1,16 +1,20 @@
 <ion-view view-title="购物车">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
+      <div class="list">
+        <ion-checkbox ng-model="pushNotification.checked"
+                      ng-change="pushNotificationChange()">
+          <a class="item my-item" collection-item-height="getItemHeight(item)" collection-item-width="getItemWidth(item)">
+            <img src="../img/lafei.jpg">
+            <b class="">原装进口红葡萄酒 500ML</b>
+            <ul class="row">
+              <li class="col-33"></li>
+              <li class="col-33"></li>
+              <li class="col-33"></li>
+            </ul>
+          </a>
+        </ion-checkbox>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
