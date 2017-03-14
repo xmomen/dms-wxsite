@@ -1,4 +1,40 @@
 /* CSS */
+body,html {color: #555;background:#dedede}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, summary,
+time, mark, audio, video {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;list-style-type:none}
+body {line-height:1;font-size:12px}
+:focus {outline:none}
+input:focus,button:focus,select:focus{
+  outline:none;
+}
+article,aside,canvas,details,figcaption,figure,
+footer,header,menu,nav,section,summary {display:block;}
+nav ul {list-style:none}
+blockquote, q {quotes:none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';}
+a {margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none !important;}
+ins {background-color:#ff9;color:#000;text-decoration:none;}
+mark {background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del {text-decoration: line-through}
+abbr[title], dfn[title] {border-bottom:1px dotted #000;cursor:help}
+table {border-collapse:collapse;border-spacing:0}
+hr {display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0}
+input, select{vertical-align:middle;border: 0}
+textarea{border:0;width: 62%;}
+
+
+
+
 /*ionic*/
 .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
   background: #e74c3c;
@@ -14,6 +50,7 @@
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
 .mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
 .ft12{font-size:12px}
 .ft14{font-size:14px}
 .ft16{font-size:16px}
@@ -33,6 +70,9 @@
    font-size:20px;
   line-height: 32px;
 }
+
+.tab-item .icon{font-size:28px}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{color: #e74c3c}
 /*首页搜索框*/
 .search_core{width:100%;padding:9px 20px;background:#f0f0f0;margin-top:-8px;position:relative}
 .search_core .search_input{width:96%;padding:10px;margin:0 auto;border-radius:25px;text-align:center;
@@ -65,7 +105,7 @@
 .home .search_input{width: 95%;position: absolute;top:23px;left:10px;border-radius: 3px;padding: 5px;}
 .form_lid{line-height:70px;height:70px;padding:0 10px;border-bottom:1px solid #d8d8d8;background: url("../img/form_lid.png") no-repeat center center;background-size: 100%}
 
-.trade-name,.trade-price{text-align:center;font-size:12px;display: block}
+.trade-name,.trade-price{text-align:center;font-size:12px;display: block;line-height:24px}
 .trade-name{font-weight: bold;color:#000;}
 .trade-price{color:#e74c3c}
 .trade-price strong{font-weight: bold;font-size:14px}
