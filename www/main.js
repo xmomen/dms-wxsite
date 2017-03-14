@@ -7,7 +7,8 @@ require(['require'], function(require){
         'ui.router',
         'permission',
         "app.module",
-        'ionic'
+        'ionic',
+        'xmomen.ui'
     ]);
     angular.element(document).ready(function() {
         //$.get('/account/permissions', function(data) {

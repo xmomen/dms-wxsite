@@ -4,6 +4,7 @@
 require.config({
     baseUrl:"./",
     paths: {
+        "jquery":"lib/jquery/dist/jquery",
         "ionic":"lib/ionic/js/ionic",
         "ionic-angular":"lib/ionic/js/ionic-angular",
         "angular": "lib/angular/angular",
@@ -14,6 +15,11 @@ require.config({
         "angular-resource":"lib/angular-resource/angular-resource",
         "angular-sanitize":"lib/angular-sanitize/angular-sanitize",
         "angular-animate":"lib/angular-animate/angular-animate",
+        "jquery.validate":"lib/jquery-validation/dist/jquery.validate",
+        "jquery.validate.local":"lib/jquery-validation/src/localization/messages_zh",
+
+        "angular-ui-xmomen":"lib/angular-ui-xmomen/xmomen-ui",
+
         "app-module": "js/app.module",
         "main":"main"
     },
@@ -29,7 +35,16 @@ require.config({
         "angular-sanitize": ["angular"],
         "angular-animate": ["angular"],
         "angular-translate": ["angular"],
+        "jquery.validate.local":["jquery.validate"],
+        "jquery.validate":["jquery"],
+        "angular-ui-xmomen":[
+          "jquery.validate.local",
+          "jquery.validate"
+        ],
         "main": [
+            //"jquery.validate.local",
+            //"jquery.validate",
+            "angular-ui-xmomen",
             "ionic",
             "ionic-angular",
             "angular-resource",

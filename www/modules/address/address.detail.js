@@ -11,8 +11,13 @@ define(function(require){
         $scope.address = data.data;
       });
     };
+    $scope.addressForm = {};
     $scope.save = function(){
+      if($scope.addressForm.validator.form()){
+        AddressAPI.save($scope.address, function(){
 
+        });
+      }
     };
     $scope.delete = function(){
 
