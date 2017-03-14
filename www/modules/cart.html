@@ -1,20 +1,63 @@
 <ion-view view-title="购物车">
   <ion-content>
-    <ion-list>
-      <div class="list">
+    <ion-list class="cart wl" style="border-top:1px solid #eee;">
         <ion-checkbox ng-model="pushNotification.checked"
-                      ng-change="pushNotificationChange()">
-          <a class="item my-item" collection-item-height="getItemHeight(item)" collection-item-width="getItemWidth(item)">
-            <img src="../img/lafei.jpg">
-            <b class="">原装进口红葡萄酒 500ML</b>
-            <ul class="row">
-              <li class="col-33"></li>
-              <li class="col-33"></li>
-              <li class="col-33"></li>
-            </ul>
-          </a>
+                      ng-change="pushNotificationChange()" style="width:45px;border: 0;padding-left:0">
         </ion-checkbox>
-      </div>
+        <ul class="wl" style="margin-bottom: 0; margin-top: -51px;padding-left: 60px;">
+          <li class="fl"><a href=""><img src="../img/lafei.jpg" class="shopping-img" /></a></li>
+          <li class="fl"><b class="title">原装进口红葡萄酒 500ML</b>
+            <ul class="info">
+              <li class="fl">
+                <span class="info-price">￥ <b class="ft18">20.22</b></span><br>
+                <span class="info-kg ft14">0.2kg</span>
+              </li>
+              <li class="fr">
+                <button type="button" class="info-delect"><span class="ion-trash-a"></span></button>
+              </li>
+              <li class="fr" style="width:90px;padding:0 10px">
+                <button class="btn-num fl"> - </button>
+                <input type="text" class="info-num fl" style="" placeholder="1">
+                <button class="btn-num fl"> + </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
     </ion-list>
+    <ion-list class="cart wl">
+      <ion-checkbox ng-model="pushNotification.checked"
+                    ng-change="pushNotificationChange()" style="width:45px;border: 0;padding-left:0">
+      </ion-checkbox>
+      <ul class="wl" style="margin-bottom: 0; margin-top: -51px;padding-left: 60px;">
+        <li class="fl"><a href=""><img src="../img/lafei.jpg" class="shopping-img" /></a></li>
+        <li class="fl"><b class="title">原装进口红葡萄酒 500ML</b>
+          <ul class="info">
+            <li class="fl">
+              <span class="info-price">￥ <b class="ft18">20.22</b></span><br>
+              <span class="info-kg ft14">0.2kg</span>
+            </li>
+            <li class="fr">
+              <button type="button" class="info-delect"><span class="ion-trash-a"></span></button>
+            </li>
+            <li class="fr" style="width:90px;padding:0 10px">
+              <button class="btn-num fl"> - </button>
+              <input type="text" class="info-num fl" style="" placeholder="1">
+              <button class="btn-num fl"> + </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </ion-list>
+    <ul class="privilege wl">
+      <li class="wl">总重：0.2kg(含包装)</li>
+      <li class="wl color_red"><span class="ion-ios-information-outline ft18"></span> 满99减10元</li>
+    </ul>
+
   </ion-content>
+  <div class="payment wl">
+    <ul class="row">
+      <li class="col-66 money"><div class=" fl">共计：￥<b class="ft18 color_red">55.66</b></div></li>
+      <li class="col-34"><button class="pay">结算 （1）</button></li>
+    </ul>
+  </div>
 </ion-view>
