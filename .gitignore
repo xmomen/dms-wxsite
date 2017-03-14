@@ -14,3 +14,6 @@ www/lib/jquery/external
 www/lib/jquery/src
 www/lib/jquery-validation/src
 www/lib/jquery-validation/build
+build
+rev
+temp

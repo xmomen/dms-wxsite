@@ -1,10 +1,36 @@
 <ion-view view-title="商品列表">
   <ion-content class="padding">
-    <ion-list>
-      <ion-item>
-        <ion-icon name="食品2" item-left></ion-icon>
-        食品
-      </ion-item>
-    </ion-list>
+
+      <div class="row" scroll-width>
+        <ion-scroll zooming="true" direction="x" scrollbar-x="false" >
+        <ul class="slide-tab" ng-style="{'width':firstClass.length*60 + 'px'}">
+          <li ng-class="slideIndex == $index ? 'current':''" style="width: 60px;"
+              ng-repeat="item in firstClass">
+            <a href="#" ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a>
+          </li>
+        </ul> <!-- / tabs -->
+        </ion-scroll>
+      </div>
+
+    <div class="row">
+      <div class="col-20">
+        <ion-scroll direction="y" scrollbar-y="false" style="height: 530px;">
+          <ul  style="height: 530px;">
+            <li ng-class="slideSecondIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
+                ng-repeat="item in secondClass" style="line-height: 38px;">
+              <a href="#" ng-click="secondClick($index,item)" ng-bind="item.name" style="border: 2px solid blue"> </a>
+            </li>
+          </ul>
+        </ion-scroll>
+      </div>
+      <div class="col-80">
+        <ul>
+          <li ng-class="slideThirdIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
+              ng-repeat="item in thirdClass" style="line-height: 38px;">
+            <a href="#" ng-click="thirdClick($index,item)" ng-bind="item.name" style="border: 2px solid red"> </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

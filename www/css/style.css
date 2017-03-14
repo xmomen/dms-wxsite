@@ -72,3 +72,42 @@
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
 .shopping-cart{font-size:30px;color:green}
+
+
+.slide-tab{
+  display: table;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  background-color: #eff0f2;
+  border-bottom: 2px solid #00897B;
+
+}
+
+.slide-tab li{
+  float: left;
+  line-height: 38px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.slide-tab a{
+  background-color: #eff0f2;
+  border-bottom: 1px solid #fff;
+  color: #888;
+  font-weight: 500;
+  display: block;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0 20px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid #00897B;
+}
+.current a{
+  color: #fff;
+  background: #00897B;
+}
+
