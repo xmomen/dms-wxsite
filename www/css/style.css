@@ -14,6 +14,10 @@
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
 .mt5{margin-top:5px;}
+.ft12{font-size:12px}
+.ft14{font-size:14px}
+.ft16{font-size:16px}
+.ft18{font-size:18px}
 .bar.bar-positive {
   border-color: #fff;
   background-color: #fff;
@@ -72,3 +76,23 @@
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
 .shopping-cart{font-size:30px;color:green}
+
+/*购物车*/
+.cart{border-bottom:1px solid #eee;}
+.cart .item{border-right:0}
+.cart .shopping-img{width:60px;height:60px}
+.cart .title{font-size:14px}
+.cart .info{margin-top: 20px}
+.info-price{font-weight:300;color:#e74c3c;}
+.info-kg{font-weight:300;color:#ccc;}
+.info-num{width:30px;border:1px solid #ccc !important;height:30px!important;margin:0 10px;text-align: center}
+.info-delect{border:0;background:0;color:#ccc;font-size:24px;float: right}
+.cart .list{width:100%;float:left;margin-top:31px;padding-bottom:10px}
+.privilege{padding:10px 20px}
+.privilege li{text-align:left;padding-left:40px;line-height:24px}
+
+/*下单支付*/
+.payment{position: fixed;bottom:50px;border-top:1px solid #ccc;}
+.payment .money{padding: 20px}
+.pay{background: #e74c3c;color:#fff;padding:22px 0;width:100%;text-align: center;
+  border:1px solid #e74c3c;}
