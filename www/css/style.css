@@ -125,7 +125,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .cart .info{margin-top: 20px}
 .info-price{font-weight:300;color:#e74c3c;}
 .info-kg{font-weight:300;color:#ccc;}
-.info-num{width:30px;border:1px solid #ccc !important;height:30px!important;margin:0 10px;text-align: center}
+.info-num{width:30px;border:1px solid #ccc !important;height:30px!important;text-align: center}
+.btn-num{height:30px;border:1px solid #ccc;background:#fff}
 .info-delect{border:0;background:0;color:#ccc;font-size:24px;float: right}
 .cart .list{width:100%;float:left;margin-top:31px;padding-bottom:10px}
 .privilege{padding:10px 20px}
