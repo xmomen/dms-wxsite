@@ -8,7 +8,8 @@ require(['require'], function(require){
         'permission',
         "app.module",
         'ionic',
-        'xmomen.ui'
+        'xmomen.ui',
+        'ui.bootstrap'
     ]);
     angular.element(document).ready(function() {
         //$.get('/account/permissions', function(data) {

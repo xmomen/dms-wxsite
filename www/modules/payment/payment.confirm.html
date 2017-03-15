@@ -1,0 +1,75 @@
+<ion-header-bar>
+  <button class="button button-icon icon ion-ios-arrow-left" ui-sref="tab.cart"></button>
+  <div class="title" ng-bind="pageSettingInfo.title"></div>
+</ion-header-bar>
+<ion-content>
+  <form name="addressFormName">
+  <div class="list">
+    <a class="item" ui-sref="address">
+      收货地址
+      <i class="icon ion-chevron-right item-note"></i>
+      <span class="item-note">请选择&nbsp;&nbsp;</span>
+    </a>
+    <a class="item" ui-sref="address">
+        谭新政
+        <span class="item-note">15000084483</span>
+        <br><br>
+        上海市浦东新区崂山路
+    </a>
+    <div class="item item-divider"></div>
+    <a class="item">
+      支付方式
+      <span class="item-note" ng-bind="'在线支付'"></span>
+    </a>
+    <div class="item item-divider"></div>
+    <a class="item">
+      配送信息
+    </a>
+    <a class="item">
+      配送方式：<span ng-bind="'顺丰速运'"></span><br>
+      运费：<span ng-bind="'免运费'"></span>
+    </a>
+    <div class="item item-divider"></div>
+    <a class="item" ui-sref="address">
+      优惠券
+      <i class="icon ion-chevron-right item-note"></i>
+      <span class="item-note">0张可用&nbsp;&nbsp;</span>
+    </a>
+    <a class="item" ui-sref="address">
+      开具普通发票
+      <i class="icon ion-chevron-right item-note"></i>
+    </a>
+    <div class="item item-divider"></div>
+    <a class="item">
+      订单1
+      <span class="item-note">运费：</span>
+    </a>
+    <a class="item item-thumbnail-left" ng-repeat="product in products">
+      <img ng-src="{{product.img}}">
+      <h2></h2>
+      <p>Blue Album</p>
+    </a>
+    <a class="item item-thumbnail-left" href="#">
+      <img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
+      <h2>Weezer</h2>
+      <p>Blue Album</p>
+    </a>
+
+    <ion-toggle >
+      设为默认地址
+    </ion-toggle>
+  </div>
+
+  </form>
+</ion-content>
+<div class="bar bar-footer">
+  <ul class="row">
+    <li class="col-66">应付金额：<b class="ft18 color_red" ng-bind="totalAmount() | currency:'￥'"></b></li>
+    <li class="col-34">
+      <button type="button" class="pay"
+              ng-click="confirmOrder()"
+              ng-class="{'pay-disabled': totalAmount() <= 0,'button-assertive': totalAmount() > 0}"
+              ng-disabled="totalAmount() <= 0">结算</button>
+    </li>
+  </ul>
+</div>

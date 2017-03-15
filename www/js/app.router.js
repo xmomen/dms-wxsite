@@ -6,6 +6,7 @@ define(function (require) {
   var tabsCtrl = require('../modules/tabs');
   var accountCrtl = require('../modules/account');
   var loginCtrl = require('../modules/login');
+  var cartCtrl = require('../modules/cart');
 
   angular.module('app.router',['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
@@ -36,7 +37,7 @@ define(function (require) {
         views: {
           'tab-cart': {
             templateUrl: 'modules/cart.html',
-            controller: 'CartCtrl'
+            controller: cartCtrl
           }
         }
       })

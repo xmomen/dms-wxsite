@@ -4,11 +4,13 @@ define([
   'js/app.rest',
   'js/app.controllers',
   'modules/address/address.module',
-  'modules/product/product.module'
+  'modules/product/product.module',
+  'modules/payment/payment.module'
 ], function(){
   angular.module('app.module', [
      'address.module',
      'product.module',
+     'payment.module',
      'app.router' ,
      'app.rest',
      'starter.controllers'

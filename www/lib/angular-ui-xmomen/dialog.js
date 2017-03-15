@@ -5,6 +5,9 @@
 define(function(toaster){
     return angular.module('xmomen.dialog', [
     ]).factory("$dialog", ["$q","$injector", function ($q, $injector) {
+        if(!$modal){
+          $modal = $injector.get("$uibModal");
+        }
         var $modal;
         return {
             alert : function(option){
@@ -67,9 +70,6 @@ define(function(toaster){
                 toaster.pop(defaultConfig.type, defaultConfig.title, defaultConfig.text);
             },
             confirm: function (option) {
-                if(!$modal){
-                    $modal = $injector.get("$modal");
-                }
                 var deferred = $q.defer();
                 var defaultConfig = {
                     title:"确认框",
@@ -84,14 +84,14 @@ define(function(toaster){
                 }
                 angular.extend(defaultConfig, option);
                 $modal.open({
-                    templateUrl: 'js/core/xmomen-ui/template/dialog-tpl.html',
+                    templateUrl: 'uix/dialog/dialog-tpl.html',
                     modal:true,
                     resolve: {
                         Message: function () {
                             return defaultConfig;
                         }
                     },
-                    controller: ['$scope', '$modalInstance', "$modal", "Message", function($scope, $modalInstance, $modal, Message){
+                    controller: ['$scope', '$uibModalInstance', "Message", function($scope, $modalInstance, Message){
                         $scope.message = Message;
                         $scope.yes = function(){
                             $modalInstance.close();

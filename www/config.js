@@ -17,6 +17,7 @@ require.config({
         "angular-animate":"lib/angular-animate/angular-animate",
         "jquery.validate":"lib/jquery-validation/dist/jquery.validate",
         "jquery.validate.local":"lib/jquery-validation/src/localization/messages_zh",
+        "ui-bootstrap-tpls":"lib/angular-bootstrap/ui-bootstrap-tpls.min",
 
         "angular-ui-xmomen":"lib/angular-ui-xmomen/xmomen-ui",
 
@@ -39,11 +40,13 @@ require.config({
         "jquery.validate":["jquery"],
         "angular-ui-xmomen":[
           "jquery.validate.local",
-          "jquery.validate"
+          "jquery.validate",
+          "ui-bootstrap-tpls"
         ],
         "main": [
             //"jquery.validate.local",
             //"jquery.validate",
+            "ui-bootstrap-tpls",
             "angular-ui-xmomen",
             "ionic",
             "ionic-angular",
