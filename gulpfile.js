@@ -76,7 +76,7 @@ gulp.task('git-check', function(done) {
 //web服务器
 gulp.task('server', function() {
   var environment = require("./environments.json");
-  var ENV = environment['production'];
+  var ENV = environment['development'];
   gulp.src(ENV.serverPath) // 服务器目录（./代表根目录）
     .pipe(webserver({ // 运行gulp-webserver
       port: ENV.port, //端口，默认8000
