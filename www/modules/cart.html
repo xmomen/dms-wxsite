@@ -1,5 +1,5 @@
 <ion-view view-title="购物车">
-  <ion-content>
+  <ion-content style="bottom:115px">
     <ion-list class="cart wl" style="border-top:1px solid #eee;" ng-repeat="product in products">
         <ion-checkbox ng-model="product.checked" ng-checked="product.checked" style="width:45px;border: 0;padding-left:0">
         </ion-checkbox>
@@ -12,16 +12,16 @@
           <li class="fl"><b class="title" ng-bind="product.name"></b>
             <ul class="info">
               <li class="fl">
-                <span class="info-price"><b class="ft18" ng-bind="product.price | currency:'￥'"></b></span><br>
+                <span class="info-price">￥<b ng-bind="product.price" class="ft18"></b></span><br>
                 <span class="info-kg ft14" ng-bind="product.unit"></span>
               </li>
-              <li class="fr">
-                <button type="button" class="info-delect" ng-click="remove($index)"><span class="ion-trash-a"></span></button>
-              </li>
-              <li class="fr" style="width:90px;padding:0 10px">
+              <li class="fl" style="width:90px;padding:0 10px">
                 <button class="btn-num fl" ng-click="subNumber(product)"> - </button>
                 <input type="text" class="info-num fl" ng-model="product.number">
                 <button class="btn-num fl" ng-click="product.number = product.number + 1"> + </button>
+              </li>
+              <li class="fl">
+                <button type="button" class="info-delect" ng-click="remove($index)"><span class="ion-trash-a"></span></button>
               </li>
             </ul>
           </li>

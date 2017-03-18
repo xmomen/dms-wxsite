@@ -47,8 +47,10 @@ textarea{border:0;width: 62%;}
 .fl{float: left}
 .pd5{padding:5px}
 .pd5-10{padding:5px 10px}
+.pd-b50{padding-bottom:50px}
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
+.color_grey{color:#ccc}
 .mt5{margin-top:5px;}
 .mt10{margin-top:10px;}
 .ft12{font-size:12px}
@@ -164,18 +166,19 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .cart .info{margin-top: 20px}
 .info-price{font-weight:300;color:#e74c3c;}
 .info-kg{font-weight:300;color:#ccc;}
-.info-num{width:30px;border:1px solid #ccc !important;height:30px!important;text-align: center}
-.btn-num{height:30px;border:1px solid #ccc;background:#fff}
+.info-num{width:24px;border:1px solid #ccc !important;height:24px!important;text-align: center}
+.btn-num{height:24px;border:1px solid #ccc;background:#fff}
 .info-delect{border:0;background:0;color:#ccc;font-size:24px;float: right}
 .cart .list{width:100%;float:left;margin-top:31px;padding-bottom:10px}
 .privilege{padding:10px 20px}
 .privilege li{text-align:left;padding-left:40px;line-height:24px}
+.ion-trash-a{margin-top:-5px}
 
 /*下单支付*/
 .payment{position: fixed;bottom:50px;border-top:1px solid #ccc;}
-.payment .money{padding: 20px}
+.payment .money{padding:17px}
 .pay{
-  background: #e74c3c;color:#fff;padding:22px 0;width:100%;text-align: center;
+  background: #e74c3c;color:#fff;padding:13px 0;width:100%;text-align: center;
   border:1px solid #e74c3c;
   font-size: large;
 }
@@ -184,3 +187,35 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   border:1px solid #f8f8f8;
   color: #666666;
 }
+/*下单界面*/
+.payment_pay{font-size:14px}
+.item-address{
+  border-bottom: .6em solid transparent;
+  border-top: .1em solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
+    #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
+.item-divider{padding:0;height:10px;min-height:10px}
+.item-dispatching{padding:0}
+.item-dispatching .lid{font-size:14px}
+.item_info{font-size:14px}
+.item_info .info{line-height:45px;border-bottom:1px solid #eee}
+.item_info label{width:5rem;text-align: right;color:#9d9d9d;display: inline-block;float: left;line-height:45px}
+.address_card{}
+.address_card .add_card{border-bottom: .6em solid transparent;
+  border-top: .1em solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
+    #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
+.item-divider{padding:0;height:10px;min-height:10px}
+/****/
+.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding: 40px 95px;color:#fff}
+.about-column{padding:12px}
+.about-column li{padding:5px;text-align: center;line-height:20px;position: relative}
+.about-column li img{width:90%}
+.about_t{width:14px;height:14px;line-height:14px;font-size:11px;display: block;border-radius:50%;background:red;color:#fff;position: absolute;right:0;
+  top:9px;}
+.about-lid{padding:12px}
+.about-lid .row{margin-top: 0;margin-bottom:-1px}
+.about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;margin-right:-1px}
+.about-lid li img{width:30px}

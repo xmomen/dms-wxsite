@@ -5,13 +5,23 @@
 </ion-header-bar>
 <ion-view>
   <ion-content>
-    <div class="card" ng-repeat="item in address">
-      <a ui-sref="address_detail({id:item.id})">
-        <div class="item item-divider">
-          <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary">默认地址</span>
-        </div>
-        <div class="item item-text-wrap small" ng-bind="item.address"></div>
-      </a>
+    <div class="address_card">
+      <div class="wl" ng-repeat="item in address">
+        <div class="item item-divider"></div>
+        <a ui-sref="address_detail({id:item.id})">
+          <div class="add_card" ng-click="choseAddress($index)">
+            <div class="item" style="border-bottom:0;padding:9px 16px">
+              <span ng-bind="item.name"></span>&nbsp;&nbsp;
+              <span ng-if="item.isDefault" class="label label-primary ft12 color_grey">默认地址</span>&nbsp;&nbsp;
+              <span ng-bind="item.phoneNumber" class="fr"></span>
+              <div class="wl">
+                <span class="ion-ios-location-outline"></span>
+                <span class="item-text-wrap small ft12 mt5" ng-bind="item.address"></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
   </ion-content>
 </ion-view>

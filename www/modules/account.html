@@ -1,32 +1,55 @@
 <ion-view view-title="我的账户">
   <ion-content>
     <ion-list>
-      <!--<a class="item item-avatar">-->
-        <!--<img ng-src="{{account.headLink}}">-->
-        <!--<i class="icon ion-chevron-right item-note"></i>-->
-      <!--</a>-->
-      <a class="item">
-        姓名
-        <span class="item-note" ng-bind="account.nickname"></span>
-      </a>
-      <a class="item">
-        账号
-        <i class="icon ion-chevron-right item-note"></i>
-        <span class="item-note" >{{account.username}}&nbsp;&nbsp;</span>
-      </a>
-      <a class="item" ui-sref="payment">
-        支付设置
-        <i class="icon ion-chevron-right item-note"></i>
-      </a>
-      <a class="item" ui-sref="address">
-        收货地址
-        <i class="icon ion-chevron-right item-note"></i>
-      </a>
-      <a class="item" ui-sref="relation_account">
-        关联账号
-        <i class="icon ion-chevron-right item-note"></i>
-      </a>
-
+      <div class="item item-avatar about-meq">
+        <img ng-src="{{account.headLink}}" style="top: 40px;left: 45px;" />
+        <span ng-bind="account.nickname"></span>
+        <span class=" wl ft12 mt10" >{{account.username}}</span>
+      </div>
+      <div class="about-column">
+        <ul class="row wl">
+          <li class="col-20">
+            <img src="../img/account_money.png" />
+            待付款</li>
+          <li class="col-20">
+            <span class="about_t">3</span>
+            <img src="../img/account_indent.png" />
+            待收货</li>
+          <li class="col-20">
+            <img src="../img/account_cowry.png" />
+            全部订单</li>
+          <li class="col-20">
+            <img src="../img/account_appraise.png" />
+            评价晒单</li>
+          <li class="col-20">
+            <img src="../img/account_service.png" />
+            售后服务</li>
+        </ul>
+      </div>
+      <div class="about-lid wl mt10">
+        <ul class="row wl">
+          <li class="col-33" ui-sref="address">
+            <img src="../img/address.png" /><br>
+            收货地址</li>
+          <li class="col-33" ui-sref="payment">
+            <img src="../img/pay.png" /><br>
+            支付设置</li>
+          <li class="col-33" ui-sref="relation_account">
+            <img src="../img/user.png" /><br>
+            关联账号</li>
+        </ul>
+        <ul class="row wl">
+          <li class="col-33">
+            <img src="../img/address.png" /><br>
+            收货地址</li>
+          <li class="col-33">
+            <img src="../img/pay.png" /><br>
+            支付设置</li>
+          <li class="col-33">
+            <img src="../img/user.png" /><br>
+            关联账号</li>
+        </ul>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>

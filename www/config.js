@@ -16,7 +16,7 @@ require.config({
         "angular-sanitize":"lib/angular-sanitize/angular-sanitize",
         "angular-animate":"lib/angular-animate/angular-animate",
         "jquery.validate":"lib/jquery-validation/dist/jquery.validate",
-        "jquery.validate.local":"lib/jquery-validation/src/localization/messages_zh",
+        //"jquery.validate.local":"lib/jquery-validation/src/localization/messages_zh",
         "ui-bootstrap-tpls":"lib/angular-bootstrap/ui-bootstrap-tpls.min",
 
         "angular-ui-xmomen":"lib/angular-ui-xmomen/xmomen-ui",
@@ -36,10 +36,10 @@ require.config({
         "angular-sanitize": ["angular"],
         "angular-animate": ["angular"],
         "angular-translate": ["angular"],
-        "jquery.validate.local":["jquery.validate"],
+        //"jquery.validate.local":["jquery.validate"],
         "jquery.validate":["jquery"],
         "angular-ui-xmomen":[
-          "jquery.validate.local",
+          //"jquery.validate.local",
           "jquery.validate",
           "ui-bootstrap-tpls"
         ],
