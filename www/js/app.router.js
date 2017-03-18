@@ -37,7 +37,10 @@ define(function (require) {
         views: {
           'tab-cart': {
             templateUrl: 'modules/cart.html',
-            controller: cartCtrl
+            controller: cartCtrl,
+            params:{
+              products:null
+            }
           }
         }
       })

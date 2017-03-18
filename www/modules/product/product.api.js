@@ -9,5 +9,13 @@ define(function (require) {
     return Resource("/product/:id", { id:"@id" }, {
       query : { method:"GET", url:"/product", isArray:false}
     });
+  }]).factory("CategoryAPI", ["Resource", function(Resource){
+    return Resource("/category/:id", { id:"@id" }, {
+      query : { method:"GET", url:"/category", isArray:false}
+    });
+  }]).factory("CouponAPI", ["Resource", function(Resource){
+    return Resource("/coupon/:id", { id:"@id" }, {
+      query : { method:"GET", url:"/coupon", isArray:false}
+    });
   }]);
 });

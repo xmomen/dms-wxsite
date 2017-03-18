@@ -3,9 +3,9 @@
 
       <div class="row" scroll-width>
         <ion-scroll zooming="true" direction="x" scrollbar-x="false" >
-        <ul class="slide-tab" ng-style="{'width':firstClass.length*60 + 'px'}">
+        <ul class="slide-tab" ng-style="{'width':categorys.length*60 + 'px'}">
           <li ng-class="slideIndex == $index ? 'current':''" style="width: 60px;"
-              ng-repeat="item in firstClass">
+              ng-repeat="item in categorys">
             <a href="#" ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a>
           </li>
         </ul> <!-- / tabs -->
@@ -17,7 +17,7 @@
         <ion-scroll direction="y" scrollbar-y="false" style="height: 530px;">
           <ul  style="height: 530px;">
             <li ng-class="slideSecondIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
-                ng-repeat="item in secondClass" style="line-height: 38px;">
+                ng-repeat="item in categorys[slideIndex]" style="line-height: 38px;">
               <a href="#" ng-click="secondClick($index,item)" ng-bind="item.name" style="border: 2px solid blue"> </a>
             </li>
           </ul>

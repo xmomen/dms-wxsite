@@ -19,6 +19,15 @@ var mockApi = function(res, pathname, paramObj, next) {
         case '/account':
             response(res, 'account.json');
             return ;
+        case '/category':
+            response(res, 'category.json');
+            return ;
+        case '/product':
+          response(res, 'product.json');
+          return ;
+        case '/product/1111':
+          response(res, 'product/1111.json');
+          return ;
         case '/user':
             response(res, 'user.json');
             return ;

@@ -1,20 +1,20 @@
 <ion-header-bar>
   <button class="button button-icon icon ion-ios-arrow-left" ui-sref="tab.cart"></button>
-  <div class="title" ng-bind="pageSettingInfo.title"></div>
+  <div class="title">确认订单</div>
 </ion-header-bar>
 <ion-content>
   <form name="addressFormName">
   <div class="list">
-    <a class="item" ui-sref="address">
+    <a class="item" ng-if="!payment.address" ng-click="openAddressModal()">
       收货地址
       <i class="icon ion-chevron-right item-note"></i>
       <span class="item-note">请选择&nbsp;&nbsp;</span>
     </a>
-    <a class="item" ui-sref="address">
-        谭新政
-        <span class="item-note">15000084483</span>
+    <a class="item" ng-if="payment.address" ng-click="openAddressModal()">
+        {{payment.address.name}}
+        <span class="item-note" ng-bind="payment.address.phoneNumber"></span>
         <br><br>
-        上海市浦东新区崂山路
+        {{payment.address.address}}
     </a>
     <div class="item item-divider"></div>
     <a class="item">
@@ -30,24 +30,19 @@
       运费：<span ng-bind="'免运费'"></span>
     </a>
     <div class="item item-divider"></div>
-    <a class="item" ui-sref="address">
+    <a class="item" ng-click="choseCoupon()">
       优惠券
       <i class="icon ion-chevron-right item-note"></i>
       <span class="item-note">0张可用&nbsp;&nbsp;</span>
     </a>
-    <a class="item" ui-sref="address">
-      开具普通发票
-      <i class="icon ion-chevron-right item-note"></i>
-    </a>
+    <ion-toggle ng-model="payment.useCard">
+      优惠卡
+    </ion-toggle>
     <div class="item item-divider"></div>
-    <a class="item">
-      订单1
-      <span class="item-note">运费：</span>
-    </a>
-    <a class="item item-thumbnail-left" ng-repeat="product in products">
+    <a class="item item-thumbnail-left" ng-repeat="product in payment.products">
       <img ng-src="{{product.img}}">
       <h2></h2>
-      <p>Blue Album</p>
+      <p ng-bind="product.name"></p>
     </a>
     <a class="item item-thumbnail-left" href="#">
       <img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
@@ -55,16 +50,16 @@
       <p>Blue Album</p>
     </a>
 
-    <ion-toggle >
-      设为默认地址
-    </ion-toggle>
+
   </div>
 
   </form>
 </ion-content>
 <div class="bar bar-footer">
   <ul class="row">
-    <li class="col-66">应付金额：<b class="ft18 color_red" ng-bind="totalAmount() | currency:'￥'"></b></li>
+    <li class="col-66">
+      应付金额：<b class="ft18 color_red" ng-bind="totalAmount() | currency:'￥'"></b>
+    </li>
     <li class="col-34">
       <button type="button" class="pay"
               ng-click="confirmOrder()"
@@ -73,3 +68,41 @@
     </li>
   </ul>
 </div>
+<!--  收货地址  -->
+<script id="chose-address.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">收货地址</h1>
+      <button class="button button-icon icon ion-ios-close-outline" ng-click="closeAddressModal()"></button>
+    </ion-header-bar>
+    <ion-content>
+      <div class="card" ng-repeat="item in address" ng-click="choseAddress($index)">
+        <a>
+          <div class="item item-divider">
+            <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary">默认地址</span>
+          </div>
+          <div class="item item-text-wrap small" ng-bind="item.address"></div>
+        </a>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+<!--  优惠券  -->
+<script id="chose-coupon.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">优惠券</h1>
+      <button class="button button-icon icon ion-ios-close-outline" ng-click="closeCouponModal()"></button>
+    </ion-header-bar>
+    <ion-content>
+      <div class="card" ng-repeat="item in coupon" ng-click="choseCoupon($index)">
+        <a>
+          <div class="item item-divider">
+            <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary">默认地址</span>
+          </div>
+          <div class="item item-text-wrap small" ng-bind="item.address"></div>
+        </a>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
