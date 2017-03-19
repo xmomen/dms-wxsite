@@ -23,7 +23,7 @@ define(function(){
 
     $scope.firstClick = function (index,item,event) {
       $scope.slideIndex = index;
-      event.target.style.border = "2px solid blue"
+      event.target.style.border = "2px solid blue";
     };
     $scope.secondClick = function (index,item){
       $scope.slideSecondIndex = index;
