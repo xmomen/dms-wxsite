@@ -14,7 +14,7 @@ define(function(){
     $scope.categorys = [];
     $scope.getCategory = function(){
       CategoryAPI.query({}, function(data){
-        $scope.categorys = data.data;
+        $scope.categorys = data;
       })
     };
     //初始化
@@ -23,7 +23,7 @@ define(function(){
 
     $scope.firstClick = function (index,item,event) {
       $scope.slideIndex = index;
-      event.target.style.border = "2px solid blue"
+      event.target.style.border = "2px solid blue";
     };
     $scope.secondClick = function (index,item){
       $scope.slideSecondIndex = index;
