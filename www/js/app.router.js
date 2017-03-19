@@ -58,9 +58,11 @@ define(function (require) {
         url: '/login',
         templateUrl: 'modules/login.html',
         controller: loginCtrl
+      })
+      .state('goods', {
+        url: '/goods',
+        templateUrl: 'modules/goods/goods.html'
       });
-
-
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/home');
 

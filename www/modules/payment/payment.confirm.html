@@ -3,39 +3,42 @@
   <div class="title">确认订单</div>
 </ion-header-bar>
 <ion-content>
-  <form name="addressFormName">
+  <form name="addressFormName" class="pd-b50">
   <div class="list">
-    <a class="item" ng-if="!payment.address" ng-click="openAddressModal()">
+    <a class="item payment_pay" ng-if="!payment.address" ng-click="openAddressModal()">
       收货地址
       <i class="icon ion-chevron-right item-note"></i>
       <span class="item-note">请选择&nbsp;&nbsp;</span>
     </a>
-    <a class="item" ng-if="payment.address" ng-click="openAddressModal()">
-        {{payment.address.name}}
-        <span class="item-note" ng-bind="payment.address.phoneNumber"></span>
-        <br><br>
-        {{payment.address.address}}
+    <a class="item payment_pay item-address" ng-if="payment.address" ng-click="openAddressModal()">
+        <div class="ft16">
+          {{payment.address.name}}
+          <span class="item-note" ng-bind="payment.address.phoneNumber"></span>
+        </div>
+        <div class="mt10 ft12">{{payment.address.address}}</div>
     </a>
     <div class="item item-divider"></div>
-    <a class="item">
+    <a class="item payment_pay">
       支付方式
       <span class="item-note" ng-bind="'在线支付'"></span>
     </a>
     <div class="item item-divider"></div>
-    <a class="item">
-      配送信息
-    </a>
-    <a class="item">
-      配送方式：<span ng-bind="'顺丰速运'"></span><br>
-      运费：<span ng-bind="'免运费'"></span>
-    </a>
+    <div class="item-dispatching">
+      <a class="item lid">
+        配送信息
+      </a>
+      <a class="item item_info">
+        <div class="info wl"><label>配送方式</label><span ng-bind="'顺丰速运'" class="fr"></span></div>
+        <div class="info wl"><label>运费</label><span ng-bind="'免运费'" class="fr"></span></div>
+      </a>
+    </div>
     <div class="item item-divider"></div>
-    <a class="item" ng-click="choseCoupon()">
+    <a class="item payment_pay" ng-click="choseCoupon()">
       优惠券
       <i class="icon ion-chevron-right item-note"></i>
-      <span class="item-note">0张可用&nbsp;&nbsp;</span>
+      <span class="item-note ft14"> <b class="color_red">0</b> 张可用&nbsp;&nbsp;</span>
     </a>
-    <ion-toggle ng-model="payment.useCard">
+    <ion-toggle ng-model="payment.useCard" class="payment_pay">
       优惠卡
     </ion-toggle>
     <div class="item item-divider"></div>
@@ -44,10 +47,16 @@
       <h2></h2>
       <p ng-bind="product.name"></p>
     </a>
+    <a class="item item-thumbnail-left" href="#">
+      <img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
+      <h2>Weezer</h2>
+      <p>Blue Album</p>
+    </a>
   </div>
-
   </form>
 </ion-content>
+
+
 <div class="bar bar-footer">
   <ul class="row">
     <li class="col-66">
@@ -61,6 +70,7 @@
     </li>
   </ul>
 </div>
+
 <!--  收货地址  -->
 <script id="chose-address.html" type="text/ng-template">
   <ion-modal-view>
@@ -68,14 +78,15 @@
       <h1 class="title">收货地址</h1>
       <button class="button button-icon icon ion-ios-close-outline" ng-click="closeAddressModal()"></button>
     </ion-header-bar>
-    <ion-content>
-      <div class="card" ng-repeat="item in address" ng-click="choseAddress($index)">
-        <a>
-          <div class="item item-divider">
-            <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary">默认地址</span>
-          </div>
-          <div class="item item-text-wrap small" ng-bind="item.address"></div>
-        </a>
+    <ion-content class="address_card">
+      <div class="wl" ng-repeat="item in address">
+        <div class="item item-divider"></div>
+        <div class="add_card" ng-click="choseAddress($index)">
+            <div class="item" style="border-bottom:0;padding:9px 16px">
+              <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary ft12 color_grey">默认地址</span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber" class="fr"></span>
+              <div class="wl"><span class="ion-ios-location-outline"></span> <span class="item-text-wrap small ft12 mt5" ng-bind="item.address"></span></div>
+            </div>
+        </div>
       </div>
     </ion-content>
   </ion-modal-view>
