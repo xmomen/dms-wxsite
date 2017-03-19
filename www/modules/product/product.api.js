@@ -11,7 +11,7 @@ define(function (require) {
     });
   }]).factory("CategoryAPI", ["Resource", function(Resource){
     return Resource("/category/:id", { id:"@id" }, {
-      query : { method:"GET", url:"/category", isArray:false}
+      query : { method:"GET", url:"/category", isArray:true}
     });
   }]).factory("CouponAPI", ["Resource", function(Resource){
     return Resource("/coupon/:id", { id:"@id" }, {

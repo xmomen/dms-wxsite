@@ -14,7 +14,7 @@ define(function(){
     $scope.categorys = [];
     $scope.getCategory = function(){
       CategoryAPI.query({}, function(data){
-        $scope.categorys = data.data;
+        $scope.categorys = data;
       })
     };
     //初始化
