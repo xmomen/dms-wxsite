@@ -57,6 +57,7 @@ textarea{border:0;width: 62%;}
 .ft14{font-size:14px}
 .ft16{font-size:16px}
 .ft18{font-size:18px}
+.ft24{font-size:24px}
 .bar.bar-positive {
   border-color: #fff;
   background-color: #fff;
@@ -103,7 +104,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   .hp_line .list_txt{font-size:13px}
 }
 .hp_line{padding: 0 10px}
-
+.row + .row {
+   margin-top:0;
+  padding-top: 0;}
 .home .search_input{width: 95%;position: absolute;top:23px;left:10px;border-radius: 3px;padding: 5px;}
 .form_lid{line-height:70px;height:70px;padding:0 10px;border-bottom:1px solid #d8d8d8;background: url("../img/form_lid.png") no-repeat center center;background-size: 100%}
 
@@ -117,45 +120,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;border-bottom: 5px solid #eee;}
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
-.shopping-cart{font-size:30px;color:green}
+.shopping-cart{font-size:30px;color:#e74c3c}
 
-
-.slide-tab{
-  display: table;
-  overflow: hidden;
-  margin: 0;
-  width: 100%;
-  background-color: #eff0f2;
-  border-bottom: 2px solid #00897B;
-
-}
-
-.slide-tab li{
-  float: left;
-  line-height: 38px;
-  overflow: hidden;
-  padding: 0;
-}
-
-.slide-tab a{
-  background-color: #eff0f2;
-  border-bottom: 1px solid #fff;
-  color: #888;
-  font-weight: 500;
-  display: block;
-  letter-spacing: 0;
-  outline: none;
-  padding: 0 20px;
-  text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  border-bottom: 2px solid #00897B;
-}
-.current a{
-  color: #fff;
-  background: #00897B;
-}
 
 
 /*购物车*/
@@ -164,7 +130,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .cart .shopping-img{width:60px;height:60px}
 .cart .title{font-size:14px}
 .cart .info{margin-top: 20px}
-.info-price{font-weight:300;color:#e74c3c;}
+.info-price{font-weight:300;color:#e74c3c;line-height:24px}
 .info-kg{font-weight:300;color:#ccc;}
 .info-num{width:24px;border:1px solid #ccc !important;height:24px!important;text-align: center}
 .btn-num{height:24px;border:1px solid #ccc;background:#fff}
@@ -219,3 +185,46 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .about-lid .row{margin-top: 0;margin-bottom:-1px}
 .about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;margin-right:-1px}
 .about-lid li img{width:30px}
+/**商品分类******/
+.classify{width:70px;min-height:530px;display:block;float:left;text-align:center;background:#f8f8f8;position: fixed;left:0;z-index:1000}
+
+.slide-tab{ display: table;overflow: hidden;margin: 0;width: 100%;}
+
+.slide-tab li{
+  line-height: 38px;
+  overflow: hidden;
+  padding: 0;
+  font-size:12px;
+}
+
+.slide-tab a{
+  border-bottom: 1px solid #eee;
+  color: #888;
+  font-weight: 500;
+  display: block;
+  letter-spacing: 0;
+  outline: none;
+  text-decoration: none;
+}
+.slide-tab a:hover,.slide-tab a.select{
+  background:#e74c3c;color: #fff;
+}
+.current a{
+  color: #fff;
+}
+
+.son_class{padding-left:70px}
+.son_class .style{width:100%;float:left;background:#fff;}
+.son_class .style li a{width:100%;float:left;text-align: center;color:#aaa;line-height:32px;
+  border:1px solid #eee;border-top:0}
+.product  li a{width:100%;float:left}
+.product_lid{padding:5px;width:100%;float:left}
+.product_lid a{ border:1px solid #eee;}
+.product-img{width:100%;display: block;}
+.son_class .banner-publicity .img{width:100%;height:100px}
+/*商品详情*/
+.product_info{padding:50px 0}
+.product_about{padding: 0 20px}
+.product_about h2{font-size:20px}
+.product_norms{border-top:1px solid #eee;border-bottom:1px solid #eee;text-align: center;line-height:45px}
+.product_count{padding:5px 20px;display:block}

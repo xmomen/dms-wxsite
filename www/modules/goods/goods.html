@@ -1,0 +1,87 @@
+<ion-view view-title="商品详情">
+  <ion-content style="padding-bottom: 50px">
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000 show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex" delegate-handle="delegateHandler">
+      <ion-slide>
+        <div class="box blue">
+          <a ui-sref="/">
+            <img src="../../img/banner-goods-01.jpg" width="100%" />
+          </a>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow">
+          <a ui-sref="/">
+            <img src="../../img/banner-goods-02.jpg"  width="100%" />
+          </a>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow">
+          <a ui-sref="/">
+            <img src="../../img/banner-goods-03.jpg"  width="100%" />
+          </a>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    <!--商品图------>
+    <div class="product_info">
+      <div class="product_about wl">
+        <h2>当地青菜</h2>
+        <div class="color_red mt10 fr">￥<span class="ft24">12</span>/KG</div>
+      </div>
+      <ul class="row product_norms wl mt10">
+        <li class="col-33">产地：上海</li>
+        <li class="col-33">品牌：清美</li>
+        <li class="col-33">规格：1.5KG</li>
+      </ul>
+    </div>
+    <div class="wl padding">
+      <ul class="info product_count fr" style="margin-bottom: 0;">
+          <li class="fl">
+            <span class="info-price">商品数量</span>
+          </li>
+          <li class="fl" style="width:90px;padding:0 10px">
+            <button class="btn-num fl" ng-click="subNumber(product)"> - </button>
+            <input type="text" class="info-num fl" ng-model="product.number">
+            <button class="btn-num fl" ng-click="product.number = product.number + 1"> + </button>
+          </li>
+      </ul>
+    </div>
+    <ion-list>
+      <a class="item mt10" ui-sref="relation_account">
+        商户评价<span>（200）</span>
+        <i class="icon ion-chevron-right item-note"></i>
+      </a>
+      <a class="item payment_pay">
+        <div class="ft16">
+          蔬菜很新鲜 非常好吃
+          <span class="item-note">用户1</span>
+        </div>
+        <div class="mt10 ft12">2017-03-21</div>
+      </a>
+      <a class="item payment_pay">
+        <div class="ft16">
+          蔬菜很新鲜 非常好吃
+          <span class="item-note">用户1</span>
+        </div>
+        <div class="mt10 ft12">2017-03-21</div>
+      </a>
+      <a class="item mt10" ui-sref="relation_account">
+        图文详情
+      </a>
+      <div class="">
+        <img src="../../img/detail/1458641473_8.jpg" width="100%" />
+        <img src="../../img/detail/1458641473_9.jpg" width="100%" />
+        <img src="../../img/banner-goods-01.jpg" width="100%" />
+        <img src="../../img/banner-goods-02.jpg" width="100%" />
+        <img src="../../img/detail/4caee424bbab7622a6ca5f95e63b805d.jpg" width="100%" />
+      </div>
+    </ion-list>
+
+  </ion-content>
+  <div class="bar bar-footer">
+    <button class="button button-block button-assertive" style="margin:0">
+      立即购买
+    </button>
+  </div>
+</ion-view>

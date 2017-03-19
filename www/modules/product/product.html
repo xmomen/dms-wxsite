@@ -1,35 +1,39 @@
 <ion-view view-title="商品列表">
-  <ion-content class="padding">
-
-      <div class="row" scroll-width>
-        <ion-scroll zooming="true" direction="x" scrollbar-x="false" >
-        <ul class="slide-tab" ng-style="{'width':categorys.length*60 + 'px'}">
-          <li ng-class="slideIndex == $index ? 'current':''" style="width: 60px;"
+  <ion-content>
+      <div class="hidding"><a href=""><span class="ion-navicon-round ft18"></span></a></div>
+      <div class="row classify" style="width: 70px!important;">
+        <ion-scroll zooming="true" direction="x" scrollbar-x="false" style="min-height:530px;">
+        <ul class="slide-tab">
+          <li ng-class="slideIndex == $index ? 'current':''"
               ng-repeat="item in categorys">
-            <a href="#" ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a>
+            <a href="#" ng-click="firstClick($index,item,$event)" ng-bind="item.name" ng-class="select"></a>
           </li>
         </ul> <!-- / tabs -->
         </ion-scroll>
       </div>
 
-    <div class="row">
-      <div class="col-20">
+    <div class="row son_class">
+      <div class="col-25">
         <ion-scroll direction="y" scrollbar-y="false" style="height: 530px;">
-          <ul  style="height: 530px;">
+          <ul class="style" style="height: 530px;">
             <li ng-class="slideSecondIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
-                ng-repeat="item in categorys[slideIndex]" style="line-height: 38px;">
-              <a href="#" ng-click="secondClick($index,item)" ng-bind="item.name" style="border: 2px solid blue"> </a>
+                ng-repeat="item in categorys[slideIndex]">
+              <a href="#" ng-click="secondClick($index,item)" ng-bind="item.name"> </a>
             </li>
           </ul>
         </ion-scroll>
       </div>
-      <div class="col-80">
-        <ul>
-          <li ng-class="slideThirdIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
-              ng-repeat="item in thirdClass" style="line-height: 38px;">
-            <a href="#" ng-click="thirdClick($index,item)" ng-bind="item.name" style="border: 2px solid red"> </a>
-          </li>
-        </ul>
+      <div class="col-75" style="border-left: 1px solid #eee">
+          <div class="col-lg-12 banner-publicity wl" ng-class="slideThirdIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
+               ng-repeat="item in thirdClass" >
+            <img src="../../img/shucai.jpg" class="img" />
+            <a ng-click="thirdClick($index,item)" ng-bind="item.name" class="">
+              <b class="wl mt10">原装进口红葡萄酒 500ML</b>
+              <span class="wl mt10">源自澳洲 品质稳定</span>
+              <span class="wl mt10 color_red">￥<strong>180.00</strong></span>
+              <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
+            </a>
+          </div>
       </div>
     </div>
   </ion-content>
