@@ -48,6 +48,7 @@ textarea{border:0;width: 62%;}
 .pd5{padding:5px}
 .pd5-10{padding:5px 10px}
 .pd-b50{padding-bottom:50px}
+.pr12{padding-right:12px}
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
 .color_grey{color:#ccc}
@@ -114,7 +115,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-name{font-weight: bold;color:#000;}
 .trade-price{color:#e74c3c}
 .trade-price strong{font-weight: bold;font-size:14px}
-.trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: block}
+.trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 10px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
 .banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;border-bottom: 5px solid #eee;}
@@ -134,7 +135,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .info-kg{font-weight:300;color:#ccc;}
 .info-num{width:24px;border:1px solid #ccc !important;height:24px!important;text-align: center}
 .btn-num{height:24px;border:1px solid #ccc;background:#fff}
-.info-delect{border:0;background:0;color:#ccc;font-size:24px;float: right}
+.info-delect{border:0;background:0;color:#ccc;font-size:24px;float: right;margin-top:-8px}
 .cart .list{width:100%;float:left;margin-top:31px;padding-bottom:10px}
 .privilege{padding:10px 20px}
 .privilege li{text-align:left;padding-left:40px;line-height:24px}
@@ -179,6 +180,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .about-column{padding:12px}
 .about-column li{padding:5px;text-align: center;line-height:20px;position: relative}
 .about-column li img{width:90%}
+.about-column li span{display: block}
 .about_t{width:14px;height:14px;line-height:14px;font-size:11px;display: block;border-radius:50%;background:red;color:#fff;position: absolute;right:0;
   top:9px;}
 .about-lid{padding:12px}
@@ -186,7 +188,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;margin-right:-1px}
 .about-lid li img{width:30px}
 /**商品分类******/
-.classify{width:70px;min-height:530px;display:block;float:left;text-align:center;background:#f8f8f8;position: fixed;left:0;z-index:1000}
+.classify{text-align:center;background:#f8f8f8;}
 
 .slide-tab{ display: table;overflow: hidden;margin: 0;width: 100%;}
 
@@ -213,7 +215,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   color: #fff;
 }
 
-.son_class{padding-left:70px}
+.son_class{}
 .son_class .style{width:100%;float:left;background:#fff;}
 .son_class .style li a{width:100%;float:left;text-align: center;color:#aaa;line-height:32px;
   border:1px solid #eee;border-top:0}

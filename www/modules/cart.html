@@ -9,19 +9,21 @@
               <img ng-src="{{product.img}}" class="shopping-img" />
             </a>
           </li>
-          <li class="fl"><b class="title" ng-bind="product.name"></b>
+          <li class="pr12">
+            <b class="title" ng-bind="product.name"></b>
             <ul class="info">
               <li class="fl">
                 <span class="info-price">￥<b ng-bind="product.price" class="ft18"></b></span><br>
                 <span class="info-kg ft14" ng-bind="product.unit"></span>
               </li>
-              <li class="fl" style="width:90px;padding:0 10px">
+
+              <li class="fr">
+                <button type="button" class="info-delect" ng-click="remove($index)"><span class="ion-trash-a"></span></button>
+              </li>
+              <li class="fr" style="width:90px;padding:0 10px">
                 <button class="btn-num fl" ng-click="subNumber(product)"> - </button>
                 <input type="text" class="info-num fl" ng-model="product.number">
                 <button class="btn-num fl" ng-click="product.number = product.number + 1"> + </button>
-              </li>
-              <li class="fl">
-                <button type="button" class="info-delect" ng-click="remove($index)"><span class="ion-trash-a"></span></button>
               </li>
             </ul>
           </li>
