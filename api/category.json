@@ -42,7 +42,7 @@
       },
       {
         "id": 13,
-        "name": "稀有蔬菜类",
+        "name": "稀有蔬菜",
         "parentId": 1,
         "parentName": "蔬菜",
         "nodes": null
@@ -57,28 +57,42 @@
     "nodes": [
       {
         "id": 14,
-        "name": "有机谷物类",
+        "name": "有机谷物",
         "parentId": 2,
         "parentName": "粮油副食",
         "nodes": null
       },
       {
         "id": 15,
-        "name": "有机米面类",
+        "name": "有机米面",
         "parentId": 2,
         "parentName": "粮油副食",
         "nodes": null
       },
       {
         "id": 16,
-        "name": "有机油类",
+        "name": "大豆油",
         "parentId": 2,
         "parentName": "粮油副食",
         "nodes": null
       },
       {
         "id": 17,
-        "name": "副食类",
+        "name": "菜籽油",
+        "parentId": 2,
+        "parentName": "粮油副食",
+        "nodes": null
+      },
+      {
+        "id": 18,
+        "name": "花生油",
+        "parentId": 2,
+        "parentName": "粮油副食",
+        "nodes": null
+      },
+      {
+        "id": 19,
+        "name": "瓜子油",
         "parentId": 2,
         "parentName": "粮油副食",
         "nodes": null
@@ -87,7 +101,7 @@
   },
   {
     "id": 3,
-    "name": "禽蛋肉类",
+    "name": "禽蛋肉",
     "parentId": null,
     "parentName": null,
     "nodes": [
@@ -123,7 +137,7 @@
   },
   {
     "id": 4,
-    "name": "干菌干菜类",
+    "name": "干菌干菜",
     "parentId": null,
     "parentName": null,
     "nodes": [
@@ -145,14 +159,14 @@
   },
   {
     "id": 5,
-    "name": "礼盒类",
+    "name": "礼盒",
     "parentId": null,
     "parentName": null,
     "nodes": null
   },
   {
     "id": 6,
-    "name": "礼卡券类",
+    "name": "礼品卡券",
     "parentId": null,
     "parentName": null,
     "nodes": null

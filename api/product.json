@@ -28,7 +28,8 @@
       "shiYiRenQun": null,
       "xianShiQiangGou": 0,
       "xinPinChangXian": 0,
-      "reMaiTuiJian": 0
+      "reMaiTuiJian": 0,
+      "brandSlogan": "绿色安全，吃的舒心"
     },
     {
       "id": 2,
@@ -58,7 +59,8 @@
       "shiYiRenQun": null,
       "xianShiQiangGou": 0,
       "xinPinChangXian": 0,
-      "reMaiTuiJian": 0
+      "reMaiTuiJian": 0,
+      "brandSlogan": "源自澳洲 品质稳定"
     },
     {
       "id": 5,
@@ -88,7 +90,8 @@
       "shiYiRenQun": null,
       "xianShiQiangGou": 0,
       "xinPinChangXian": 0,
-      "reMaiTuiJian": 0
+      "reMaiTuiJian": 0,
+      "brandSlogan": "健康美食，美食健康"
     },
     {
       "id": 4,
@@ -118,7 +121,8 @@
       "shiYiRenQun": null,
       "xianShiQiangGou": 0,
       "xinPinChangXian": 0,
-      "reMaiTuiJian": 0
+      "reMaiTuiJian": 0,
+      "brandSlogan": "优选品牌"
     },
     {
       "id": 1,
@@ -148,7 +152,8 @@
       "shiYiRenQun": null,
       "xianShiQiangGou": 0,
       "xinPinChangXian": 0,
-      "reMaiTuiJian": 0
+      "reMaiTuiJian": 0,
+      "brandSlogan": "健康生活"
     }
   ],
   "pageInfo": {
