@@ -1,39 +1,43 @@
-<div class="bar bar-header bar-light item-input-inset">
-  <label class="item-input-wrapper">
-    <i class="icon ion-ios-search placeholder-icon"></i>
-    <input type="search" ng-model="queryParam.keyword" placeholder="搜索商品">
-  </label>
-</div>
-<ion-content>
-    <div class="row" scroll-width>
-      <ion-scroll zooming="true" direction="x" scrollbar-x="false" >
-      <ul class="slide-tab" ng-style="{'width':categorys.length*60 + 'px'}">
-        <li ng-class="slideIndex == $index ? 'current':''" style="width: 120px;"
-            ng-repeat="item in categorys">
-          <a ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a>
-        </li>
-      </ul> <!-- / tabs -->
-      </ion-scroll>
-    </div>
+<ion-view view-title="商品列表">
+  <ion-content>
 
-  <div class="row">
-    <div class="col-20">
-      <ion-scroll direction="y" scrollbar-y="false" style="height: 530px;">
-        <ul  style="height: 530px;">
-          <li ng-class="slideSecondIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
-              ng-repeat="item in categorys[slideIndex].nodes" style="line-height: 38px;">
-            <a ng-click="secondClick($index,item)" ng-bind="item.name" style="border: 2px solid blue"> </a>
+      <div class="row border-top border-bottom" scroll-width>
+        <ion-scroll zooming="true" direction="x" scrollbar-x="false" style="margin-top:0">
+        <ul class="slide-tab" ng-style="{'width':categorys.length*86 + 'px'}">
+          <li
+              ng-repeat="item in categorys">
+            <a ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a><!-- class="select"-->
+          </li>
+        </ul> <!-- / tabs -->
+        </ion-scroll>
+      </div>
+
+    <div class="row">
+      <div class="col-20 son_class">
+        <ion-scroll direction="y" scrollbar-y="false">
+          <ul class="style">
+            <li ng-class="slideSecondIndex == item.id-1 ? 'current row-baseline':'row-baseline'"
+                ng-repeat="item in categorys[slideIndex].nodes">
+              <a ng-click="secondClick($index,item)" ng-bind="item.name"> </a>
+            </li>
+          </ul>
+        </ion-scroll>
+      </div>
+      <div class="col-80">
+        <ul class="son_class wl">
+          <li ng-repeat="item in products" class="banner-publicity wl">
+            <a  ui-sref="goods({id:'ffff'})" class="row wl color_black">
+              <span class="col-33"><img src="../../img/shucai.jpg" class="img fl" /></span>
+              <span class="col-67">
+                <span class="product-name ft14" ng-bind="item.itemName"></span>
+                <span class="wl mt10">源自澳洲 品质稳定</span>
+                <span class="wl mt10 color_red">￥<strong>180.00</strong></span>
+              </span>
+            </a>
+            <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
           </li>
         </ul>
-      </ion-scroll>
+      </div>
     </div>
-    <div class="col-80">
-      <ul>
-        <li
-            ng-repeat="item in products" style="line-height: 38px;">
-          <a  ui-sref="goods({id:'ffff'})" style="border: 2px solid red" ng-bind="item.itemName"></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</ion-content>
+  </ion-content>
+</ion-view>

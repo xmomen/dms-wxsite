@@ -52,13 +52,18 @@ textarea{border:0;width: 62%;}
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
 .color_grey{color:#ccc}
+.color_black{color:#666}
+
 .mt5{margin-top:5px;}
+.mt-2{margin-top:-2px;}
 .mt10{margin-top:10px;}
 .ft12{font-size:12px}
 .ft14{font-size:14px}
 .ft16{font-size:16px}
 .ft18{font-size:18px}
 .ft24{font-size:24px}
+.border-top{border-top:1px solid #eee}
+.border-bottom{border-bottom:1px solid #eee}
 .bar.bar-positive {
   border-color: #fff;
   background-color: #fff;
@@ -115,7 +120,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-name{font-weight: bold;color:#000;}
 .trade-price{color:#e74c3c}
 .trade-price strong{font-weight: bold;font-size:14px}
-.trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 10px}
+.trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 7px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
 .banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;border-bottom: 5px solid #eee;}
@@ -176,7 +181,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
 .item-divider{padding:0;height:10px;min-height:10px}
 /****/
-.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding: 40px 95px;color:#fff}
+.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding: 40px 0 0  110px;color:#fff}
+.about-meq.item-avatar > img:first-child{max-width:50px;max-height:50px;border-radius:6px;}
 .about-column{padding:12px}
 .about-column li{padding:5px;text-align: center;line-height:20px;position: relative}
 .about-column li img{width:90%}
@@ -186,26 +192,41 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .about-lid .row{margin-top: 0;margin-bottom:-1px}
 .about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;}
 .about-lid li img{width:30px}
-/**商品分类******/
-.classify{text-align:center;background:#f8f8f8;}
 
-.slide-tab{ display: table;overflow: hidden;margin: 0;width: 100%;}
+/*商品详情*/
+.product_info{padding:50px 0}
+.product_about{padding: 0 20px}
+.product_about h2{font-size:20px}
+.product_norms{border-top:1px solid #eee;border-bottom:1px solid #eee;text-align: center;line-height:45px}
+.product_count{padding:5px 20px;display:block}
+.button.button-block, .button.button-full{line-height:44px;margin-top:0}
+/* 商品列表 */
+.classify{text-align:center;background:#f8f8f8;}
+.slide-tab{
+  display: table;
+  overflow: hidden;
+  margin: 0;
+  background-color: #fff;
+}
 
 .slide-tab li{
   line-height: 38px;
   overflow: hidden;
   padding: 0;
   font-size:12px;
+  float:left;
 }
 
 .slide-tab a{
-  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
   color: #888;
   font-weight: 500;
   display: block;
   letter-spacing: 0;
   outline: none;
   text-decoration: none;
+  padding: 0 20px;
+  margin-left:-1px;
 }
 .slide-tab a:hover,.slide-tab a.select{
   background:#e74c3c;color: #fff;
@@ -213,57 +234,20 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .current a{
   color: #fff;
 }
-
-.son_class{}
-.son_class .style{width:100%;float:left;background:#fff;}
+.son_class{background:#f8f8f8}
+.son_class .style{width:100%;float:left;border-bottom:#eee}
 .son_class .style li a{width:100%;float:left;text-align: center;color:#aaa;line-height:32px;
-  border:1px solid #eee;border-top:0}
+  border-bottom:1px solid #eee;}
+.son_class .product-name{word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;line-height:18px}
+.son_class .style li a:hover,.son_class .style li a.select{color:#e74c3c}
+
 .product  li a{width:100%;float:left}
 .product_lid{padding:5px;width:100%;float:left}
 .product_lid a{ border:1px solid #eee;}
 .product-img{width:100%;display: block;}
-.son_class .banner-publicity .img{width:100%;height:100px}
-/*商品详情*/
-.product_info{padding:50px 0}
-.product_about{padding: 0 20px}
-.product_about h2{font-size:20px}
-.product_norms{border-top:1px solid #eee;border-bottom:1px solid #eee;text-align: center;line-height:45px}
-.product_count{padding:5px 20px;display:block}
-
-
-/* 商品列表 */
-.slide-tab{
-  display: table;
-  overflow: hidden;
-  margin: 0;
-  width: 100%;
-  background-color: #eff0f2;
-  border-bottom: 2px solid #00897B;
-}
-
-.slide-tab li{
-  float: left;
-  line-height: 38px;
-  overflow: hidden;
-  padding: 0;
-}
-
-.slide-tab a{
-  background-color: #eff0f2;
-  border-bottom: 1px solid #fff;
-  color: #888;
-  font-weight: 500;
-  display: block;
-  letter-spacing: 0;
-  outline: none;
-  padding: 0 20px;
-  text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  border-bottom: 2px solid #00897B;
-}
-.current a{
-  color: #fff;
-  background: #00897B;
-}
+.son_class .banner-publicity{border-bottom:0}
+.son_class .banner-publicity .img{width:70px;height:70px}
