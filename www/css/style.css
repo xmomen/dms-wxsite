@@ -244,6 +244,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
   overflow:hidden;line-height:18px}
+.son_class .style li a:hover,.son_class .style li a.select{color:#e74c3c}
 
 .product  li a{width:100%;float:left}
 .product_lid{padding:5px;width:100%;float:left}
