@@ -2,7 +2,7 @@ define([
   'angular',
   'js/app.router',
   'js/app.rest',
-  'js/app.controllers',
+  'js/app.directive',
   'modules/address/address.module',
   'modules/product/product.module',
   'modules/payment/payment.module'
@@ -13,7 +13,7 @@ define([
      'payment.module',
      'app.router' ,
      'app.rest',
-     'starter.controllers'
+     'app.directive'
   ]).factory('Resource', [ '$resource', '$injector', "$timeout", function( $resource , $injector, $timeout) {
     var $dialog;
 

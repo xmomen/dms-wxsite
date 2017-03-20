@@ -183,9 +183,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .about-column li span{display: block}
 .about_t{width:14px;height:14px;line-height:14px;font-size:11px;display: block;border-radius:50%;background:red;color:#fff;position: absolute;right:0;
   top:9px;}
-.about-lid{padding:12px}
 .about-lid .row{margin-top: 0;margin-bottom:-1px}
-.about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;margin-right:-1px}
+.about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;}
 .about-lid li img{width:30px}
 /**商品分类******/
 .classify{text-align:center;background:#f8f8f8;}

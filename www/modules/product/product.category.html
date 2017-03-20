@@ -1,0 +1,15 @@
+<div class="bar bar-header bar-light item-input-inset">
+  <button class="button button-icon icon ion-ios-arrow-left" ui-sref="tab.home"></button>
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" ng-model="queryParam.keyword" placeholder="请输入商品名称">
+  </label>
+  <button type="button" class="button button-clear" ng-click="">筛选</button>
+</div>
+<ion-list ng-repeat="product in products">
+  <ion-item class="item-thumbnail-left">
+    <img ng-src="{{product.img}}" ui-sref="goods({id:product.id})">
+    <h2>{{product.itemName}}</h2>
+    <p>{{product.sellPrice | currency:'¥'}}</p>
+  </ion-item>
+</ion-list>
