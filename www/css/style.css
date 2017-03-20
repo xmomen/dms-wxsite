@@ -251,3 +251,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .product-img{width:100%;display: block;}
 .son_class .banner-publicity{border-bottom:0}
 .son_class .banner-publicity .img{width:70px;height:70px}
+
+.button-center {
+  line-height:normal !important;
+}

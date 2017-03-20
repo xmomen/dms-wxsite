@@ -1,22 +1,18 @@
 <ion-header-bar>
   <button class="button button-icon icon ion-ios-arrow-left" ui-sref="address"></button>
   <div class="title" ng-bind="pageSettingInfo.title"></div>
-  <button class="button button-icon icon ion-ios-trash-outline" ng-click="delete()"></button>
+  <button class="button button-icon icon ion-ios-trash-outline" ng-if="pageSettingInfo.action == 'UPDATE'" ng-click="delete()"></button>
 </ion-header-bar>
 <ion-content>
   <form name="addressFormName" ug-validate="addressForm">
   <div class="list">
     <label class="item item-input">
       <span class="input-label ft14">收货人</span>
-      <input name="name" class="ft14" type="text" placeholder="中文或英文名">
+      <input name="name" class="ft14" ng-model="address.name" type="text" placeholder="中文或英文名">
     </label>
     <label class="item item-input">
       <span class="input-label ft14">手机号码</span>
-      <input name="phone" class="ft14" required="true" data-msg-require="手机号码必填" type="text" placeholder="11位手机号码">
-    </label>
-    <label class="item item-input">
-      <span class="input-label f14">电话号码</span>
-      <input type="text" class="ft14" placeholder="区号-电话号码-分机号，选填项">
+      <input name="phone" class="ft14" ng-model="address.phoneNumber" required="true" data-msg-require="手机号码必填" type="text" placeholder="11位手机号码">
     </label>
     <div class="item item-divider"></div>
     <label class="item item-input item-select">
@@ -54,12 +50,12 @@
       <input type="text" class="ft14" placeholder="详细街道地址">
     </label>
     <div class="item item-divider"></div>
-    <ion-toggle class="ft14">
+    <ion-toggle class="ft14"  ng-model="address.isDefault">
       设为默认地址
     </ion-toggle>
   </div>
-  <button type="button" ng-click="save()" class="button button-block button-positive">
-    保存
-  </button>
   </form>
 </ion-content>
+<ion-footer-bar>
+  <button type="button" ng-click="save()" class="button button-full button-center button-positive">保存</button>
+</ion-footer-bar>
