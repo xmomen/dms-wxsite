@@ -2,6 +2,7 @@
   "data": [
     {
       "id": 3,
+      "img":"/img/lafei.jpg",
       "itemCode": "0101200",
       "cdCategoryId": 9,
       "categoryName": "茎类",
@@ -33,6 +34,7 @@
     },
     {
       "id": 2,
+      "img":"/img/lafei.jpg",
       "itemCode": "0101300",
       "cdCategoryId": 10,
       "categoryName": "叶类",
@@ -64,6 +66,7 @@
     },
     {
       "id": 5,
+      "img":"/img/lafei.jpg",
       "itemCode": "0101400",
       "cdCategoryId": 11,
       "categoryName": "花芽类",
@@ -95,6 +98,7 @@
     },
     {
       "id": 4,
+      "img":"/img/lafei.jpg",
       "itemCode": "0101500",
       "cdCategoryId": 12,
       "categoryName": "果实类",
@@ -126,6 +130,7 @@
     },
     {
       "id": 1,
+      "img":"/img/lafei.jpg",
       "itemCode": "0201100",
       "cdCategoryId": 14,
       "categoryName": "有机谷物类",

@@ -7,6 +7,7 @@ define(function (require) {
   var accountCrtl = require('../modules/account');
   var loginCtrl = require('../modules/login');
   var cartCtrl = require('../modules/cart');
+  var homeCtrl = require('../modules/home');
 
   angular.module('app.router',['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
@@ -27,7 +28,7 @@ define(function (require) {
         views: {
           'tab-home': {
             templateUrl: 'modules/home.html',
-            controller: 'HomeCtrl'
+            controller:homeCtrl
           }
         }
       })

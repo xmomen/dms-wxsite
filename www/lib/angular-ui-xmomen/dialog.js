@@ -4,7 +4,7 @@
  */
 define(function(toaster){
     return angular.module('xmomen.dialog', [
-    ]).factory("$dialog", ["$q","$injector", function ($q, $injector) {
+    ]).factory("$dialog", ["$q","$injector", "$ionicPopup", function ($q, $injector, $ionicPopup) {
         if(!$modal){
           $modal = $injector.get("$uibModal");
         }
@@ -23,7 +23,15 @@ define(function(toaster){
                 }
                 //type, title, body, timeout, bodyOutputType, clickHandler)
                 angular.extend(defaultConfig, option);
-                toaster.pop(defaultConfig.type, defaultConfig.title, defaultConfig.text);
+                var alertPopup = $ionicPopup.alert({
+                  title: option.title,
+                  okText: '确定', // String (默认: 'OK')。OK按钮的文字。
+                  okType: '',
+                  template: option.text
+                });
+                alertPopup.then(function(res) {
+                  console.log('Thank you for not eating my delicious ice cream cone');
+                });
             },
             success : function(option){
                 var defaultConfig = {
@@ -79,29 +87,23 @@ define(function(toaster){
                 };
                 if(!angular.isObject(option)){
                     option = {
-                        content:option
+                        content:'<span style="font-size: 14px;">' + option + '</span>'
                     }
                 }
                 angular.extend(defaultConfig, option);
-                $modal.open({
-                    templateUrl: 'uix/dialog/dialog-tpl.html',
-                    modal:true,
-                    resolve: {
-                        Message: function () {
-                            return defaultConfig;
-                        }
-                    },
-                    controller: ['$scope', '$uibModalInstance', "Message", function($scope, $modalInstance, Message){
-                        $scope.message = Message;
-                        $scope.yes = function(){
-                            $modalInstance.close();
-                        };
-                        $scope.no = function(){
-                            $modalInstance.dismiss();
-                        };
-                    }]
-                }).result.then(function () {
-                    deferred.resolve();
+                $ionicPopup.confirm({
+                  title: defaultConfig.title,
+                  cancelText: '取消', // String (默认: 'Cancel')。一个取消按钮的文字。
+                  //cancelType: '', // String (默认: 'button-default')。取消按钮的类型。
+                  okText: '确定', // String (默认: 'OK')。OK按钮的文字。
+                  //okType: '', // String (默认: 'button-positive')。OK按钮的类型。
+                  template: defaultConfig.content
+                }).then(function (res) {
+                    if(res) {
+                      deferred.resolve();
+                    }else{
+                      deferred.reject();
+                    }
                 }, function () {
                     deferred.reject();
                 });

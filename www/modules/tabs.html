@@ -3,18 +3,7 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-header-bar align-title="left" class="bar-positive">
-  <h1 class="title" style="padding-left: 52px"></h1>
-  <div class="buttons">
-    <button class="button button-icon icon ion-location" ng-click="getLocation()" ng-bind="locationInfo.name"></button>
-  </div>
-</ion-header-bar>
-<!--<ion-nav-bar class="bar-stable">-->
-  <!--<ion-nav-back-button></ion-nav-back-button>-->
-  <!--<ion-nav-buttons>-->
-    <!--<button class="button button-icon icon ion-ios-location-outline" ng-click="getLocation()" ng-bind="locationInfo.name"></button>-->
-  <!--</ion-nav-buttons>-->
-<!--</ion-nav-bar>-->
+
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
   <ion-tab title="首页" icon-off="ion-ios-box-outline" icon-on="ion-ios-box" href="#/tab/home">
