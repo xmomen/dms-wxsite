@@ -1,0 +1,190 @@
+[
+  {
+    "id": 1,
+    "name": "蔬菜",
+    "parentId": null,
+    "parentName": null,
+    "nodes": [
+      {
+        "id": 13,
+        "name": "稀有蔬菜类",
+        "parentId": 1,
+        "parentName": "蔬菜",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 12,
+        "name": "果实类",
+        "parentId": 1,
+        "parentName": "蔬菜",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 11,
+        "name": "花芽类",
+        "parentId": 1,
+        "parentName": "蔬菜",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 10,
+        "name": "叶类",
+        "parentId": 1,
+        "parentName": "蔬菜",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 9,
+        "name": "茎类",
+        "parentId": 1,
+        "parentName": "蔬菜",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 8,
+        "name": "根类",
+        "parentId": 1,
+        "parentName": "蔬菜",
+        "nodes": null,
+        "leaf": true
+      }
+    ],
+    "leaf": false
+  },
+  {
+    "id": 2,
+    "name": "粮油副食",
+    "parentId": null,
+    "parentName": null,
+    "nodes": [
+      {
+        "id": 17,
+        "name": "副食类",
+        "parentId": 2,
+        "parentName": "粮油副食",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 16,
+        "name": "有机油类",
+        "parentId": 2,
+        "parentName": "粮油副食",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 15,
+        "name": "有机米面类",
+        "parentId": 2,
+        "parentName": "粮油副食",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 14,
+        "name": "有机谷物类",
+        "parentId": 2,
+        "parentName": "粮油副食",
+        "nodes": null,
+        "leaf": true
+      }
+    ],
+    "leaf": false
+  },
+  {
+    "id": 3,
+    "name": "禽蛋肉类",
+    "parentId": null,
+    "parentName": null,
+    "nodes": [
+      {
+        "id": 18,
+        "name": "禽类",
+        "parentId": 3,
+        "parentName": "禽蛋肉类",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 19,
+        "name": "蛋类",
+        "parentId": 3,
+        "parentName": "禽蛋肉类",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 20,
+        "name": "牛肉类",
+        "parentId": 3,
+        "parentName": "禽蛋肉类",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 21,
+        "name": "羊肉类",
+        "parentId": 3,
+        "parentName": "禽蛋肉类",
+        "nodes": null,
+        "leaf": true
+      }
+    ],
+    "leaf": false
+  },
+  {
+    "id": 4,
+    "name": "干菌干菜类",
+    "parentId": null,
+    "parentName": null,
+    "nodes": [
+      {
+        "id": 22,
+        "name": "干菌类",
+        "parentId": 4,
+        "parentName": "干菌干菜类",
+        "nodes": null,
+        "leaf": true
+      },
+      {
+        "id": 23,
+        "name": "干菜类",
+        "parentId": 4,
+        "parentName": "干菌干菜类",
+        "nodes": null,
+        "leaf": true
+      }
+    ],
+    "leaf": false
+  },
+  {
+    "id": 5,
+    "name": "礼盒类",
+    "parentId": null,
+    "parentName": null,
+    "nodes": null,
+    "leaf": true
+  },
+  {
+    "id": 6,
+    "name": "礼卡券类",
+    "parentId": null,
+    "parentName": null,
+    "nodes": null,
+    "leaf": true
+  },
+  {
+    "id": 7,
+    "name": "益谷农人",
+    "parentId": null,
+    "parentName": null,
+    "nodes": null,
+    "leaf": true
+  }
+]
