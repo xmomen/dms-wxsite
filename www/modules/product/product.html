@@ -4,9 +4,8 @@
       <div class="row border-top border-bottom" scroll-width>
         <ion-scroll zooming="true" direction="x" scrollbar-x="false" style="margin-top:0">
         <ul class="slide-tab" ng-style="{'width':categorys.length*86 + 'px'}">
-          <li
-              ng-repeat="item in categorys">
-            <a ng-click="firstClick($index,item,$event)" ng-bind="item.name"></a><!-- class="select"-->
+          <li ng-repeat="item in categorys">
+            <a ng-click="firstClick($index,item,$event)" ng-bind="item.name" ng-class="{'select':categorys.$index}"></a>
           </li>
         </ul> <!-- / tabs -->
         </ion-scroll>
@@ -30,8 +29,8 @@
               <span class="col-33"><img src="../../img/shucai.jpg" class="img fl" /></span>
               <span class="col-67">
                 <span class="product-name ft14" ng-bind="item.itemName"></span>
-                <span class="wl mt10">源自澳洲 品质稳定</span>
-                <span class="wl mt10 color_red">￥<strong>180.00</strong></span>
+                <span class="wl mt10" ng-bind="item.brandSlogan"></span>
+                <span class="wl mt10 color_red">￥<strong ng-bind="item.sellPrice"></strong>/<span ng-bind="item.pricingManner"></span></span>
               </span>
             </a>
             <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>

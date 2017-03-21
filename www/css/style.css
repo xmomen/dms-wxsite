@@ -216,20 +216,21 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   font-size:12px;
   float:left;
 }
+.slide-tab li:hover{
+  background:#e74c3c;color: #fff;
+}
 
 .slide-tab a{
   border-right: 1px solid #eee;
   color: #888;
   font-weight: 500;
-  display: block;
   letter-spacing: 0;
   outline: none;
-  text-decoration: none;
   padding: 0 20px;
   margin-left:-1px;
 }
-.slide-tab a:hover,.slide-tab a.select{
-  background:#e74c3c;color: #fff;
+.slide-tab li a:hover,.slide-tab li a.select{
+  color:#e74c3c;
 }
 .current a{
   color: #fff;
