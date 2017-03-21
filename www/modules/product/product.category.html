@@ -6,8 +6,8 @@
   </label>
   <button type="button" class="button button-clear" ng-click="">筛选</button>
 </div>
-<ion-list ng-repeat="product in products">
-  <ion-item class="item-thumbnail-left">
+<ion-list class="bg-f8 wl">
+  <ion-item class="item-thumbnail-left mt5" ng-repeat="product in products">
     <img ng-src="{{product.img}}" ui-sref="goods({id:product.id})">
     <h2>{{product.itemName}}</h2>
     <p>{{product.sellPrice | currency:'¥'}}</p>
