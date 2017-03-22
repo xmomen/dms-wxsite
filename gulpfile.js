@@ -86,11 +86,11 @@ gulp.task('server', function() {
         enable: true,
         path: ENV.serverPath
       },
-      //proxies: [
-      //    {
-      //        source: '/api', target: 'http://127.0.0.1:8080'
-      //    }
-      //],
+      proxies: [
+          {
+              source: '/api', target: 'http://127.0.0.1:8700'
+          }
+      ],
       middleware: function(req, res, next) {
         var urlObj = url.parse(req.url, true),
           method = req.method,

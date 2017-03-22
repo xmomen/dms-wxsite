@@ -3,10 +3,12 @@
  */
 define(function(){
   return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate){
+    $scope.queryParams = {};
     $scope.getProducts = function(){
       ProductAPI.query({
-        pageSize:10,
-        pageNum:1
+        limit:10,
+        offset:1,
+        categoryId:$scope.queryParams.categoryId
       }, function(data){
         $scope.products = data.data;
       })
@@ -15,6 +17,7 @@ define(function(){
     $scope.getCategory = function(){
       CategoryAPI.query({}, function(data){
         $scope.categorys = data;
+        $scope.categorys.unshift({name:"全部",nodes:null});
       })
     };
     //初始化
@@ -23,13 +26,13 @@ define(function(){
 
     $scope.firstClick = function (index,item,event) {
       $scope.slideIndex = index;
+      $scope.queryParams.categoryId = item.id;
+      $scope.getProducts();
     };
     $scope.secondClick = function (index,item){
       $scope.slideSecondIndex = index;
-    };
-    $scope.thirdClick = function (index,item) {
-      $scope.slideThirdIndex = index;
-      $scope.text = item.name;
+      $scope.queryParams.categoryId = item.id;
+      $scope.getProducts();
     };
     var init = function(){
       $scope.getProducts();

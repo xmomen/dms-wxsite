@@ -27,7 +27,7 @@ define([
 
             methods = angular.extend( defaults, methods );
 
-            var resource = $resource( url, params, methods );
+            var resource = $resource('/api' + url, params, methods );
 
             resource.prototype.$save = function(success, fail) {
                 var thisResource = this;

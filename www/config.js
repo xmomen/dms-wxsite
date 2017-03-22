@@ -18,7 +18,9 @@ require.config({
         "jquery.validate":"lib/jquery-validation/dist/jquery.validate",
         //"jquery.validate.local":"lib/jquery-validation/src/localization/messages_zh",
         "ui-bootstrap-tpls":"lib/angular-bootstrap/ui-bootstrap-tpls.min",
-
+        "wechat-api":"lib/wechat/jweixin",
+        "wechat-api-config":"lib/wechat/weixin.config",
+        "wechat-api-sign":"lib/wechat/weixin.sign",
         "angular-ui-xmomen":"lib/angular-ui-xmomen/xmomen-ui",
 
         "app-module": "js/app.module",
@@ -38,6 +40,9 @@ require.config({
         "angular-translate": ["angular"],
         //"jquery.validate.local":["jquery.validate"],
         "jquery.validate":["jquery"],
+        "wechat-api":["angular"],
+        "wechat-api-sign":["angular"],
+        "wechat-api-config":["wechat-api", "wechat-api-sign"],
         "angular-ui-xmomen":[
           //"jquery.validate.local",
           "jquery.validate",
@@ -46,6 +51,7 @@ require.config({
         "main": [
             //"jquery.validate.local",
             //"jquery.validate",
+            "wechat-api",
             "ui-bootstrap-tpls",
             "angular-ui-xmomen",
             "ionic",

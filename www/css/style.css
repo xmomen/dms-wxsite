@@ -207,6 +207,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   overflow: hidden;
   margin: 0;
   background-color: #fff;
+  border-bottom: 1px solid;
 }
 
 .slide-tab li{
@@ -253,6 +254,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .son_class .banner-publicity{border-bottom:0}
 .son_class .banner-publicity .img{width:70px;height:70px}
 
+.banner-publicity:first-child{
+  margin-top: 0;
+}
+
 .button-center {
   line-height:normal !important;
+}
+.category-sub-active {
+  background-color:#fff;
 }

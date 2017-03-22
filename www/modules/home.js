@@ -1,14 +1,40 @@
 /**
  * Created by tanxinzheng on 17/3/3.
  */
-define(function(){
-  return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', function($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate){
+define(['wechat-api', 'wechat-api-sign'], function(wx){
+  return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', 'ProductAPI', function($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate, ProductAPI){
     // 获取用户当前位置
     $scope.getLocation = function(){
-      console.log($ionicTabsDelegate)
       $scope.cityListModal.show();
       init();
       //$scope.locationInfo.name = "上海";
+    };
+    $scope.getQiangGouProducts = function(){
+      ProductAPI.query({
+        limit:6,
+        offset:1,
+        labels:"xianShiQiangGou"
+      }, function(data){
+        $scope.qiangGouProducts = data.data;
+      });
+    };
+    $scope.getXinPinProducts = function(){
+      ProductAPI.query({
+        limit:6,
+        offset:1,
+        labels:"xinPinChangXian"
+      }, function(data){
+        $scope.xinPinProducts = data.data;
+      });
+    };
+    $scope.getTuiJianProducts = function(){
+      ProductAPI.query({
+        limit:6,
+        offset:1,
+        labels:"reMaiTuiJian"
+      }, function(data){
+        $scope.tuiJianProducts = data.data;
+      });
     };
     $ionicModal.fromTemplateUrl('js/template/city-list.html', {
       //id: 'cityList',
@@ -55,9 +81,32 @@ define(function(){
         console.log(lastY+"end");
       });
     }
-
+    $scope.getCurrentLocation = function(){
+      wx.ready(function () {
+        wx.getLocation({
+          type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+          success: function (res) {
+            var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+            var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+            var speed = res.speed; // 速度，以米/每秒计
+            var accuracy = res.accuracy; // 位置精度
+            // 地址解析:http://lbs.qq.com/javascript_v2/guide-service.html#link-four
+            var geocoder = new qq.maps.Geocoder({
+              complete: function (result) {
+                resolve(result.detail.address)
+              }
+            });
+            var coord = new qq.maps.LatLng(res.latitude, res.longitude)
+            geocoder.getAddress(coord)
+          }
+        });
+      });
+    };
     var init = function(){
-      //$scope.getLocation();
+      $scope.getCurrentLocation();
+      $scope.getQiangGouProducts();
+      $scope.getXinPinProducts();
+      $scope.getTuiJianProducts();
     };
     init();
   }]
