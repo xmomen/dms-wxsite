@@ -6,7 +6,7 @@ define(function(){
     $scope.queryParams = {};
     $scope.getProducts = function(){
       ProductAPI.query({
-        limit:10,
+        limit:100,
         offset:1,
         categoryId:$scope.queryParams.categoryId
       }, function(data){
@@ -24,9 +24,14 @@ define(function(){
     $scope.slideIndex = 0;
     $scope.slideSecondIndex = 0;
 
-    $scope.firstClick = function (index,item,event) {
+    $scope.firstClick = function (index,item) {
       $scope.slideIndex = index;
-      $scope.queryParams.categoryId = item.id;
+      $scope.slideSecondIndex = 0;
+      if(item.nodes && item.nodes.length > 0){
+        $scope.queryParams.categoryId = item.nodes[0].id;
+      }else{
+        $scope.queryParams.categoryId = item.id;
+      }
       $scope.getProducts();
     };
     $scope.secondClick = function (index,item){

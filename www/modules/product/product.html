@@ -6,7 +6,7 @@
     <ion-scroll zooming="true" direction="x" scrollbar-x="false" style="margin-top:0">
     <ul class="slide-tab" ng-style="{'width':categorys.length*86 + 'px'}">
       <li ng-repeat="item in categorys">
-        <a ng-click="firstClick($index,item,$event)" ng-bind="item.name" ng-class="{'select':slideIndex == $index}"></a>
+        <a ng-click="firstClick($index,item)" ng-bind="item.name" ng-class="{'select':slideIndex == $index}"></a>
       </li>
     </ul> <!-- / tabs -->
     </ion-scroll>

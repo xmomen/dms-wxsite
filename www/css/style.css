@@ -264,3 +264,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .category-sub-active {
   background-color:#fff;
 }
+
+.icon-md {
+  font-size: 35px;
+}
