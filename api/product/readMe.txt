@@ -1,11 +1,11 @@
 API
 [{ url:/category/list,GET
-  describle: »ñµÃÉÌÆ··ÖÀà£¬·µ»Ø¸ñÊ½²Î¿¼/product/category.json
+  describle: è·å¾—å•†å“åˆ†ç±»ï¼Œè¿”å›æ ¼å¼å‚è€ƒ/product/category.json
 }, {
    url:/product/{productId},GET
-  describle: »òÈ¡ÉÌÆ·ÏêÇé£¬·µ»Ø¸ñÊ½²Î¿¼/product/productDetail.json
+  describle: æˆ–å–å•†å“è¯¦æƒ…ï¼Œè¿”å›æ ¼å¼å‚è€ƒ/product/productDetail.json
 }, {
    url:/product/{category}/list?limit={limit}&offset={offset}&keyword={keyword}&orderField={orderField}&isAsc={isAsc}&labels={labels},GET
-  describle: »ñÈ¡ÉÌÆ·ÁĞ±í£¬·µ»Ø¸ñÊ½²Î¿¼/product/product.json,Ö»ÓĞlimitºÍoffsetÊÇ±ØĞèµÄ×Ö¶Î£¬ÍêÕûurl²Î¿¼/product/12/list?limit=10&offset=1&labels=xianShiQiangGou,xinPinChangXian,reMaiTuiJian&orderField=price&isAsc=true,·µ»ØÊı¾İ¸ñÊ½²Î¿¼/product/product.json.±êÇ©labelsÒÔ¶ººÅ·Ö¸ô
+  describle: è·å–å•†å“åˆ—è¡¨ï¼Œè¿”å›æ ¼å¼å‚è€ƒ/product/product.json,åªæœ‰limitå’Œoffsetæ˜¯å¿…éœ€çš„å­—æ®µï¼Œå®Œæ•´urlå‚è€ƒ/product/12/list?limit=10&offset=1&labels=xianShiQiangGou,xinPinChangXian,reMaiTuiJian&orderField=price&isAsc=true,è¿”å›æ•°æ®æ ¼å¼å‚è€ƒ/product/product.json.æ ‡ç­¾labelsä»¥é€—å·åˆ†éš”
 }
  
