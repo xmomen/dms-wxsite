@@ -47,10 +47,12 @@ textarea{border:0;width: 62%;}
 .fl{float: left}
 .pd5{padding:5px}
 .pd5-10{padding:5px 10px}
+.pd10{padding:10px}
 .pd-b50{padding-bottom:50px}
 .pr12{padding-right:12px}
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
+.color_writ{color:#ccc}
 .color_grey{color:#ccc}
 .color_black{color:#666}
 
@@ -71,6 +73,7 @@ textarea{border:0;width: 62%;}
   background-color: #fff;
   background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
   color: #444}
+.bg-ff{background: #ffffff}
 .bg-f8{background: #f8f8f8}
 .bar .title.title-left{text-align: center}
 .bar.bar-positive .title{color: #444}
@@ -85,6 +88,7 @@ textarea{border:0;width: 62%;}
 .tab-item .icon{font-size:28px}
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{color: #e74c3c}
 .item{border-color: #eee}
+.pane, .view{background: #f8f8f8}
 /*首页搜索框*/
 .search_core{width:100%;padding:9px 20px;background:#f0f0f0;margin-top:-8px;position:relative}
 .search_core .search_input{width:96%;padding:10px;margin:0 auto;border-radius:25px;text-align:center;
@@ -126,12 +130,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 7px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
-.banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;border-bottom: 5px solid #eee;}
+.banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;}
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
-.shopping-cart{font-size:30px;color:#e74c3c}
-
-
+.shopping-cart{font-size:20px;color:#e74c3c;margin-top:5px;display: block}
+.shopping-list li{width:33.333%;display: block;background:#fff}
+.product-list li{width: 49.999999%;display: block;border:5px solid #f8f8f8}
+.product-list .banner-publicity{padding:0}
 
 /*购物车*/
 .cart{border-bottom:1px solid #eee;}
@@ -272,6 +277,17 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .button-center {
   line-height:normal !important;
 }
+/*两列展示*/
+.one_omit{word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;line-height:18px}
+.two_omit{word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;line-height:18px}
 /*优惠券*/
 .stamp * {
   padding: 0;
@@ -333,12 +349,12 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   margin-top: 15px;
 }
 .stamp04 {
-  background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 4px, #f8f8f8 4px);
+  background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 4px, #eee 4px);
   background-size: 12px 8px;
   background-position: -5px 10px;
 }
 .stamp04:before {
-  background-color:#f8f8f8;
+  background-color:#eee;
   left: 5px;
   right: 5px;
 }
@@ -361,3 +377,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   border-radius:3px;
   display: block;
 }
+.bottom-save{position: fixed;z-index: 1;bottom:50px; border-top:1px solid #eee;line-height:40px;box-shadow:0 0 10px rgba(233, 233, 233, .5);}
+
+
+/*标题背景*/
