@@ -2,8 +2,18 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(){
-  return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate){
-    $scope.queryParams = {};
+  return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', '$stateParams', function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate, $stateParams){
+    console.log($stateParams);
+    $scope.queryParams = {
+      style:'col'
+    };
+    $scope.switchStyle = function(){
+      if($scope.queryParams.style == 'row'){
+        $scope.queryParams.style = 'col';
+      }else{
+        $scope.queryParams.style = 'row';
+      }
+    };
     $scope.labelQuery = function(label){
       $scope.queryParams.label = label;
       $scope.getProducts();

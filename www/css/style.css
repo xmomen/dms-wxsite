@@ -72,7 +72,7 @@ textarea{border:0;width: 62%;}
 
 .bar .title.title-left{text-align: center}
 .bar.bar-positive .title{color: #444}
-.bar-positive .button{color: #e74c3c}
+.bar-positive .button{color: #e74c3c !important;}
 .bar .button.button-icon, .bar button.button-icon{font-size:14px}
 .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
   vertical-align: top;

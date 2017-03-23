@@ -1,5 +1,9 @@
 <ion-header-bar align-title="center" class="bar-positive">
   <h1 class="title">商品分类</h1>
+  <button type="button" class="button button-icon"
+          ng-click="switchStyle()">
+    <i class="icon" ng-class="{'ion-navicon':queryParams.style=='row','ion-grid':queryParams.style=='col'}"></i>
+  </button>
 </ion-header-bar>
 <div class="bar bar-subheader">
   <div class="row row-text-center">
