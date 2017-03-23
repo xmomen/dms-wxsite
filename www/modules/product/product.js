@@ -2,7 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(){
-  return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', '$stateParams', function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate, $stateParams){
+  return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', '$stateParams', 'CartAPI', 'pubSub', '$dialog',
+  function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate, $stateParams, CartAPI, pubSub, $dialog){
     console.log($stateParams);
     $scope.queryParams = {
       style:'col'
@@ -61,6 +62,12 @@ define(function(){
       $scope.slideSecondIndex = index;
       $scope.queryParams.categoryId = item.id;
       $scope.getProducts();
+    };
+    $scope.pushCarts = function(item){
+      item.number = 1;
+      CartAPI.pushProduct({id:item.id, val: item});
+      pubSub.publish('changeCart');
+      $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
     };
     var init = function(){
       $scope.getProducts();

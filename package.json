@@ -3,6 +3,7 @@
   "version": "1.1.1",
   "description": "An Ionic project",
   "dependencies": {
+    "angular-pub-sub": "^1.0.1",
     "wechat": "^2.1.0"
   },
   "devDependencies": {

@@ -16,6 +16,34 @@ define(function (require) {
   }]).factory("CouponAPI", ["Resource", function(Resource){
     return Resource("/coupon/:id", { id:"@id" }, {
       query : { isArray:false }
-    });
+    })
+  }]).factory("CartAPI", ["localStorageService", function(localStorageService){
+    return {
+      //获取产品
+      pullProducts: function(){
+        var data = localStorageService.get('cart', 'json');
+        var newData = [];
+        angular.forEach(data, function(val){
+          newData.push(val);
+        });
+        return newData;
+      },
+      //放入产品到购物车
+      pushProduct: function(item){
+        var carts = localStorageService.get('cart');
+        if(carts){
+          carts[item.id] = item.val;
+        }else{
+          carts = {};
+          carts[item.id] = item.val;
+        }
+        localStorageService.add('cart', carts, 'json');
+      },
+      removeProduct: function(item){
+        var carts = localStorageService.get('cart');
+        carts[item.id] = undefined;
+        localStorageService.add('cart', carts, 'json');
+      }
+    }
   }]);
 });

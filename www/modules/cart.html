@@ -8,15 +8,15 @@
       <ul class="wl" style="margin-bottom: 0; margin-top: -51px;padding-left: 60px;">
         <li class="fl">
           <a href="">
-            <img ng-src="{{product.img}}" class="shopping-img" />
+            <img ng-src="{{product.picUrl}}" class="shopping-img" />
           </a>
         </li>
         <li class="pr12">
-          <b class="title" ng-bind="product.name"></b>
+          <b class="title" ng-bind="product.itemName"></b>
           <ul class="info">
             <li class="fl">
-              <span class="info-price">￥<b ng-bind="product.price" class="ft18"></b></span><br>
-              <span class="info-kg ft14" ng-bind="product.unit"></span>
+              <span class="info-price"><b ng-bind="product.sellPrice | currency:'¥'" class="ft18"></b></span><br>
+              <!--<span class="info-kg ft14" ng-bind="product.unit"></span>-->
             </li>
 
             <li class="fr">
