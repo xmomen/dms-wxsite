@@ -1,0 +1,56 @@
+{
+  "pageInfo": {
+    "pageNum": 1,
+    "pageSize": 10,
+    "startRow": 0,
+    "endRow": 10,
+    "total": 2,
+    "pages": 1
+  },
+  "data": [
+    {
+      "id": 4,
+      "itemCode": "0101500",
+      "itemName": "西红柿",
+      "categoryId": 12,
+      "categoryName": "果实类",
+      "itemDescribe": null,
+      "itemType": null,
+      "yieldly": null,
+      "spec": "700",
+      "basePrice": null,
+      "memberPrice": null,
+      "priceManner": null,
+      "sellStatus": true,
+      "sellUnit": "0",
+      "sellPrice": 13.0,
+      "xianShiQiangGou": false,
+      "xinPinChangXian": false,
+      "reMaiTuiJian": false,
+      "picUrls": null,
+      "detailContent": null
+    },
+    {
+      "id": 10,
+      "itemCode": "0101501",
+      "itemName": "黄瓜",
+      "categoryId": 12,
+      "categoryName": "果实类",
+      "itemDescribe": null,
+      "itemType": null,
+      "yieldly": null,
+      "spec": "600",
+      "basePrice": null,
+      "memberPrice": null,
+      "priceManner": null,
+      "sellStatus": true,
+      "sellUnit": "0",
+      "sellPrice": 14.0,
+      "xianShiQiangGou": false,
+      "xinPinChangXian": false,
+      "reMaiTuiJian": false,
+      "picUrls": null,
+      "detailContent": null
+    }
+  ]
+}

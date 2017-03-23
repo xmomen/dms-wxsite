@@ -47,10 +47,12 @@ textarea{border:0;width: 62%;}
 .fl{float: left}
 .pd5{padding:5px}
 .pd5-10{padding:5px 10px}
+.pd10{padding:10px}
 .pd-b50{padding-bottom:50px}
 .pr12{padding-right:12px}
 .row{margin:0;padding:0}
 .color_red{color:#e74c3c}
+.color_writ{color:#ccc}
 .color_grey{color:#ccc}
 .color_black{color:#666}
 
@@ -64,12 +66,15 @@ textarea{border:0;width: 62%;}
 .ft24{font-size:24px}
 .border-top{border-top:1px solid #eee}
 .border-bottom{border-bottom:1px solid #eee}
+.border-left{border-left:1px solid #eee}
+.border-right{border-right:1px solid #eee}
 .bar.bar-positive {
   border-color: #fff;
   background-color: #fff;
   background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
   color: #444}
-
+.bg-ff{background: #ffffff}
+.bg-f8{background: #f8f8f8}
 .bar .title.title-left{text-align: center}
 .bar.bar-positive .title{color: #444}
 .bar-positive .button{color: #e74c3c !important;}
@@ -82,6 +87,8 @@ textarea{border:0;width: 62%;}
 
 .tab-item .icon{font-size:28px}
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{color: #e74c3c}
+.item{border-color: #eee}
+.pane, .view{background: #f8f8f8}
 /*首页搜索框*/
 .search_core{width:100%;padding:9px 20px;background:#f0f0f0;margin-top:-8px;position:relative}
 .search_core .search_input{width:96%;padding:10px;margin:0 auto;border-radius:25px;text-align:center;
@@ -123,12 +130,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 7px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
-.banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;border-bottom: 5px solid #eee;}
+.banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;}
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
-.shopping-cart{font-size:30px;color:#e74c3c}
-
-
+.shopping-cart{font-size:20px;color:#e74c3c;margin-top:5px;display: block}
+.shopping-list li{width:33.333%;display: block;background:#fff}
+.product-list li{width: 49.999999%;display: block;border:5px solid #f8f8f8}
+.product-list .banner-publicity{padding:0}
 
 /*购物车*/
 .cart{border-bottom:1px solid #eee;}
@@ -180,7 +188,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
     #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
 .item-divider{padding:0;height:10px;min-height:10px}
-/****/
+/**我的账户**/
 .about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding: 40px 0 0  110px;color:#fff}
 .about-meq.item-avatar > img:first-child{max-width:50px;max-height:50px;border-radius:6px;}
 .about-column{padding:12px}
@@ -190,11 +198,24 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .about_t{width:14px;height:14px;line-height:14px;font-size:11px;display: block;border-radius:50%;background:red;color:#fff;position: absolute;right:0;
   top:9px;}
 .about-lid .row{margin-top: 0;margin-bottom:-1px}
-.about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative;border:1px solid #eee;}
+.about-lid li{padding:15px 5px;text-align: center;line-height:20px;position: relative}
 .about-lid li img{width:30px}
 
+.icon_img-pay{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/pay.png") left top no-repeat;background-size:100%}
+.icon_img-pay:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/pay-hover.png") left top no-repeat;background-size:100%}
+.icon_img-user{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/user.png") left top no-repeat;background-size:100%}
+.icon_img-user:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/user-hover.png") left top no-repeat;background-size:100%}
+.icon_img-address{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/address.png") left top no-repeat;background-size:100%}
+.icon_img-address:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/address-hover.png") left top no-repeat;background-size:100%}
+.icon_img-recommend{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/recommend.png") left top no-repeat;background-size:100%}
+.icon_img-recommend:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/recommend-hover.png") left top no-repeat;background-size:100%}
+.icon_img-collect{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/collect.png") left top no-repeat;background-size:100%}
+.icon_img-collect:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/collect-hover.png") left top no-repeat;background-size:100%}
+.icon_img-browse{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/browse.png") left top no-repeat;background-size:100%}
+.icon_img-browse:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/browse-hover.png") left top no-repeat;background-size:100%}
+
 /*商品详情*/
-.product_info{padding:50px 0}
+.product_info{padding-top:40px;background: #fff}
 .product_about{padding: 0 20px}
 .product_about h2{font-size:20px}
 .product_norms{border-top:1px solid #eee;border-bottom:1px solid #eee;text-align: center;line-height:45px}
@@ -278,3 +299,107 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   color: #fdf9f9;
   background-color: red;
 }
+/*两列展示*/
+.one_omit{word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;line-height:18px}
+.two_omit{word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;line-height:18px}
+/*优惠券*/
+.stamp * {
+  padding: 0;
+  margin: 0;
+  list-style:none;
+  font-family:"Microsoft YaHei", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+}
+.stamp {
+  width:100%;
+  height:40px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.stamp:before {
+  content: '';
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:10px;
+  right:10px;
+  z-index: -1;
+}
+.stamp .par {
+  float: left;
+  padding: 8px 15px;
+  text-align: left;
+}
+.stamp .par p {
+  color:#333;
+  font-size: 16px;
+  line-height: 21px;
+}
+.stamp .par span {
+  font-size: 50px;
+  color:#333;
+  margin-right: 5px;
+  line-height: 65px;
+}
+.stamp .par .sign {
+  font-size: 34px;
+}
+.stamp .par sub {
+  position: relative;
+  top:-5px;
+  color:#333;
+}
+.stamp .copy {
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 30px;
+  color:#555;
+  text-align: center;
+  line-height: initial;
+}
+.stamp .copy p {
+  font-size: 16px;
+  margin-top: 15px;
+}
+.stamp04 {
+  background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 4px, #eee 4px);
+  background-size: 12px 8px;
+  background-position: -5px 10px;
+}
+.stamp04:before {
+  background-color:#eee;
+  left: 5px;
+  right: 5px;
+}
+.stamp04 .copy {
+  padding:10px 20px 0 0;
+  font-size: 14px;
+  float: right;
+}
+.stamp04 .copy p {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+.stamp04 .copy a {
+  background-color:#fff;
+  color:#333;
+  font-size: 14px;
+  text-decoration:none;
+  padding:5px 10px;
+  border-radius:3px;
+  display: block;
+}
+.bottom-save{position: fixed;z-index: 1;bottom:50px; border-top:1px solid #eee;line-height:40px;box-shadow:0 0 10px rgba(233, 233, 233, .5);}
+
+
+/*标题背景*/

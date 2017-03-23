@@ -4,7 +4,7 @@
   <h1 class="title">商品详情</h1>
 </ion-header-bar>
 
-<ion-content style="padding-bottom: 50px">
+<ion-content class="bg-f8 wl" style="padding-bottom: 50px">
   <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000 show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex" delegate-handle="delegateHandler">
     <ion-slide>
       <div class="box blue">
@@ -29,7 +29,7 @@
     </ion-slide>
   </ion-slide-box>
   <!--商品图------>
-  <div class="product_info">
+  <div class="product_info wl">
     <div class="product_about wl">
       <h2>当地青菜</h2>
       <div class="color_red mt10 fr">￥<span class="ft24">12</span>/KG</div>
@@ -53,7 +53,7 @@
     <!--</ul>-->
   <!--</div>-->
   <ion-list>
-    <a class="item mt10" ui-sref="relation_account">
+    <a class="item mt10 wl" ui-sref="relation_account">
       商户评价<span>（200）</span>
       <i class="icon ion-chevron-right item-note"></i>
     </a>
@@ -71,6 +71,7 @@
       </div>
       <div class="mt10 ft12">2017-03-21</div>
     </a>
+
     <a class="item mt10" ui-sref="relation_account">
       图文详情
     </a>

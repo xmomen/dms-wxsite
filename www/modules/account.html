@@ -1,5 +1,5 @@
 <ion-view view-title="我的账户">
-  <ion-content>
+  <ion-content class="bg-ff">
     <ion-list>
       <div class="item item-avatar about-meq">
         <img ng-src="{{account.headLink}}" style="top:35px;left: 45px;" />
@@ -31,6 +31,7 @@
           </li>
         </ul>
       </div>
+
       <div class="about-lid wl mt10">
         <ul class="row wl">
           <li class="col-33" ui-sref="card">
@@ -55,12 +56,17 @@
             历史浏览</li>
         </ul>
       </div>
-      <ion-item></ion-item>
-      <ion-item>
-        <strong class="positive">4008-670-558</strong>
-        <span style="font-size: 10px;">（客服时间：10：00至7：00）</span>
-        <i class="icon ion-ios-telephone-outline item-note" style="font-size: 20px"></i>
-      </ion-item>
+      <div class="wl mt10">
+        <div class="stamp stamp04">
+          <div class="par"><p>我的优惠券</p></div>
+          <div class="copy">5 张</div>
+        </div>
+      </div>
     </ion-list>
   </ion-content>
+  <div class="bottom-save wl bg-ff">
+        <span class="wl text-right pr12">
+          客服电话：4008-670-558（时间：10：00至7：00）
+        </span>
+  </div>
 </ion-view>
