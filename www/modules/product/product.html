@@ -39,8 +39,8 @@
       </ion-scroll>
     </div>
     <div ng-class="{'col':categorys[slideIndex].nodes == null, 'col-80':categorys[slideIndex].nodes.length > 0}">
-      <ul class="son_class wl">
-        <li ng-repeat="item in products" class="banner-publicity wl">
+      <ul class="son_class wl" ng-if="queryParams.style=='row'">
+        <li ng-repeat="item in products" class="banner-publicity banner-publicity-row wl">
           <a  ui-sref="goods({id:item.id})" class="row wl color_black">
             <span class="col-33"><img ng-src="{{item.picUrl}}" class="img fl" /></span>
             <span class="col-67">
@@ -52,6 +52,21 @@
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
         </li>
       </ul>
+      <div class="wl" ng-if="queryParams.style=='col'">
+        <ul class="product-list">
+          <li class="fl banner-publicity" ng-repeat="item in products">
+            <a  ui-sref="goods({id:'ffff'})" class="color_black">
+              <img src="../../img/shucai.jpg" class="img fl" />
+              <div class="pd10 wl">
+                <b class="one_omit wl" ng-bind="item.itemName"></b>
+                <span class="wl mt10 one_omit" ng-bind="item.brandSlogan"></span>
+                <span class="wl mt10 color_red">￥<strong ng-bind="item.sellPrice"></strong>/<span ng-bind="item.pricingManner"></span></span>
+              </div>
+            </a>
+            <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </ion-content>

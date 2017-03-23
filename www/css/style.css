@@ -130,7 +130,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 7px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
-.banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;}
+.banner-publicity{background:#fff;padding:10px;height: auto;}
+.banner-publicity-row{margin-top:5px;}
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
 .shopping-cart{font-size:20px;color:#e74c3c;margin-top:5px;display: block}
