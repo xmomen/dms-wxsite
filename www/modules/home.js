@@ -2,12 +2,19 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(['wechat-api', 'wechat-api-sign'], function(wx){
-  return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', 'ProductAPI', function($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate, ProductAPI){
+  return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', 'ProductAPI', 'pubSub', '$state',
+  function($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate, ProductAPI, pubSub, $state){
     // 获取用户当前位置
     $scope.getLocation = function(){
       $scope.cityListModal.show();
       init();
       //$scope.locationInfo.name = "上海";
+    };
+    $scope.goProducts = function(data){
+      pubSub.publish("tab.products.filterProduct",{
+        type:data.type
+      })
+      $state.go('tab.product');
     };
     $scope.getQiangGouProducts = function(){
       ProductAPI.query({

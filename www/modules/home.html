@@ -1,27 +1,23 @@
 <ion-header-bar align-title="center" class="bar-positive">
-
   <img src="../img/logo.png">
   <h1 class="title"></h1>
   <div class="buttons">
-    <button class="button button-icon icon ion-location" ng-click="getLocation()"
-            ng-bind="currentCity.cityName"></button>
+    <button class="button button-icon icon ion-location" ng-click="getLocation()" ng-bind="currentCity.cityName"></button>
   </div>
 </ion-header-bar>
 <ion-content style="padding-bottom: 50px">
-  <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000
-                 show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex"
-                 delegate-handle="delegateHandler">
+  <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000 show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex" delegate-handle="delegateHandler">
     <ion-slide>
       <div class="box blue">
-        <a ui-sref="tab.product({type:'7'})">
-          <img src="../img/banner-01.png" width="100%"/>
+        <a ui-sref="product_category({type:'7'})">
+          <img src="../img/banner-01.png" width="100%" />
         </a>
       </div>
     </ion-slide>
     <ion-slide>
       <div class="box yellow">
-        <a ui-sref="tab.product({type:'7'})">
-          <img src="../img/banner-02.png" width="100%"/>
+        <a ui-sref="product_category({type:'7'})">
+          <img src="../img/banner-02.png"  width="100%" />
         </a>
       </div>
     </ion-slide>
@@ -29,184 +25,118 @@
   <!--运单查询-->
   <div class="floatl" style="padding:0">
     <div class="search_core">
-      <input type="text" name="conNo" id="conNo" ng-model="conNo" class="search_input" placeholder="搜索优选商品"/>
-
+      <input type="text" name="conNo" id="conNo" ng-model="conNo" class="search_input" placeholder="搜索优选商品" />
       <div class="searchicon"><span class="ion-ios-search-strong" style="font-size: 24px"></span></div>
     </div>
   </div>
   <div class="navbar_bg">
     <div class="row hp_line floatl" style="margin-top:10px">
       <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'1'})">
+        <a ng-click="goProducts({type:'1'})">
           <div class="hp_icon icon_xyvip"></div>
           <p class="list_txt">优选会员</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'1'})">
+        <a ng-click="goProducts({type:'1'})">
           <div class="hp_icon icon_new"></div>
           <p class="list_txt">新品尝鲜</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'0'})">
+        <a ng-click="goProducts({type:'0'})">
           <div class="hp_icon icon_1time"></div>
           <p class="list_txt">一小时达</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'1'})">
+        <a ng-click="goProducts({type:'1'})">
           <div class="hp_icon icon_ly"></div>
           <p class="list_txt">蔬菜</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'2'})">
+        <a ng-click="goProducts({type:'2'})">
           <div class="hp_icon icon_lh"></div>
           <p class="list_txt">粮油副食</p>
         </a>
       </div>
     </div>
-    <div class="row hp_line floatl">
-      <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'3'})">
-          <div class="hp_icon icon_rs"></div>
-          <p class="list_txt">禽蛋肉</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'4'})">
-          <div class="hp_icon icon_sx"></div>
-          <p class="list_txt">干菌干菜</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'5'})">
-          <div class="hp_icon icon_sg"></div>
-          <p class="list_txt">礼盒类</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'6'})">
-          <div class="hp_icon icon_ls"></div>
-          <p class="list_txt">礼品卡券</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="tab.product({type:'7'})">
-          <div class="hp_icon icon_yp"></div>
-          <p class="list_txt">后院农人</p>
-        </a>
-      </div>
+      <div class="row hp_line floatl">
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'3'})">
+            <div class="hp_icon icon_rs"></div>
+            <p class="list_txt">禽蛋肉</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'4'})">
+            <div class="hp_icon icon_sx"></div>
+            <p class="list_txt">干菌干菜</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'5'})">
+            <div class="hp_icon icon_sg"></div>
+            <p class="list_txt">礼盒类</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'6'})">
+            <div class="hp_icon icon_ls"></div>
+            <p class="list_txt">礼品卡券</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'7'})">
+            <div class="hp_icon icon_yp"></div>
+            <p class="list_txt">后院农人</p>
+          </a>
+        </div>
     </div>
   </div>
+  <!--  抢购  -->
   <div class="form_lid wl"></div>
-  <div class="row wl">
-    <div class="col-33 pd5-10" ng-repeat-start="item in qiangGouProducts">
-      <a ui-sref="goods({id:item.id})">
-        <img ng-src="../../img/shucai.jpg" style="width:100%"/>
-        <span class="trade-name" ng-bind="item.itemName"></span>
-        <span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>
-        <b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>
-      </a>
-    </div>
-  <!--</div>-->
-  <!--<div class="row wl">-->
-    <div class="col-33 pd5-10" ng-repeat-end>
-      <a ui-sref="goods({id:item.id})">
-        <img ng-src="../../img/shucai.jpg" style="width:100%"/>
-        <span class="trade-name" ng-bind="item.itemName"></span>
-        <span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>
-        <b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>
-      </a>
-    </div>
   <div class="wl">
     <ul class="shopping-list">
-      <li class="pd5-10 fl">
-        <a ui-sref="goods({id:'ffff'})">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
+      <li class="pd5-10 fl" ng-repeat="item in qiangGouProducts">
+        <a ui-sref="goods({id:item.id})">
+          <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
+          <span class="trade-name" ng-bind="item.itemName"></span>
+          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
         </a>
       </li>
     </ul>
   </div>
-  <!--<div class="row wl">-->
-    <!--<div class="col-33 pd5-10" ng-repeat="item in xinPinProducts">-->
-      <!--<a ui-sref="goods({id:item.id})">-->
-        <!--<img ng-src="../../img/shucai.jpg" style="width:100%"/>-->
-        <!--<span class="trade-name" ng-bind="item.itemName"></span>-->
-        <!--<span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>-->
-        <!--<b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>-->
-      <!--</a>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="row wl">-->
-    <!--<div class="col-33 pd5-10" ng-repeat="item in tuiJianProducts">-->
-      <!--<a ui-sref="goods({id:item.id})">-->
-        <!--<img ng-src="../../img/shucai.jpg" style="width:100%"/>-->
-        <!--<span class="trade-name" ng-bind="item.itemName"></span>-->
-        <!--<span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>-->
-        <!--<b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>-->
-      <!--</a>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="banner-publicity wl">-->
-    <!--<img src="../img/publicity/timg.jpg" class="img"/>-->
-  <!--</div>-->
-  <div>
-    <div class="row" ng-repeat="item in tuiJianProducts">
-      <div class="col-lg-12 banner-publicity">
-        <img src="../img/publicity/t-p-01.jpg" class="img"/>
-        <div>
-          <b class="wl mt10" ng-bind="item.itemName"></b>
-          <span class="wl mt10 color_red">
-            <strong ng-bind="item.sellPrice | currency:'￥'"></strong>
-            <!--<strong ng-bind="item.memberPrice | currency:'￥'"></strong>-->
-          </span>
-          <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
-        </div>
+  <!--  新品  -->
+  <div class="form_lid wl"></div>
+  <div class="wl">
+    <ul class="shopping-list">
+      <li class="pd5-10 fl" ng-repeat="item in xinPinProducts">
+        <a ui-sref="goods({id:item.id})">
+          <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
+          <span class="trade-name" ng-bind="item.itemName"></span>
+          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--  推荐  -->
+  <div class="form_lid wl"></div>
+  <div class="wl">
+    <ul class="shopping-list">
+      <li class="pd5-10 fl" ng-repeat="item in tuiJianProducts">
+        <a ui-sref="goods({id:item.id})">
+          <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
+          <span class="trade-name" ng-bind="item.itemName"></span>
+          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
+        </a>
+      </li>
+    </ul>
+  </div>
   <div class="banner-publicity wl">
     <img src="../img/publicity/timg.jpg" class="img" />
   </div>
@@ -220,4 +150,5 @@
         <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
       </div>
     </div>
+  </div>
 </ion-content>

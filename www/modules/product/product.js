@@ -4,10 +4,21 @@
 define(function(){
   return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', '$stateParams', 'CartAPI', 'pubSub', '$dialog',
   function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate, $stateParams, CartAPI, pubSub, $dialog){
-    console.log($stateParams);
     $scope.queryParams = {
       style:'col'
     };
+    pubSub.subscribe("tab.products.filterProduct", function(data){
+      if(data.type){
+        $scope.queryParams.categoryId = data.type;
+      }
+      for (var i = 0; i < $scope.categorys.length; i++) {
+        var obj = $scope.categorys[i];
+        if(obj.id = data.type){
+          $scope.slideIndex = i;
+        }
+      }
+      $scope.getProducts();
+    });
     $scope.switchStyle = function(){
       if($scope.queryParams.style == 'row'){
         $scope.queryParams.style = 'col';

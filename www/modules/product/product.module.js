@@ -27,9 +27,7 @@ define([
         'tab-product': {
           templateUrl: 'modules/product/product.html',
           controller: product,
-          params:{
-            type:null
-          }
+          params:{ "type":null }
         }
       }
     }).state('product_detail', {
