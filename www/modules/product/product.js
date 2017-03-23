@@ -4,10 +4,23 @@
 define(function(){
   return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate){
     $scope.queryParams = {};
+    $scope.labelQuery = function(label){
+      $scope.queryParams.label = label;
+      $scope.getProducts();
+    };
+    $scope.orderQuery = function(orderField){
+      $scope.queryParams.label = null;
+      $scope.queryParams.orderField = orderField;
+      $scope.queryParams.isAsc = !$scope.queryParams.isAsc;
+      $scope.getProducts();
+    };
     $scope.getProducts = function(){
       ProductAPI.query({
         limit:100,
         offset:1,
+        orderField:$scope.queryParams.orderField,
+        isAsc:$scope.queryParams.isAsc,
+        labels:[$scope.queryParams.label],
         categoryId:$scope.queryParams.categoryId
       }, function(data){
         $scope.products = data.data;

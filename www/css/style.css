@@ -268,3 +268,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .icon-md {
   font-size: 35px;
 }
+
+.row-text-center {
+  line-height: 24px;
+  text-align: center;
+}
+
+.active-red {
+  color: #fdf9f9;
+  background-color: red;
+}

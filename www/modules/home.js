@@ -13,7 +13,7 @@ define(['wechat-api', 'wechat-api-sign'], function(wx){
       ProductAPI.query({
         limit:6,
         offset:1,
-        labels:"xianShiQiangGou"
+        labels:["xianShiQiangGou"]
       }, function(data){
         $scope.qiangGouProducts = data.data;
       });
@@ -22,7 +22,7 @@ define(['wechat-api', 'wechat-api-sign'], function(wx){
       ProductAPI.query({
         limit:6,
         offset:1,
-        labels:"xinPinChangXian"
+        labels:["xinPinChangXian"]
       }, function(data){
         $scope.xinPinProducts = data.data;
       });
@@ -31,7 +31,7 @@ define(['wechat-api', 'wechat-api-sign'], function(wx){
       ProductAPI.query({
         limit:6,
         offset:1,
-        labels:"reMaiTuiJian"
+        labels:["reMaiTuiJian"]
       }, function(data){
         $scope.tuiJianProducts = data.data;
       });

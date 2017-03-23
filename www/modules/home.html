@@ -101,7 +101,17 @@
   </div>
   <div class="form_lid wl"></div>
   <div class="row wl">
-    <div class="col-33 pd5-10" ng-repeat="item in qiangGouProducts">
+    <div class="col-33 pd5-10" ng-repeat-start="item in qiangGouProducts">
+      <a ui-sref="goods({id:item.id})">
+        <img ng-src="../../img/shucai.jpg" style="width:100%"/>
+        <span class="trade-name" ng-bind="item.itemName"></span>
+        <span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>
+        <b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>
+      </a>
+    </div>
+  <!--</div>-->
+  <!--<div class="row wl">-->
+    <div class="col-33 pd5-10" ng-repeat-end>
       <a ui-sref="goods({id:item.id})">
         <img ng-src="../../img/shucai.jpg" style="width:100%"/>
         <span class="trade-name" ng-bind="item.itemName"></span>
@@ -110,26 +120,26 @@
       </a>
     </div>
   </div>
-  <div class="row wl">
-    <div class="col-33 pd5-10" ng-repeat="item in xinPinProducts">
-      <a ui-sref="goods({id:item.id})">
-        <img ng-src="../../img/shucai.jpg" style="width:100%"/>
-        <span class="trade-name" ng-bind="item.itemName"></span>
-        <span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>
-        <b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>
-      </a>
-    </div>
-  </div>
-  <div class="row wl">
-    <div class="col-33 pd5-10" ng-repeat="item in tuiJianProducts">
-      <a ui-sref="goods({id:item.id})">
-        <img ng-src="../../img/shucai.jpg" style="width:100%"/>
-        <span class="trade-name" ng-bind="item.itemName"></span>
-        <span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>
-        <b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>
-      </a>
-    </div>
-  </div>
+  <!--<div class="row wl">-->
+    <!--<div class="col-33 pd5-10" ng-repeat="item in xinPinProducts">-->
+      <!--<a ui-sref="goods({id:item.id})">-->
+        <!--<img ng-src="../../img/shucai.jpg" style="width:100%"/>-->
+        <!--<span class="trade-name" ng-bind="item.itemName"></span>-->
+        <!--<span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>-->
+        <!--<b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>-->
+      <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row wl">-->
+    <!--<div class="col-33 pd5-10" ng-repeat="item in tuiJianProducts">-->
+      <!--<a ui-sref="goods({id:item.id})">-->
+        <!--<img ng-src="../../img/shucai.jpg" style="width:100%"/>-->
+        <!--<span class="trade-name" ng-bind="item.itemName"></span>-->
+        <!--<span class="trade-price" ng-bind="item.basePrice | currency:'￥'"></span>-->
+        <!--<b class="trade-vip">VIP <strong ng-bind="item.memberPrice | currency:'￥'"></strong></b>-->
+      <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
   <!--<div class="banner-publicity wl">-->
     <!--<img src="../img/publicity/timg.jpg" class="img"/>-->
   <!--</div>-->

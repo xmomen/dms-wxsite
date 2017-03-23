@@ -1,7 +1,19 @@
 <ion-header-bar align-title="center" class="bar-positive">
   <h1 class="title">商品分类</h1>
 </ion-header-bar>
-<ion-content>
+<div class="bar bar-subheader">
+  <div class="row row-text-center">
+    <div class="col" ng-class="{'active-red':queryParams.label == null}"
+         ng-click="orderQuery('price')">价格</div>
+    <div class="col" ng-class="{'active-red':queryParams.label == 'xianShiQiangGou'}"
+         ng-click="labelQuery('xianShiQiangGou')">抢购</div>
+    <div class="col" ng-class="{'active-red':queryParams.label == 'xinPinChangXian'}"
+         ng-click="labelQuery('xinPinChangXian')">新品</div>
+    <div class="col" ng-class="{'active-red':queryParams.label == 'reMaiTuiJian'}"
+         ng-click="labelQuery('reMaiTuiJian')">推荐</div>
+  </div>
+</div>
+<ion-content class="has-subheader">
   <div class="row border-top border-bottom" scroll-width>
     <ion-scroll zooming="true" direction="x" scrollbar-x="false" style="margin-top:0">
     <ul class="slide-tab" ng-style="{'width':categorys.length*86 + 'px'}">
@@ -30,7 +42,7 @@
             <span class="col-67">
               <span class="product-name ft14" ng-bind="item.itemName"></span>
               <span class="wl mt10" ng-bind="item.brandSlogan"></span>
-              <span class="wl mt10 color_red"><strong ng-bind="item.sellPrice | currency:'¥'"></strong>/ VIP: <span ng-bind="item.memberPrice | currency:'¥'"></span></span>
+              <span class="wl mt10 color_red"><strong ng-bind="item.sellPrice | currency:'¥'"></strong> <span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
             </span>
           </a>
           <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
