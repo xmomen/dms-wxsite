@@ -1,22 +1,22 @@
 <ion-header-bar align-title="left" class="bar-positive">
   <h1 class="title">购物车</h1>
 </ion-header-bar>
-<ion-content style="bottom:115px">
+<ion-content style="bottom:115px" class="bg-ff">
   <ion-list class="cart wl" style="border-top:1px solid #eee;" ng-repeat="product in products">
       <ion-checkbox ng-model="product.checked" ng-checked="product.checked" style="width:45px;border: 0;padding-left:0">
       </ion-checkbox>
       <ul class="wl" style="margin-bottom: 0; margin-top: -51px;padding-left: 60px;">
         <li class="fl">
           <a ui-sref="goods">
-            <img ng-src="{{product.img}}" class="shopping-img" />
+            <img ng-src="{{product.picUrl}}" class="shopping-img" />
           </a>
         </li>
         <li class="pr12">
-          <b class="title" ng-bind="product.name"></b>
+          <b class="title" ng-bind="product.itemName"></b>
           <ul class="info">
             <li class="fl">
-              <span class="info-price">￥<b ng-bind="product.price" class="ft18"></b></span><br>
-              <span class="info-kg ft14" ng-bind="product.unit"></span>
+              <span class="info-price"><b ng-bind="product.sellPrice | currency:'¥'" class="ft18"></b></span><br>
+              <!--<span class="info-kg ft14" ng-bind="product.unit"></span>-->
             </li>
 
             <li class="fr">

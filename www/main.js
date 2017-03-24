@@ -7,6 +7,8 @@ require(['require'], function(require){
         'ui.router',
         'permission',
         "app.module",
+        "LocalStorageModule",
+        "PubSubModule",
         'ionic',
         'xmomen.ui',
         'ui.bootstrap'

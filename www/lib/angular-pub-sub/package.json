@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-pub-sub",
+        "scope": null,
+        "escapedName": "angular-pub-sub",
+        "name": "angular-pub-sub",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/jeng/xmomen-repo/website/dms-wxsite"
+    ]
+  ],
+  "_from": "angular-pub-sub@latest",
+  "_id": "angular-pub-sub@1.0.1",
+  "_inCache": true,
+  "_location": "/angular-pub-sub",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "name": "jmnsf",
+    "email": "jmnsferreira@gmail.com"
+  },
+  "_npmVersion": "2.7.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-pub-sub",
+    "scope": null,
+    "escapedName": "angular-pub-sub",
+    "name": "angular-pub-sub",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npmjs.org/angular-pub-sub/-/angular-pub-sub-1.0.1.tgz",
+  "_shasum": "1c4c76148df87ceed8bfcf56569beab3b7061c3b",
+  "_shrinkwrap": null,
+  "_spec": "angular-pub-sub",
+  "_where": "/Users/jeng/xmomen-repo/website/dms-wxsite",
+  "author": {
+    "name": "jmnsf",
+    "email": "jmnsferreira@gmail.com",
+    "url": "jmnsf.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jmnsf/angular-pub-sub/issues",
+    "email": "jmnsferreira@gmail.com"
+  },
+  "dependencies": {},
+  "description": "An Angular module that implements a Publish Subscribe service with support for message history.",
+  "devDependencies": {
+    "bower": "*",
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-karma": "latest",
+    "karma": "latest",
+    "karma-coverage": "latest",
+    "karma-jasmine": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "1c4c76148df87ceed8bfcf56569beab3b7061c3b",
+    "tarball": "https://registry.npmjs.org/angular-pub-sub/-/angular-pub-sub-1.0.1.tgz"
+  },
+  "gitHead": "b4c919646741e02f78d408b82e3e2999cf3c4a2b",
+  "homepage": "https://github.com/jmnsf/angular-pub-sub",
+  "keywords": [
+    "AngularJS",
+    "angular",
+    "publish",
+    "subscribe",
+    "pubsub"
+  ],
+  "license": "MIT",
+  "main": "./dist/angular-pub-sub.js",
+  "maintainers": [
+    {
+      "name": "jmnsf",
+      "email": "jmnsferreira@gmail.com"
+    }
+  ],
+  "name": "angular-pub-sub",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmnsf/angular-pub-sub.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "version": "1.0.1"
+}
