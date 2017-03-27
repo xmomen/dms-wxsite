@@ -18,11 +18,8 @@
     "xianShiQiangGou": false,
     "xinPinChangXian": false,
     "reMaiTuiJian": false,
-    "picUrls": [
-      "http://pic.58pic.com/58pic/15/35/55/12p58PICZv8_1024.jpg",
-      "http://www.cqsxsp.com/images/201410/goods_img/68_P_1413356080309.jpg",
-      "http://pic.58pic.com/58pic/15/38/18/52e58PICDE4_1024.jpg"
-    ],
+    "picUrl": "http://pic.58pic.com/58pic/15/35/55/12p58PICZv8_1024.jpg",
+    "picUrls": null,
     "detailContent": null
   },
   {
@@ -44,6 +41,7 @@
     "xianShiQiangGou": false,
     "xinPinChangXian": false,
     "reMaiTuiJian": false,
+    "picUrl": "http://pic.58pic.com/58pic/15/35/55/12p58PICZv8_1024.jpg",
     "picUrls": null,
     "detailContent": null
   }
