@@ -55,8 +55,8 @@
       <div class="wl" ng-if="queryParams.style=='col'">
         <ul class="product-list">
           <li class="fl banner-publicity" ng-repeat="item in products">
-            <a  ui-sref="goods({id:'ffff'})" class="color_black">
-              <img src="../../img/shucai.jpg" class="img fl" />
+            <a  ui-sref="goods({id:item.id})" class="color_black">
+              <img ng-src="{{item.picUrl}}" class="img fl" />
               <div class="pd10 wl">
                 <b class="one_omit wl" ng-bind="item.itemName"></b>
                 <span class="wl mt10 one_omit" ng-bind="item.brandSlogan"></span>

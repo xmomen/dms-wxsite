@@ -4,6 +4,7 @@
 define(['wechat-api', 'wechat-api-sign'], function(wx){
   return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', 'ProductAPI', 'pubSub', '$state',
   function($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate, ProductAPI, pubSub, $state){
+    $scope.currentCity = {};
     // 获取用户当前位置
     $scope.getLocation = function(){
       $scope.cityListModal.show();
@@ -13,7 +14,7 @@ define(['wechat-api', 'wechat-api-sign'], function(wx){
     $scope.goProducts = function(data){
       pubSub.publish("tab.products.filterProduct",{
         type:data.type
-      })
+      });
       $state.go('tab.product');
     };
     $scope.getQiangGouProducts = function(){
@@ -89,25 +90,26 @@ define(['wechat-api', 'wechat-api-sign'], function(wx){
       });
     }
     $scope.getCurrentLocation = function(){
-      wx.ready(function () {
-        wx.getLocation({
-          type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-          success: function (res) {
-            var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-            var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-            var speed = res.speed; // 速度，以米/每秒计
-            var accuracy = res.accuracy; // 位置精度
-            // 地址解析:http://lbs.qq.com/javascript_v2/guide-service.html#link-four
-            var geocoder = new qq.maps.Geocoder({
-              complete: function (result) {
-                resolve(result.detail.address)
-              }
-            });
-            var coord = new qq.maps.LatLng(res.latitude, res.longitude)
-            geocoder.getAddress(coord)
-          }
+        wx.ready(function () {
+          wx.getLocation({
+            type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+            success: function (res) {
+              var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+              var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+              var speed = res.speed; // 速度，以米/每秒计
+              var accuracy = res.accuracy; // 位置精度
+              // 地址解析:http://lbs.qq.com/javascript_v2/guide-service.html#link-four
+              var map = new BMap.Map("allmap");
+              var point = new BMap.Point(longitude,latitude);
+              var gc = new BMap.Geocoder();
+              gc.getLocation(point, function(rs) {
+                var addComp = rs.addressComponents;
+                $scope.currentCity.cityName = addComp.city;
+              });
+            }
+          //});
         });
-      });
+      })
     };
     var init = function(){
       $scope.getCurrentLocation();

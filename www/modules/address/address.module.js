@@ -14,7 +14,6 @@ define([
     }).state('address_detail', {
       url:'/address_detail/{id}',
       templateUrl: 'modules/address/address.detail.html',
-      //params:{id:{}},
       controller: detail
     });
   }]);

@@ -44,7 +44,9 @@ require.config({
         "angular-pub-sub": ["angular"],
         //"jquery.validate.local":["jquery.validate"],
         "jquery.validate":["jquery"],
-        "wechat-api":["angular"],
+        "wechat-api":{
+          exports:"wx"
+        },
         "wechat-api-sign":["angular"],
         "wechat-api-config":["wechat-api", "wechat-api-sign"],
         "angular-ui-xmomen":[
