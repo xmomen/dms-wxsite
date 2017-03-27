@@ -15,7 +15,6 @@
           <ul class="info">
             <li class="fl">
               <span class="info-price"><b ng-bind="product.sellPrice | currency:'¥'" class="ft18"></b></span><br>
-              <!--<span class="info-kg ft14" ng-bind="product.unit"></span>-->
             </li>
 
             <li class="fr">
@@ -23,7 +22,7 @@
             </li>
             <li class="fr" style="width:90px;padding:0 10px">
               <button class="btn-num fl" ng-click="subNumber(product)"> - </button>
-              <input type="text" class="info-num fl" ng-model="product.number">
+              <input type="text" class="info-num fl" ng-model="product.number" ng-change="changeNumber(product)">
               <button class="btn-num fl" ng-click="addNumber(product)"> + </button>
             </li>
           </ul>

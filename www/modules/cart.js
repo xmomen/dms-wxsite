@@ -34,6 +34,13 @@ define(function(require){
         });
       })
     };
+    $scope.changeNumber = function(product){
+      var items = [];
+      for (var i = 0; i < product.number; i++) {
+        items.push(product);
+      }
+      CartAPI.resetProduct(items);
+    };
     $scope.addNumber = function(product){
       product.number = product.number + 1;
       CartAPI.pushProduct(product);

@@ -21,28 +21,46 @@ define(function (require) {
     return Resource("/coupon/:id", { id:"@id" }, {
       query : { isArray:false }
     })
-  }]).factory("CartAPI", ["localStorageService", function(localStorageService){
+  }]).factory("CartAPI", ["localStorage", function(localStorage){
     return {
       //获取产品
       pullProducts: function(){
-        var data = localStorageService.get('cart', 'json');
+        var data = localStorage.getObject('cart');
         var newData = [];
         angular.forEach(data, function(val){
           newData.push(val);
         });
         return newData;
       },
+      resetProduct: function(items){
+        if(!items && items.length <= 0){
+          return;
+        }
+        var carts = localStorage.getObject('cart');
+        if(carts){
+          for (var j = carts.length-1; j >= 0; j--) {
+            var obj = carts[j];
+            if(obj.id == items[0].id){
+              carts.splice(j, 1);
+            }
+          }
+        }
+        for (var i = 0; i < items.length; i++) {
+          carts.push(angular.copy(items[i]));
+        }
+        localStorage.setObject('cart', carts);
+      },
       //放入产品到购物车
       pushProduct: function(item){
-        var carts = localStorageService.get('cart');
+        var carts = localStorage.getObject('cart');
         if(!carts){
           carts = [];
         }
         carts.push(angular.copy(item));
-        localStorageService.add('cart', carts, 'json');
+        localStorage.setObject('cart', carts);
       },
       removeProduct: function(item){
-        var carts = localStorageService.get('cart');
+        var carts = localStorage.getObject('cart');
         if(carts){
           for (var j = 0; j < carts.length; j++) {
             var obj = carts[j];
@@ -52,7 +70,7 @@ define(function (require) {
             }
           }
         }
-        localStorageService.add('cart', carts, 'json');
+        localStorage.getObject('cart', carts);
       }
     }
   }]);
