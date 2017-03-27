@@ -17,11 +17,11 @@
         </div>
         <div class="mt10 ft12">{{payment.address.address}}</div>
     </a>
-    <div class="item item-divider"></div>
-    <a class="item payment_pay">
-      支付方式
-      <span class="item-note" ng-bind="'在线支付'"></span>
-    </a>
+    <!--<div class="item item-divider"></div>-->
+    <!--<a class="item payment_pay">-->
+      <!--支付方式-->
+      <!--<span class="item-note" ng-bind="'在线支付'"></span>-->
+    <!--</a>-->
     <div class="item item-divider"></div>
     <div class="item-dispatching">
       <a class="item lid">
@@ -66,7 +66,7 @@
       <button type="button" class="pay"
               ng-click="confirmOrder()"
               ng-class="{'pay-disabled': totalAmount() <= 0,'button-assertive': totalAmount() > 0}"
-              ng-disabled="totalAmount() <= 0">结算</button>
+              ng-disabled="totalAmount() <= 0">提交订单</button>
     </li>
   </ul>
 </div>

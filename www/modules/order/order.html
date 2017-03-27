@@ -4,13 +4,19 @@
 </ion-header-bar>
 <div class="bar bar-subheader">
   <div class="button-bar">
-    <a class="button button-assertive">近一个月订单</a>
-    <a class="button button-stable">近半年订单</a>
-    <a class="button button-stable">半年前订单</a>
+    <a class="button button-stable"
+       ng-click="switchTime(1)"
+       ng-class="{'button-assertive':queryParams.timeType == 1}">近一个月订单</a>
+    <a class="button button-stable"
+       ng-click="switchTime(2)"
+       ng-class="{'button-assertive':queryParams.timeType == 2}">近半年订单</a>
+    <a class="button button-stable"
+       ng-click="switchTime(3)"
+       ng-class="{'button-assertive':queryParams.timeType == 3}">半年前订单</a>
   </div>
 </div>
 <ion-content class="has-subheader">
-  <ion-list>
+  <ion-list ng-repeat="order in orders">
     <ion-item class="item-divider"></ion-item>
     <ion-item>订单状态：<span class="assertive">待付款</span></ion-item>
     <ion-item>

@@ -7,7 +7,11 @@ define(function (require) {
     "ngResource"
   ]).factory("ProductAPI", ["Resource", function(Resource){
     return Resource("/product/:id", { id:"@id" }, {
-      query : { isArray:false}
+      query : { isArray:false},
+      getCartProduct:{ isArray:true, url: '/api/cart', method:"GET", params:{
+          productIds:"@productIds"
+        }
+      }
     });
   }]).factory("CategoryAPI", ["Resource", function(Resource){
     return Resource("/category/:id", { id:"@id" }, {
@@ -31,17 +35,23 @@ define(function (require) {
       //放入产品到购物车
       pushProduct: function(item){
         var carts = localStorageService.get('cart');
-        if(carts){
-          carts[item.id] = item.val;
-        }else{
-          carts = {};
-          carts[item.id] = item.val;
+        if(!carts){
+          carts = [];
         }
+        carts.push(angular.copy(item));
         localStorageService.add('cart', carts, 'json');
       },
       removeProduct: function(item){
         var carts = localStorageService.get('cart');
-        carts[item.id] = undefined;
+        if(carts){
+          for (var j = 0; j < carts.length; j++) {
+            var obj = carts[j];
+            if(obj.id == item.id){
+              carts.splice(j, 1);
+              break;
+            }
+          }
+        }
         localStorageService.add('cart', carts, 'json');
       }
     }

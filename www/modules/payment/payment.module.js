@@ -9,7 +9,10 @@ define([
     $stateProvider.state('payment_confirm', {
       url: '/payment/confirm',
       templateUrl: 'modules/payment/payment.confirm.html',
-      controller: paymentConfirm
+      controller: paymentConfirm,
+      params:{
+        products:null
+      }
     });
   }]);
 

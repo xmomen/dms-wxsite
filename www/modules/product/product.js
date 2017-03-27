@@ -75,8 +75,7 @@ define(function(){
       $scope.getProducts();
     };
     $scope.pushCarts = function(item){
-      item.number = 1;
-      CartAPI.pushProduct({id:item.id, val: item});
+      CartAPI.pushProduct(item);
       pubSub.publish('changeCart');
       $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
     };

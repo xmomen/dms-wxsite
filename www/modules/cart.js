@@ -9,11 +9,39 @@ define(function(require){
     });
     $scope.getCartData = function(){
       var items = CartAPI.pullProducts();
-      $scope.products = items;
+      $scope.productIds = items;
+      $scope.getProductCart();
+    };
+    $scope.getProductCart = function(){
+      var productIds = [];
+      angular.forEach($scope.productIds, function(val, index){
+        productIds.push(val.id);
+      });
+      ProductAPI.getCartProduct({
+        productIds:productIds
+      }, function(data){
+        $scope.products = data;
+        angular.forEach($scope.products, function(val ,index){
+          angular.forEach($scope.productIds, function(cval, cindex){
+            if(val.id == cval.id){
+              if(val.number){
+                val.number++;
+              }else{
+                val.number = 1;
+              }
+            }
+          })
+        });
+      })
+    };
+    $scope.addNumber = function(product){
+      product.number = product.number + 1;
+      CartAPI.pushProduct(product);
     };
     $scope.subNumber = function(item){
       if(item.number > 1){
-        item.number = item.number - 1
+        item.number = item.number - 1;
+        CartAPI.removeProduct(item);
       }
     };
     $scope.remove = function(index){

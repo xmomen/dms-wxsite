@@ -3,8 +3,7 @@
 </ion-header-bar>
 <ion-content style="bottom:115px" class="bg-ff">
   <ion-list class="cart wl" style="border-top:1px solid #eee;" ng-repeat="product in products">
-      <ion-checkbox ng-model="product.checked" ng-checked="product.checked" style="width:45px;border: 0;padding-left:0">
-      </ion-checkbox>
+      <ion-checkbox ng-model="product.checked" ng-checked="product.checked" style="width:45px;border: 0;padding-left:0"></ion-checkbox>
       <ul class="wl" style="margin-bottom: 0; margin-top: -51px;padding-left: 60px;">
         <li class="fl">
           <a ui-sref="goods">
@@ -25,7 +24,7 @@
             <li class="fr" style="width:90px;padding:0 10px">
               <button class="btn-num fl" ng-click="subNumber(product)"> - </button>
               <input type="text" class="info-num fl" ng-model="product.number">
-              <button class="btn-num fl" ng-click="product.number = product.number + 1"> + </button>
+              <button class="btn-num fl" ng-click="addNumber(product)"> + </button>
             </li>
           </ul>
         </li>

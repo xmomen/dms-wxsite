@@ -2,7 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state', function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state){
+  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state',
+  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state){
     $scope.payment = {};
     $ionicModal.fromTemplateUrl('chose-address.html', {
       scope: $scope,
@@ -48,8 +49,13 @@ define(function(require){
     $scope.closeCouponModal = function(){
       $scope.couponModal.hide();
     };
-    var init = function(){
+    $scope.queryProduct = function(){
 
+    };
+    var init = function(){
+      if($stateParams.products){
+
+      }
     };
     init();
   }]

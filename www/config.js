@@ -22,7 +22,6 @@ require.config({
         "ui-bootstrap-tpls":"lib/angular-bootstrap/ui-bootstrap-tpls.min",
         "wechat-api":"lib/wechat/jweixin",
         "wechat-api-config":"lib/wechat/weixin.config",
-        "wechat-api-sign":"lib/wechat/weixin.sign",
         "angular-ui-xmomen":"lib/angular-ui-xmomen/xmomen-ui",
 
         "app-module": "js/app.module",
@@ -47,8 +46,7 @@ require.config({
         "wechat-api":{
           exports:"wx"
         },
-        "wechat-api-sign":["angular"],
-        "wechat-api-config":["wechat-api", "wechat-api-sign"],
+        "wechat-api-config":["wechat-api"],
         "angular-ui-xmomen":[
           //"jquery.validate.local",
           "jquery.validate",
