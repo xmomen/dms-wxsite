@@ -121,8 +121,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
    margin-top:0;
   padding-top: 0;}
 .home .search_input{width: 95%;position: absolute;top:23px;left:10px;border-radius: 3px;padding: 5px;}
-.form_lid{line-height:70px;height:70px;padding:0 10px;border-bottom:1px solid #d8d8d8;background: url("../img/form_lid.png") no-repeat center center;background-size: 100%}
-
 .trade-name,.trade-price{text-align:center;font-size:12px;display: block;line-height:24px}
 .trade-name{font-weight: bold;color:#000;}
 .trade-price{color:#e74c3c}
@@ -381,3 +379,4 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 
 
 /*标题背景*/
+.form_lid{line-height:70px;height:70px;padding:0 10px;border-bottom:1px solid #d8d8d8;background: linear-gradient(#6cc67c,#648b6c);}
