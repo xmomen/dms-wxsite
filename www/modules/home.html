@@ -32,131 +32,107 @@
   <div class="navbar_bg">
     <div class="row hp_line floatl" style="margin-top:10px">
       <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'1'})">
+        <a ng-click="goProducts({type:'1'})">
           <div class="hp_icon icon_xyvip"></div>
           <p class="list_txt">优选会员</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'1'})">
+        <a ng-click="goProducts({type:'1'})">
           <div class="hp_icon icon_new"></div>
           <p class="list_txt">新品尝鲜</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'1'})">
+        <a ng-click="goProducts({type:'0'})">
           <div class="hp_icon icon_1time"></div>
           <p class="list_txt">一小时达</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'1'})">
+        <a ng-click="goProducts({type:'1'})">
           <div class="hp_icon icon_ly"></div>
           <p class="list_txt">蔬菜</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'2'})">
+        <a ng-click="goProducts({type:'2'})">
           <div class="hp_icon icon_lh"></div>
           <p class="list_txt">粮油副食</p>
         </a>
       </div>
     </div>
-    <div class="row hp_line floatl">
-      <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'3'})">
-          <div class="hp_icon icon_rs"></div>
-          <p class="list_txt">禽蛋肉</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'4'})">
-          <div class="hp_icon icon_sx"></div>
-          <p class="list_txt">干菌干菜</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'5'})">
-          <div class="hp_icon icon_sg"></div>
-          <p class="list_txt">礼盒类</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'6'})">
-          <div class="hp_icon icon_ls"></div>
-          <p class="list_txt">礼品卡券</p>
-        </a>
-      </div>
-      <div class="col-20 homecol">
-        <a ui-sref="product_category({type:'7'})">
-          <div class="hp_icon icon_yp"></div>
-          <p class="list_txt">后院农人</p>
-        </a>
-      </div>
+      <div class="row hp_line floatl">
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'3'})">
+            <div class="hp_icon icon_rs"></div>
+            <p class="list_txt">禽蛋肉</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'4'})">
+            <div class="hp_icon icon_sx"></div>
+            <p class="list_txt">干菌干菜</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'5'})">
+            <div class="hp_icon icon_sg"></div>
+            <p class="list_txt">礼盒类</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'6'})">
+            <div class="hp_icon icon_ls"></div>
+            <p class="list_txt">礼品卡券</p>
+          </a>
+        </div>
+        <div class="col-20 homecol">
+          <a ng-click="goProducts({type:'7'})">
+            <div class="hp_icon icon_yp"></div>
+            <p class="list_txt">后院农人</p>
+          </a>
+        </div>
     </div>
   </div>
-  <!--<div class="form_lid wl"></div>-->
-  <div class="am-u-sm-7 am-u-md-5 am-u-lg-2 text-two big">
-
-    <div class="outer-con ">
-      <div class="title ">
-        雪之恋和风大福
-      </div>
-      <div class="sub-title ">
-        ¥13.8
-      </div>
-
-    </div>
-    <a href="# "><img src="../images/act1.png" /></a>
-  </div>
+  <!--  抢购  -->
+  <div class="form_lid wl"></div>
   <div class="wl">
     <ul class="shopping-list">
-      <li class="pd5-10 fl">
-        <a ui-sref="goods({id:'ffff'})">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
+      <li class="pd5-10 fl" ng-repeat="item in qiangGouProducts">
+        <a ui-sref="goods({id:item.id})">
+          <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
+          <span class="trade-name" ng-bind="item.itemName"></span>
+          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
         </a>
       </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
+    </ul>
+  </div>
+  <!--  新品  -->
+  <div class="form_lid wl"></div>
+  <div class="wl">
+    <ul class="shopping-list">
+      <li class="pd5-10 fl" ng-repeat="item in xinPinProducts">
+        <a ui-sref="goods({id:item.id})">
+          <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
+          <span class="trade-name" ng-bind="item.itemName"></span>
+          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
         </a>
       </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
-        </a>
-      </li>
-      <li class=" pd5-10 fl">
-        <a ui-sref="goods">
-          <img src="../img/lafei.jpg" class="" style="width:100%"/>
-          <span class="trade-name">商品名称</span>
-          <span class="trade-price">￥ <strong>22.00</strong></span>
-          <span class="trade-vip">VIP ￥18.00</span>
+    </ul>
+  </div>
+  <!--  推荐  -->
+  <div class="form_lid wl"></div>
+  <div class="wl">
+    <ul class="shopping-list">
+      <li class="pd5-10 fl" ng-repeat="item in tuiJianProducts">
+        <a ui-sref="goods({id:item.id})">
+          <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
+          <span class="trade-name" ng-bind="item.itemName"></span>
+          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
         </a>
       </li>
     </ul>

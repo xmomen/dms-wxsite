@@ -26,7 +26,8 @@ define([
       views: {
         'tab-product': {
           templateUrl: 'modules/product/product.html',
-          controller: product
+          controller: product,
+          params:{ "type":null }
         }
       }
     }).state('product_detail', {

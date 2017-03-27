@@ -77,7 +77,7 @@ textarea{border:0;width: 62%;}
 .bg-f8{background: #f8f8f8}
 .bar .title.title-left{text-align: center}
 .bar.bar-positive .title{color: #444}
-.bar-positive .button{color: #e74c3c}
+.bar-positive .button{color: #e74c3c !important;}
 .bar .button.button-icon, .bar button.button-icon{font-size:14px}
 .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
   vertical-align: top;
@@ -128,7 +128,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 7px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
-.banner-publicity{background:#fff;padding:10px;margin-top:5px;height: auto;}
+.banner-publicity{background:#fff;padding:10px;height: auto;}
+.banner-publicity-row{margin-top:5px;}
 .banner-publicity .img{width:100%}
 .shopping-button{background:0;border:0;margin-top: -35px}
 .shopping-cart{font-size:20px;color:#e74c3c;margin-top:5px;display: block}
@@ -226,6 +227,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   overflow: hidden;
   margin: 0;
   background-color: #fff;
+  border-bottom: 1px solid;
 }
 
 .slide-tab li{
@@ -272,8 +274,29 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .son_class .banner-publicity{border-bottom:0}
 .son_class .banner-publicity .img{width:70px;height:70px}
 
+.banner-publicity:first-child{
+  margin-top: 0;
+}
+
 .button-center {
   line-height:normal !important;
+}
+.category-sub-active {
+  background-color:#fff;
+}
+
+.icon-md {
+  font-size: 35px;
+}
+
+.row-text-center {
+  line-height: 24px;
+  text-align: center;
+}
+
+.active-red {
+  color: #fdf9f9;
+  background-color: red;
 }
 /*两列展示*/
 .one_omit{word-break:break-all;

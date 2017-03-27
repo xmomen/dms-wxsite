@@ -7,15 +7,43 @@ define(function (require) {
     "ngResource"
   ]).factory("ProductAPI", ["Resource", function(Resource){
     return Resource("/product/:id", { id:"@id" }, {
-      query : { method:"GET", url:"/product", isArray:false}
+      query : { isArray:false}
     });
   }]).factory("CategoryAPI", ["Resource", function(Resource){
     return Resource("/category/:id", { id:"@id" }, {
-      query : { method:"GET", url:"/category", isArray:true}
+      query : { isArray:true}
     });
   }]).factory("CouponAPI", ["Resource", function(Resource){
     return Resource("/coupon/:id", { id:"@id" }, {
-      query : { method:"GET", url:"/coupon", isArray:false}
-    });
+      query : { isArray:false }
+    })
+  }]).factory("CartAPI", ["localStorageService", function(localStorageService){
+    return {
+      //获取产品
+      pullProducts: function(){
+        var data = localStorageService.get('cart', 'json');
+        var newData = [];
+        angular.forEach(data, function(val){
+          newData.push(val);
+        });
+        return newData;
+      },
+      //放入产品到购物车
+      pushProduct: function(item){
+        var carts = localStorageService.get('cart');
+        if(carts){
+          carts[item.id] = item.val;
+        }else{
+          carts = {};
+          carts[item.id] = item.val;
+        }
+        localStorageService.add('cart', carts, 'json');
+      },
+      removeProduct: function(item){
+        var carts = localStorageService.get('cart');
+        carts[item.id] = undefined;
+        localStorageService.add('cart', carts, 'json');
+      }
+    }
   }]);
 });

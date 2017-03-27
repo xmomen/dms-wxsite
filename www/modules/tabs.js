@@ -28,8 +28,8 @@ define(function(){
       };
     };
     function init(){
-      var startY = 0; // ��ʼλ��
-      var lastY = 0; // ��һ��λ��
+      var startY = 0;
+      var lastY = 0;
       var indicator =document.getElementById("indicator");
       indicator.addEventListener('touchstart', function(e) {
         lastY = startY = e.touches[0].pageY;
@@ -39,17 +39,14 @@ define(function(){
         var nowY = e.touches[0].pageY;
         var moveY = nowY - lastY;
         var contentTop = content.style.top.replace('px', '');
-        // ����topֵ�ƶ�content
         content.style.top = (parseInt(contentTop) + moveY) + 'px';
         lastY = nowY;
         console.log(lastY+"move");
       });
       indicator.addEventListener('touchend', function(e) {
-        // do touchend
         var nowY = e.touches[0].pageY;
         var moveY = nowY - lastY;
         var contentTop = content.style.top.replace('px', '');
-        // ����topֵ�ƶ�content
         content.style.top = (parseInt(contentTop) + moveY) + 'px';
         lastY = nowY;
         console.log(lastY+"end");
