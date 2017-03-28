@@ -49,12 +49,19 @@ define(function(require){
     $scope.closeCouponModal = function(){
       $scope.couponModal.hide();
     };
-    $scope.queryProduct = function(){
-
+    $scope.totalAmount = function(){
+      var amount = 0;
+      for (var i = 0; i < $scope.payment.products.length; i++) {
+        var obj = $scope.payment.products[i];
+        if(obj.checked){
+          amount = amount + (obj.sellPrice * obj.number);
+        }
+      }
+      return amount;
     };
     var init = function(){
       if($stateParams.products){
-
+        $scope.payment.products = $stateParams.products;
       }
     };
     init();

@@ -34,23 +34,19 @@
     </div>
     <div class="item item-divider"></div>
     <a class="item payment_pay" ng-click="choseCoupon()">
-      优惠券
+      会员卡
       <i class="icon ion-chevron-right item-note"></i>
       <span class="item-note ft14"> <b class="color_red">0</b> 张可用&nbsp;&nbsp;</span>
     </a>
-    <ion-toggle ng-model="payment.useCard" class="payment_pay">
-      优惠卡
-    </ion-toggle>
+    <!--<ion-toggle ng-model="payment.useCard" class="payment_pay">-->
+      <!--优惠卡-->
+    <!--</ion-toggle>-->
     <div class="item item-divider"></div>
     <a class="item item-thumbnail-left" ng-repeat="product in payment.products">
-      <img ng-src="{{product.img}}">
-      <h2></h2>
-      <p ng-bind="product.name"></p>
-    </a>
-    <a class="item item-thumbnail-left" href="#">
-      <img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
-      <h2>Weezer</h2>
-      <p>Blue Album</p>
+      <img ng-src="{{product.picUrl}}">
+      <h2 ng-bind="product.itemName"></h2>
+      <p ng-bind="product.sellPrice | currency:'¥'"></p>
+      <span class="item-note ft14"> x <b class="color_red" ng-bind="product.number"></b></span>
     </a>
   </div>
   </form>
@@ -59,7 +55,7 @@
 
 <div class="bar bar-footer">
   <ul class="row">
-    <li class="col-66">
+    <li class="col-66" style="line-height: 30px;">
       应付金额：<b class="ft18 color_red" ng-bind="totalAmount() | currency:'￥'"></b>
     </li>
     <li class="col-34">
