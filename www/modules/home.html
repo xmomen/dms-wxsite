@@ -104,7 +104,7 @@
     </div>
     <ul class="shopping-list">
       <li class="pd5-10 fl" ng-repeat="item in qiangGouProducts">
-        <a ui-sref="goods({id:item.id})">
+        <a ui-sref="product_detail({id:item.id})">
           <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
           <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
@@ -115,12 +115,14 @@
   </div>
   <!--  新品  -->
   <div class="wl">
-    <!--<div class="form_lid wl">-->
-      <!--<h2>新品</h2>-->
-    <!--</div>-->
+    <div class="form_lid red wl">
+      <span class="triangle1"></span>
+      <h2><em class="triangle-left"></em>.<em class="rectangle">新品</em>.<em class="triangle-right"></em></h2>
+      <span class="triangle2 fr"></span>
+    </div>
     <ul class="shopping-list">
       <li class="pd5-10 fl" ng-repeat="item in xinPinProducts">
-        <a ui-sref="goods({id:item.id})">
+        <a ui-sref="product_detail({id:item.id})">
           <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
           <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
@@ -131,12 +133,14 @@
   </div>
   <!--  推荐  -->
   <div class="wl">
-    <!--<div class="form_lid wl">-->
-      <!--<h2>推荐</h2>-->
-    <!--</div>-->
+    <div class="form_lid red wl">
+      <span class="triangle1"></span>
+      <h2><em class="triangle-left"></em>.<em class="rectangle">推荐</em>.<em class="triangle-right"></em></h2>
+      <span class="triangle2 fr"></span>
+    </div>
     <ul class="shopping-list">
       <li class="pd5-10 fl" ng-repeat="item in tuiJianProducts">
-        <a ui-sref="goods({id:item.id})">
+        <a ui-sref="product_detail({id:item.id})">
           <img ng-src="{{item.picUrl}}" class="" style="width:100%"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
           <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
@@ -145,18 +149,18 @@
       </li>
     </ul>
   </div>
-  <div class="banner-publicity wl">
-    <img src="../img/publicity/timg.jpg" class="img" />
-  </div>
-  <div class="row">
-    <div class="col-lg-12 banner-publicity">
-      <img src="../img/publicity/t-p-01.jpg" class="img" />
-      <div class="">
-        <b class="wl mt10">原装进口红葡萄酒 500ML</b>
-        <span class="wl mt10">源自澳洲 品质稳定</span>
-        <span class="wl mt10 color_red">￥<strong>180.00</strong></span>
-        <button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>
-      </div>
-    </div>
-  </div>
+  <!--<div class="banner-publicity wl">-->
+    <!--<img src="../img/publicity/timg.jpg" class="img" />-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <!--<div class="col-lg-12 banner-publicity">-->
+      <!--<img src="../img/publicity/t-p-01.jpg" class="img" />-->
+      <!--<div class="">-->
+        <!--<b class="wl mt10">原装进口红葡萄酒 500ML</b>-->
+        <!--<span class="wl mt10">源自澳洲 品质稳定</span>-->
+        <!--<span class="wl mt10 color_red">￥<strong>180.00</strong></span>-->
+        <!--<button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 </ion-content>
