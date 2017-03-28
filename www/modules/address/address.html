@@ -12,11 +12,11 @@
           <div class="add_card" ng-click="choseAddress($index)">
             <div class="item" style="border-bottom:0;padding:9px 16px">
               <span ng-bind="item.name"></span>&nbsp;&nbsp;
-              <span ng-if="item.isDefault" class="label label-primary ft12 color_grey">默认地址</span>&nbsp;&nbsp;
-              <span ng-bind="item.phoneNumber" class="fr"></span>
+              <span ng-if="item.isDefalut == 1" class="label label-primary ft12 color_grey">默认地址</span>&nbsp;&nbsp;
+              <span ng-bind="item.mobile" class="fr"></span>
               <div class="wl">
                 <span class="ion-ios-location-outline"></span>
-                <span class="item-text-wrap small ft12 mt5" ng-bind="item.address"></span>
+                <span class="item-text-wrap small ft12 mt5" ng-bind="item.fullAddress"></span>
               </div>
             </div>
           </div>

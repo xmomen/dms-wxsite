@@ -10,6 +10,7 @@ define([
     $stateProvider.state('address', {
       url: '/address',
       templateUrl: 'modules/address/address.html',
+      cache:false,
       controller: address
     }).state('address_detail', {
       url:'/address_detail/{id}',

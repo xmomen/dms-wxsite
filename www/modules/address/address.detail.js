@@ -2,7 +2,7 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'AddressAPI', '$stateParams', function($scope, AddressAPI, $stateParams){
+  return ['$scope', 'AddressAPI', '$stateParams', '$state', '$dialog', function($scope, AddressAPI, $stateParams, $state, $dialog){
     $scope.pageSettingInfo = {
       title:"收货地址"
     };
@@ -14,13 +14,26 @@ define(function(require){
     $scope.addressForm = {};
     $scope.save = function(){
       if($scope.addressForm.validator.form()){
-        AddressAPI.save($scope.address, function(){
-
-        });
+        if($scope.address.id){
+          AddressAPI.update($scope.address, function(data){
+            $state.go('address');
+          });
+        }else{
+          AddressAPI.save($scope.address, function(data){
+            $state.go('address');
+          });
+        }
       }
     };
-    $scope.delete = function(){
-
+    $scope.delete = function(address){
+      $dialog.confirm("是否删除此收货地址？").then(function(){
+        AddressAPI.delete({
+          id:address.id
+        }, function(){
+          $dialog.alert("删除成功");
+          $state.go('address');
+        })
+      })
     };
     var init = function(){
       if($stateParams.id){
@@ -28,6 +41,7 @@ define(function(require){
         $scope.pageSettingInfo.action = "UPDATE";
         $scope.getAddressInfo();
       }else{
+        $scope.address = {};
         $scope.pageSettingInfo.title = "添加收货地址";
         $scope.pageSettingInfo.action = "ADD";
       }

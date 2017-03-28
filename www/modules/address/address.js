@@ -5,8 +5,8 @@ define(function(require){
   return ['$scope', 'AddressAPI', function($scope, AddressAPI){
     $scope.getAddressInfo = function(){
       AddressAPI.query({
-        pageSize:10,
-        pageNum:1
+        limit:10,
+        offset:1
       }, function(data){
         $scope.address = data.data;
       })

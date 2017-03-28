@@ -6,8 +6,8 @@ define(function (require) {
   return angular.module('address.rest', [
     "ngResource"
   ]).factory("AddressAPI", ["Resource", function(Resource){
-    return Resource("/address/:id", { id:"@id" }, {
-      query : { method:"GET", url:"/address", isArray:false}
+    return Resource("/memberAddress/:id", { id:"@id" }, {
+      query : { isArray:false}
     });
   }]);
 });
