@@ -31,8 +31,9 @@ table {border-collapse:collapse;border-spacing:0}
 hr {display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0}
 input, select{vertical-align:middle;border: 0}
 textarea{border:0;width: 62%;}
-
-
+@font-face {
+  font-family: Lovelo-Black;
+src: url('../font/汉仪魏碑简.ttf')}
 
 
 /*ionic*/
@@ -402,5 +403,22 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .goods-info img{width:100%;margin-top:-1px}
 
 /*标题背景*/
-.form_lid{height:70px;padding:0 10px;background: #ff6666;background: radial-gradient(#ff9999,#ff6666);}
-.form_lid h2{font-size: 24px;line-height:70px;text-align:center;color:white;font-style: inherit}
+.form_lid{height:70px;padding:0 10px;overflow: hidden}
+.form_lid.red{background: #ff6666;background: radial-gradient(#ff6666,#ff6666);}
+.form_lid .triangle1{height: 0;
+  width: 120px;
+  border-bottom: 120px solid #ff7373;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;}
+.form_lid .triangle2{height: 0;
+  width: 120px;
+  border-top: 120px solid #ff7373;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;margin-top: -140px}
+.form_lid h2{font-size: 26px;line-height:70px;text-align:center;color:white;font-family: Lovelo-Black;margin-top:-10px}
+.form_lid h2 .rectangle {
+  padding:6px 40px;
+  height: 100px;
+  background: #990000;
+  border:1px solid #990000;border-bottom-left-radius:55px;border-top-right-radius:55px;box-shadow: 1px 3px 3px #ffcccc;
+}

@@ -2,7 +2,12 @@
   <h1 class="title">购物车</h1>
 </ion-header-bar>
 <ion-content style="bottom:115px" class="bg-ff">
+  <!--<div class="">-->
+    <!--购物车空空如也-->
+  <!--</div>-->
   <ion-list class="cart wl" style="border-top:1px solid #eee;" ng-repeat="product in products">
+
+    <div class="wl">
       <ion-checkbox ng-model="product.checked" ng-checked="product.checked" style="width:45px;border: 0;padding-left:0">
       </ion-checkbox>
       <ul class="wl" style="margin-bottom: 0; margin-top: -51px;padding-left: 60px;">
@@ -30,6 +35,7 @@
           </ul>
         </li>
       </ul>
+    </div>
   </ion-list>
   <!--<ul class="privilege wl">-->
     <!--<li class="wl">总重：0.2kg(含包装)</li>-->
