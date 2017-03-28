@@ -9,7 +9,6 @@ define(['wechat-api'], function (wx) {
       $scope.getLocation = function () {
         $scope.cityListModal.show();
         init();
-        //$scope.locationInfo.name = "上海";
       };
       $scope.goProducts = function (data) {
         pubSub.publish("tab.products.filterProduct", {

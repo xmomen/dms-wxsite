@@ -7,7 +7,7 @@ define(function (require) {
     "ngResource"
   ]).factory("AppAPI", ["Resource", function(Resource){
     return Resource("/account/:id", { id:"@id" }, {
-      getAccount : { method:"GET", url:"/account", isArray:false}
+      getAccount : { method:"GET", url:"/api/account/setting", isArray:false}
     });
   }]).factory("WeiXinAPI", ["$http", "$q", function($http, $q){
     return {

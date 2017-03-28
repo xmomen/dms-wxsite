@@ -88,8 +88,8 @@ gulp.task('server', function() {
       },
       proxies: [
           {
-              source: '/api', target: 'http://127.0.0.1:8700'
-              //source: '/api', target: 'http://121.40.156.26:8188'
+              //source: '/api', target: 'http://127.0.0.1:8700'
+              source: '/api', target: 'http://121.40.156.26:8188'
           },
         {
           source: '/ueditor/jsp/upload/image', target: 'http://127.0.0.1:8700/ueditor/jsp/upload/image'
@@ -166,7 +166,7 @@ gulp.task('css', function(){
 
 // images
 gulp.task('img', function () {
-  return gulp.src('www/img/*.{png,jpg,gif,ico}')
+  return gulp.src('www/img/detail/*.{png,jpg,gif,ico}')
     .pipe(imagemin({
       optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
       progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片

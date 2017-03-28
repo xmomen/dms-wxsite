@@ -13,7 +13,7 @@ define(function(){
       }
       for (var i = 0; i < $scope.categorys.length; i++) {
         var obj = $scope.categorys[i];
-        if(obj.id = data.type){
+        if(obj.id == data.type){
           $scope.slideIndex = i;
         }
       }
@@ -37,12 +37,16 @@ define(function(){
       $scope.getProducts();
     };
     $scope.getProducts = function(){
+      var labels = [];
+      if($scope.queryParams.label){
+        labels = [$scope.queryParams.label];
+      }
       ProductAPI.query({
         limit:100,
         offset:1,
         orderField:$scope.queryParams.orderField,
         isAsc:$scope.queryParams.isAsc,
-        labels:[$scope.queryParams.label],
+        labels: labels,
         categoryId:$scope.queryParams.categoryId
       }, function(data){
         $scope.products = data.data;
