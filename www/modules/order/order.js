@@ -2,7 +2,7 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'OrderAPI', function($scope, OrderAPI){
+  return ['$scope', 'OrderAPI','$state', function($scope, OrderAPI, $state){
     $scope.getOrders = function(){
       OrderAPI.query({
         memberCode:''
@@ -14,6 +14,11 @@ define(function(require){
     $scope.switchTime = function(){
 
     };
+
+    $scope.confirmTracking = function(){
+      $state.go('tracking');
+    };
+
     var init = function(){
       $scope.getOrders();
     };

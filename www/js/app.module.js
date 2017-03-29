@@ -6,12 +6,14 @@ define([
   'modules/address/address.module',
   'modules/product/product.module',
   'modules/payment/payment.module',
-  'modules/order/order.module'
+  'modules/order/order.module',
+  'modules/tracking/tracking.module'
 ], function(){
   angular.module('app.module', [
      'address.module',
      'product.module',
      'order.module',
+     'tracking.module',
      'payment.module',
      'app.router' ,
      'app.rest',
