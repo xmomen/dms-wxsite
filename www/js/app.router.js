@@ -5,11 +5,21 @@ define(function (require) {
   var angular = require('angular');
   var tabsCtrl = require('../modules/tabs');
   var accountCrtl = require('../modules/account');
-  var loginCtrl = require('../modules/login');
   var cartCtrl = require('../modules/cart');
   var homeCtrl = require('../modules/home');
 
-  angular.module('app.router',['ui.router']).config(function ($stateProvider, $urlRouterProvider, $qProvider) {
+  angular.module('app.router',['ui.router', 'ionic']).config(['$stateProvider', '$urlRouterProvider', '$qProvider','$ionicConfigProvider','$locationProvider',
+  function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    //权限
+    $urlRouterProvider.deferIntercept();
+    //兼容ios android
+    $ionicConfigProvider.platform.ios.tabs.style('standard');
+    $ionicConfigProvider.platform.ios.tabs.position('bottom');
+    $ionicConfigProvider.platform.android.tabs.style('standard');
+    $ionicConfigProvider.platform.android.tabs.position('bottom');
+    $ionicConfigProvider.platform.ios.navBar.alignTitle('center');
+    $ionicConfigProvider.platform.android.navBar.alignTitle('center');
 
     $qProvider.errorOnUnhandledRejections(false);
     $stateProvider
@@ -56,17 +66,8 @@ define(function (require) {
           }
         }
       })
-      .state('login', {
-        url: '/login',
-        templateUrl: 'modules/login.html',
-        controller: loginCtrl
-      })
-      .state('goods', {
-        url: '/goods',
-        templateUrl: 'modules/goods/goods.html'
-      });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/home');
 
-  });
+  }]);
 });

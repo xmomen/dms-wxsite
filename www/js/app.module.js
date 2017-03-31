@@ -88,11 +88,31 @@ define([
       }
     }
   }])
-    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", function ($ionicPlatform, $rootScope, PermPermissionStore) {
-      PermPermissionStore
-        .definePermission('isAuthorized', function () {
-          //return Session.checkSession();
-          return false;
+    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter",
+    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter) {
+
+      $http
+        .get('/api/account/setting')
+        .then(function(permissions){
+          // Use RoleStore and PermissionStore to define permissions and roles
+          // or even set up whole session
+          PermPermissionStore
+            .definePermission('isAuthorized', function () {
+              return true;
+            });
+
+        }, function(){
+          PermPermissionStore
+            .definePermission('isAuthorized', function () {
+              return false;
+            });
+        })
+        .then(function(){
+          // Once permissions are set-up
+          // kick-off router and start the application rendering
+          $urlRouter.sync();
+          // Also enable router to listen to url changes
+          $urlRouter.listen();
         });
 
       $ionicPlatform.ready(function () {
@@ -107,6 +127,7 @@ define([
           // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
+
       });
     }]);
 
