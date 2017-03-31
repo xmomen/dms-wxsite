@@ -1,5 +1,6 @@
 define([
   'angular',
+  'js/app.controller',
   'js/app.router',
   'js/app.rest',
   'js/app.directive',
@@ -8,7 +9,7 @@ define([
   'modules/payment/payment.module',
   'modules/order/order.module',
   'modules/tracking/tracking.module'
-], function(){
+], function(angular, appCtrl){
   angular.module('app.module', [
      'address.module',
      'product.module',
@@ -18,7 +19,7 @@ define([
      'app.router' ,
      'app.rest',
      'app.directive'
-  ]).factory('localStorage', ['$window', function($window){
+  ]).controller('dmsCtrl', appCtrl).factory('localStorage', ['$window', function($window){
     return{        //存储单个属性
       set :function(key, value){
         $window.localStorage[key]=value;
@@ -87,7 +88,13 @@ define([
       }
     }
   }])
-    .run(["$ionicPlatform", function ($ionicPlatform) {
+    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", function ($ionicPlatform, $rootScope, PermPermissionStore) {
+      PermPermissionStore
+        .definePermission('isAuthorized', function () {
+          //return Session.checkSession();
+          return false;
+        });
+
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)

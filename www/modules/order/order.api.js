@@ -6,8 +6,8 @@ define(function (require) {
   return angular.module('order.rest', [
     "ngResource"
   ]).factory("OrderAPI", ["Resource", function(Resource){
-    return Resource("/myOrder/:id", { id:"@id" }, {
-      query : { method:"GET", isArray:true}
+    return Resource("/wx/order/:id", { id:"@id" }, {
+      query : { isArray:true }
     });
   }]);
 });

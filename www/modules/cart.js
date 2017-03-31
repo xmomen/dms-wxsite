@@ -77,6 +77,11 @@ define(function(require){
       }
       $state.go('payment_confirm', { products: choseProducts });
     };
+    $scope.$watch('checkAll', function(newVal, oldVal){
+        for (var i = 0; i < $scope.products.length; i++) {
+          $scope.products[i].checked = newVal;
+        }
+    });
     var init = function(){
       $scope.getCartData();
     };

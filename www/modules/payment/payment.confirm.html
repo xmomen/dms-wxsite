@@ -22,16 +22,16 @@
       <!--支付方式-->
       <!--<span class="item-note" ng-bind="'在线支付'"></span>-->
     <!--</a>-->
-    <div class="item item-divider"></div>
-    <div class="item-dispatching">
-      <a class="item lid">
-        配送信息
-      </a>
-      <a class="item item_info">
-        <div class="info wl"><label>配送方式</label><span ng-bind="'顺丰速运'" class="fr"></span></div>
-        <div class="info wl"><label>运费</label><span ng-bind="'免运费'" class="fr"></span></div>
-      </a>
-    </div>
+    <!--<div class="item item-divider"></div>-->
+    <!--<div class="item-dispatching">-->
+      <!--<a class="item lid">-->
+        <!--配送信息-->
+      <!--</a>-->
+      <!--<a class="item item_info">-->
+        <!--<div class="info wl"><label>配送方式</label><span ng-bind="'顺丰速运'" class="fr"></span></div>-->
+        <!--<div class="info wl"><label>运费</label><span ng-bind="'免运费'" class="fr"></span></div>-->
+      <!--</a>-->
+    <!--</div>-->
     <div class="item item-divider"></div>
     <a class="item payment_pay" ng-click="choseCoupon()">
       会员卡
@@ -60,8 +60,8 @@
     </li>
     <li class="col-34">
       <button type="button" class="pay"
-              ng-click="confirmOrder()"
-              ng-class="{'pay-disabled': totalAmount() <= 0,'button-assertive': totalAmount() > 0}"
+              ng-click="submitOrder()"
+              ng-class="{'pay-disabled': totalAmount() <= 0,'button-assertive': totalAmount() > 0}",
               ng-disabled="totalAmount() <= 0">提交订单</button>
     </li>
   </ul>

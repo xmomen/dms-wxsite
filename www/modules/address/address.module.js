@@ -11,10 +11,20 @@ define([
       url: '/address',
       templateUrl: 'modules/address/address.html',
       cache:false,
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      },
       controller: address
     }).state('address_detail', {
       url:'/address_detail/{id}',
       templateUrl: 'modules/address/address.detail.html',
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      },
       controller: detail
     });
   }]);

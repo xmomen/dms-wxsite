@@ -10,6 +10,11 @@ define([
       url: '/payment/confirm',
       templateUrl: 'modules/payment/payment.confirm.html',
       controller: paymentConfirm,
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      },
       params:{
         products:null
       }

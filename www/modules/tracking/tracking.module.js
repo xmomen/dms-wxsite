@@ -8,6 +8,11 @@ define([
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     $stateProvider.state('tracking', {
       url:'/tracking',
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      },
       templateUrl: 'modules/tracking/tracking.html'
     });
   }]);

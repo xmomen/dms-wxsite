@@ -9,8 +9,9 @@ define(function (require) {
   var cartCtrl = require('../modules/cart');
   var homeCtrl = require('../modules/home');
 
-  angular.module('app.router',['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+  angular.module('app.router',['ui.router']).config(function ($stateProvider, $urlRouterProvider, $qProvider) {
 
+    $qProvider.errorOnUnhandledRejections(false);
     $stateProvider
 
       // setup an abstract state for the tabs directive

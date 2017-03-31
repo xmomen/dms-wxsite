@@ -9,6 +9,11 @@ define([
     $stateProvider.state('order', {
       url:'/order/{type}',
       templateUrl: 'modules/order/order.html',
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      },
       controller: order
     });
   }]);

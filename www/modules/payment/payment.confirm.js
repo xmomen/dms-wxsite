@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state',
-  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state){
+  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI',
+  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI){
     $scope.payment = {};
     $ionicModal.fromTemplateUrl('chose-address.html', {
       scope: $scope,
@@ -13,13 +13,20 @@ define(function(require){
     });
     $scope.getAddressInfo = function(){
       AddressAPI.query({
-        pageSize:10,
-        pageNum:1
+        limit:10,
+        offset:1
       }, function(data){
         $scope.address = data.data;
       })
     };
     $scope.payment = {};
+    $scope.submitOrder = function(){
+      if(!$scope.payment.address){
+        $dialog.alert('请选择收货人');
+        return;
+      }
+      OrderAPI.create($scope.payment);
+    };
     $scope.openAddressModal = function() {
       $scope.addressModal.show();
       $scope.getAddressInfo();

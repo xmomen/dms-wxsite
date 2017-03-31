@@ -7,6 +7,7 @@ require(['require'], function(require){
         'ngResource',
         'ui.router',
         'permission',
+        'permission.ui',
         "app.module",
         "LocalStorageModule",
         "PubSubModule",

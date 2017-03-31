@@ -14,27 +14,33 @@
     <!-- endbuild -->
 
   </head>
-  <body>
+  <body ng-controller="dmsCtrl">
 
     <ion-nav-view></ion-nav-view>
 
-    <script id="uix/dialog/dialog-tpl.html" type="text/ng-template">
-      <div class="modal-header">
-        <h3 class="modal-title" ng-bind="message.title"></h3>
-      </div>
-      <div class="modal-body">
-        <div class="widget-body" ng-bind="message.content">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="button" data-ng-click="yes()">
-          <i class="fa fa-save"></i>
-          确认
-        </button>
-        <button class="btn btn-warning" ng-click="no()">
-          <i class="icon icon-close"></i>
-          取消</button>
-      </div>
+    <script id="login-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
+          <div class="title">登录</div>
+          <!--<button class="button button-icon icon" ng-click="register()">注册</button>-->
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">用户名</span>
+              <input type="text" placeholder="请输入用户名/手机号" ng-model="user.username" name="username">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">密码</span>
+              <input type="password" placeholder="请输入密码" ng-model="user.password" name="password">
+            </label>
+          </div>
+          <button type="button" ng-click="login()" class="button button-block button-positive">
+            登录
+          </button>
+        </ion-content>
+      </ion-modal-view>
     </script>
 
     <!-- build:rjs js/product.js -->
