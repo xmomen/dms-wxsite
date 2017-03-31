@@ -1,36 +1,44 @@
 <ion-header-bar align-title="center" class="bar-positive">
   <button type="button" class="button button-icon icon ion-ios-arrow-left" ui-sref="order({type:'0'})"></button>
-  <h1 class="title">待付款订单</h1>
+  <h1 class="title">订单详情</h1>
 </ion-header-bar>
 <ion-content>
   <ion-list>
     <ion-item>
       <div class="row">
-        <div class="col col-75">收货人：</div>
-        <div class="col">15088882222</div>
+        <div class="col col-60">收货人：{{order.consigneeName}}</div>
+        <div class="col">{{order.consigneePhone}}</div>
+      </div>
+      <div class="row">
+        <div class="col">{{order.consigneeAddress}}</div>
       </div>
     </ion-item>
-    <ion-item>订单状态：<span class="assertive">待付款</span></ion-item>
+    <ion-item>订单状态：
+      <span class="assertive" ng-if="order.payStatus == 1" ng-bind="order.orderStatusDesc"></span>
+      <span class="assertive" ng-if="order.payStatus != 1" ng-bind="order.payStatusDesc"></span>
+    </ion-item>
     <ion-item>
       <div class="row">
-        <div class="col" style="font-size: 10px;">订单编号：93424234234324234</div>
+        <div class="col" style="font-size: 10px;">订单编号：{{order.orderNo}}</div>
       </div>
       <div class="row">
-        <div class="col" style="font-size: 10px;">下单时间：2017-03-14 12:20:33</div>
+        <div class="col" style="font-size: 10px;">下单时间：{{order.createTime | date:'yyyy-MM-dd hh:mm:ss'}}</div>
       </div>
       <div class="row">
-        <div class="col" style="font-size: 10px;">订单金额：<span class="assertive">$ 123.44</span></div>
+        <div class="col" style="font-size: 10px;">订单金额：<span class="assertive" ng-bind="order.totalAmount | currency:'¥'"></span></div>
       </div>
     </ion-item>
-    <ion-item class="item-thumbnail-left">
-      <img src="/img/lafei.jpg">
-      <h2>82年 拉菲</h2>
-      <p class="assertive">¥ 999.88</p>
+    <ion-item class="item-thumbnail-left" ng-repeat="product in order.products">
+      <img ng-src="{{product.picUrl}}">
+      <h2 ng-bind="product.itemName"></h2>
+      <p class="assertive" ng-bind="product.itemPrice * product.itemQty | currency:'¥'"></p>
+      <span class="item-note small"> x <b ng-bind="product.itemQty"></b></span>
     </ion-item>
     <ion-item>
       <div style="display: inline-block;float: right;">
-        <button class="button button-small button-assertive" style="width: 58px;" type="button">付款</button>
-        <button class="button button-small button-assertive" type="button" ng-click="confirmTracking()">物流追踪</button>
+        <button class="button button-small button-assertive" ng-if="order.orderStatus == 5" style="width: 58px;" type="button">确认收货</button>
+        <button class="button button-small button-assertive" ng-if="order.payStatus == 0" style="width: 58px;" type="button">付款</button>
+        <button class="button button-small button-assertive" ng-if="order.payStatus == 1" type="button" ng-click="confirmTracking()">物流追踪</button>
       </div>
     </ion-item>
   </ion-list>

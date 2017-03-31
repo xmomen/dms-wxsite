@@ -22,7 +22,7 @@
       <span class="assertive" ng-if="order.payStatus == 1" ng-bind="order.orderStatusDesc"></span>
       <span class="assertive" ng-if="order.payStatus != 1" ng-bind="order.payStatusDesc"></span>
     </ion-item>
-    <ion-item>
+    <ion-item ui-sref="order_detail({id:order.id})">
       <div class="row">
         <div class="col" style="font-size: 10px;">订单编号：{{order.orderNo}}</div>
       </div>
@@ -33,7 +33,8 @@
         <div class="col" style="font-size: 10px;">订单金额：<span class="assertive" ng-bind="order.totalAmount | currency:'¥'"></span></div>
       </div>
     </ion-item>
-    <ion-item class="item-thumbnail-left" ng-repeat="product in order.products">
+    <ion-item class="item-thumbnail-left"
+              ng-repeat="product in order.products">
       <img ng-src="{{product.picUrl}}">
       <h2 ng-bind="product.itemName"></h2>
       <p class="assertive" ng-bind="product.itemPrice * product.itemQty | currency:'¥'"></p>

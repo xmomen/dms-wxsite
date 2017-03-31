@@ -10,7 +10,7 @@ define(function (require) {
 
   angular.module('app.router',['ui.router', 'ionic']).config(['$stateProvider', '$urlRouterProvider', '$qProvider','$ionicConfigProvider','$locationProvider',
   function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
     //权限
     $urlRouterProvider.deferIntercept();
     //兼容ios android

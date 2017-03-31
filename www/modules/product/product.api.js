@@ -70,7 +70,21 @@ define(function (require) {
             }
           }
         }
-        localStorage.getObject('cart', carts);
+        localStorage.setObject('cart', carts);
+      },
+      removeProductByItemId: function(itemId){
+        var carts = localStorage.getObject('cart');
+        if(carts){
+          var newCarts = [];
+          for (var j = 0; j < carts.length; j++) {
+            var obj = carts[j];
+            if(obj.id != itemId){
+              newCarts.push(obj);
+            }
+          }
+          carts = newCarts;
+        }
+        localStorage.setObject('cart', carts);
       }
     }
   }]);

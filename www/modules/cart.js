@@ -24,10 +24,10 @@ define(function(require){
         angular.forEach($scope.products, function(val ,index){
           angular.forEach($scope.productIds, function(cval, cindex){
             if(val.id == cval.id){
-              if(val.number){
-                val.number++;
+              if(val.itemQty){
+                val.itemQty++;
               }else{
-                val.number = 1;
+                val.itemQty = 1;
               }
             }
           })
@@ -36,24 +36,24 @@ define(function(require){
     };
     $scope.changeNumber = function(product){
       var items = [];
-      for (var i = 0; i < product.number; i++) {
+      for (var i = 0; i < product.itemQty; i++) {
         items.push(product);
       }
       CartAPI.resetProduct(items);
     };
     $scope.addNumber = function(product){
-      product.number = product.number + 1;
+      product.itemQty = product.itemQty + 1;
       CartAPI.pushProduct(product);
     };
     $scope.subNumber = function(item){
-      if(item.number > 1){
-        item.number = item.number - 1;
+      if(item.itemQty > 1){
+        item.itemQty = item.itemQty - 1;
         CartAPI.removeProduct(item);
       }
     };
     $scope.remove = function(index){
       $dialog.confirm('是否删除该商品').then(function(){
-        CartAPI.removeProduct($scope.products[index]);
+        CartAPI.removeProductByItemId($scope.products[index].id);
         $scope.products.splice(index, 1);
       })
     };
@@ -62,7 +62,7 @@ define(function(require){
       for (var i = 0; i < $scope.products.length; i++) {
         var obj = $scope.products[i];
         if(obj.checked){
-          amount = amount + (obj.sellPrice * obj.number);
+          amount = amount + (obj.sellPrice * obj.itemQty);
         }
       }
       return amount;

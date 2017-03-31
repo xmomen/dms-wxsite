@@ -13,9 +13,9 @@
     <a class="item payment_pay item-address" ng-if="payment.address" ng-click="openAddressModal()">
         <div class="ft16">
           {{payment.address.name}}
-          <span class="item-note" ng-bind="payment.address.phoneNumber"></span>
+          <span class="item-note" ng-bind="payment.address.mobile"></span>
         </div>
-        <div class="mt10 ft12">{{payment.address.address}}</div>
+        <div class="mt10 ft12">{{payment.address.fullAddress}}</div>
     </a>
     <!--<div class="item item-divider"></div>-->
     <!--<a class="item payment_pay">-->
@@ -46,7 +46,7 @@
       <img ng-src="{{product.picUrl}}">
       <h2 ng-bind="product.itemName"></h2>
       <p ng-bind="product.sellPrice | currency:'¥'"></p>
-      <span class="item-note ft14"> x <b class="color_red" ng-bind="product.number"></b></span>
+      <span class="item-note ft14"> x <b class="color_red" ng-bind="product.itemQty"></b></span>
     </a>
   </div>
   </form>
@@ -79,8 +79,8 @@
         <div class="item item-divider"></div>
         <div class="add_card" ng-click="choseAddress($index)">
             <div class="item" style="border-bottom:0;padding:9px 16px">
-              <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary ft12 color_grey">默认地址</span>&nbsp;&nbsp;<span ng-bind="item.phoneNumber" class="fr"></span>
-              <div class="wl"><span class="ion-ios-location-outline"></span> <span class="item-text-wrap small ft12 mt5" ng-bind="item.address"></span></div>
+              <span ng-bind="item.name"></span>&nbsp;&nbsp;<span ng-if="item.isDefault" class="label label-primary ft12 color_grey">默认地址</span>&nbsp;&nbsp;<span ng-bind="item.mobile" class="fr"></span>
+              <div class="wl"><span class="ion-ios-location-outline"></span> <span class="item-text-wrap small ft12 mt5" ng-bind="item.fullAddress"></span></div>
             </div>
         </div>
       </div>
