@@ -10,6 +10,13 @@ define(function (require) {
       getAccount : { method:"GET", url:"/api/account/setting", isArray:false},
       login: { method:'GET', url : "/api/", isArray:false}
     });
+  }]).factory("BindAPI", ["Resource", function(Resource){
+    return Resource("/wx/:memberId", { id:"@id" }, {
+      bindMember : { method:"PUT", url:"/api/wx/bindMember", params:{
+        openId:"@openId",
+        mobile:"@mobile"
+      }, isArray:false}
+    });
   }]).factory("WeiXinAPI", ["$http", "$q", function($http, $q){
     return {
       getJsSDKConfig: function(){

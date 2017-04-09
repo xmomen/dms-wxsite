@@ -2,11 +2,13 @@
  * Created by tanxinzheng on 17/3/31.
  */
 define(function(){
-  return ['$scope', '$ionicModal', '$http', '$location', '$state', function($scope, $ionicModal, $http, $location, $state){
+  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI',
+  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI){
     $scope.$on('$stateChangePermissionDenied', function(event, toState, toParams, options) {
       console.log("未登录");
       $scope.loginModal.show();
     });
+    $scope.user = {};
     $scope.back = function(){
       $scope.loginModal.hide();
     };
@@ -17,13 +19,29 @@ define(function(){
         console.log(data);
       })
     };
+    $scope.bind = function(){
+      var member = $cookieStore.get('member');
+      BindAPI.bindMember({
+        openId:member.openId,
+        mobile:$scope.user.phone
+      }, function(data){
+        $scope.loginModal.hide();
+        $cookieStore.put('member', {
+          memberId:data.id,
+          openId:member.openId
+        });
+      })
+    };
     $ionicModal.fromTemplateUrl('login-modal.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {
       $scope.loginModal = modal;
     });
-    console.log($location.search());
-    //alert($stateParams.openId);
+    var params = {
+      openId:$UrlUtils.getParams('openId'),
+      memberId:$UrlUtils.getParams('memberId')
+    };
+    console.log(params);
   }]
 });

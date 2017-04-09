@@ -87,33 +87,62 @@ define([
         return $q.reject(response);
       }
     }
+  }]).factory('$UrlUtils', [function(){
+    var getParams = function(name){
+      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if(r!=null)return  unescape(r[2]); return null;
+    };
+    return {
+      getParams:getParams
+    }
   }])
-    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter",
-    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter) {
+    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter", "$q", '$UrlUtils', '$cookieStore',
+    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter, $q, $UrlUtils , $cookieStore) {
+      var params = {
+        openId:$UrlUtils.getParams('openId'),
+        memberId:$UrlUtils.getParams('memberId')
+      };
 
-      $http
-        .get('/api/account/setting')
-        .then(function(permissions){
-          // Use RoleStore and PermissionStore to define permissions and roles
-          // or even set up whole session
-          PermPermissionStore
-            .definePermission('isAuthorized', function () {
-              return true;
-            });
+      var member = $cookieStore.get('member');
+      if(!member && params.openId){
+        $cookieStore.put('member', params);
+      }
 
-        }, function(){
-          PermPermissionStore
-            .definePermission('isAuthorized', function () {
-              return false;
-            });
-        })
-        .then(function(){
-          // Once permissions are set-up
-          // kick-off router and start the application rendering
-          $urlRouter.sync();
-          // Also enable router to listen to url changes
-          $urlRouter.listen();
+      PermPermissionStore
+        .definePermission('isAuthorized', function () {
+          var defer = $q.defer();
+          var cmember = $cookieStore.get('member');
+          if(cmember && cmember.memberId){
+            defer.resolve();
+          }else{
+            defer.reject();
+          }
+          return defer.promise;
         });
+      //$http
+      //  .get('/api/account/setting')
+      //  .then(function(permissions){
+      //    // Use RoleStore and PermissionStore to define permissions and roles
+      //    // or even set up whole session
+      //    PermPermissionStore
+      //      .definePermission('isAuthorized', function () {
+      //        return true;
+      //      });
+      //
+      //  }, function(){
+      //    PermPermissionStore
+      //      .definePermission('isAuthorized', function () {
+      //        return false;
+      //      });
+      //  })
+      //  .then(function(){
+      //    // Once permissions are set-up
+      //    // kick-off router and start the application rendering
+      //    $urlRouter.sync();
+      //    // Also enable router to listen to url changes
+      //    $urlRouter.listen();
+      //  });
 
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

@@ -79,7 +79,10 @@ define(function(){
       $scope.getProducts();
     };
     $scope.pushCarts = function(item){
-      CartAPI.pushProduct(item);
+      CartAPI.create({
+        memberId:'',
+        itemId:item.id
+      });
       pubSub.publish('changeCart');
       $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
     };

@@ -10,6 +10,7 @@ require(['require'], function(require){
         'permission.ui',
         "app.module",
         "LocalStorageModule",
+        "ngCookies",
         "PubSubModule",
         'ionic',
         'xmomen.ui',

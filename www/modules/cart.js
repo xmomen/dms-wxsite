@@ -8,7 +8,7 @@ define(function(require){
       $scope.getCartData();
     });
     $scope.getCartData = function(){
-      var items = CartAPI.pullProducts();
+      var items = CartAPI.query({memberId:''});
       $scope.productIds = items;
       $scope.getProductCart();
     };
@@ -18,7 +18,8 @@ define(function(require){
         productIds.push(val.id);
       });
       ProductAPI.getCartProduct({
-        productIds:productIds
+        productIds:productIds,
+        memberCode:''
       }, function(data){
         $scope.products = data;
         angular.forEach($scope.products, function(val ,index){

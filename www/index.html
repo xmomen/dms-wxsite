@@ -23,22 +23,22 @@
       <ion-modal-view>
         <ion-header-bar>
           <button class="button button-icon icon ion-ios-arrow-left" ng-click="back()"></button>
-          <div class="title">登录</div>
+          <div class="title">绑定手机</div>
           <!--<button class="button button-icon icon" ng-click="register()">注册</button>-->
         </ion-header-bar>
         <ion-content>
           <div class="list">
             <label class="item item-input">
-              <span class="input-label">用户名</span>
-              <input type="text" placeholder="请输入用户名/手机号" ng-model="user.username" name="username">
+              <span class="input-label">手机号码</span>
+              <input type="text" placeholder="请输入手机号码" ng-model="user.phone" name="username">
             </label>
-            <label class="item item-input">
-              <span class="input-label">密码</span>
-              <input type="password" placeholder="请输入密码" ng-model="user.password" name="password">
-            </label>
+            <!--<label class="item item-input">-->
+              <!--<span class="input-label">验证码</span>-->
+              <!--<input type="text" placeholder="请输入密码" ng-model="user.password" name="password">-->
+            <!--</label>-->
           </div>
-          <button type="button" ng-click="login()" class="button button-block button-positive">
-            登录
+          <button type="button" ng-click="bind()" class="button button-block button-positive">
+            绑定
           </button>
         </ion-content>
       </ion-modal-view>

@@ -12,7 +12,7 @@ define(function (require) {
   function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $locationProvider) {
     //$locationProvider.html5Mode(true);
     //权限
-    $urlRouterProvider.deferIntercept();
+    //$urlRouterProvider.deferIntercept();
     //兼容ios android
     $ionicConfigProvider.platform.ios.tabs.style('standard');
     $ionicConfigProvider.platform.ios.tabs.position('bottom');

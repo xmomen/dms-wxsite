@@ -17,8 +17,12 @@ define(function(){
 
     };
     $scope.pushCart = function(){
-      CartAPI.pushProduct($scope.product);
-      $dialog.alert("成功放入购物车");
+      CartAPI.create({
+        memberId:'',
+        itemId:$scope.product.id
+      }, function(){
+        $dialog.alert("成功放入购物车");
+      });
     };
     $scope.buy = function(){
       $state.go('payment_confirm', {
