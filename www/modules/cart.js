@@ -2,37 +2,18 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'AppAPI', '$dialog', '$state', 'CartAPI', 'pubSub', 'ProductAPI', function($scope, AppAPI, $dialog, $state, CartAPI, pubSub, ProductAPI){
+  return ['$scope', 'AppAPI', '$dialog', '$state', 'CartAPI', 'pubSub', 'ProductAPI', '$cookieStore', function($scope, AppAPI, $dialog, $state, CartAPI, pubSub, ProductAPI , $cookieStore){
     $scope.products = [];
     pubSub.subscribe('changeCart', function(){
-      $scope.getCartData();
-    });
-    $scope.getCartData = function(){
-      var items = CartAPI.query({memberId:''});
-      $scope.productIds = items;
       $scope.getProductCart();
-    };
+    });
+
     $scope.getProductCart = function(){
-      var productIds = [];
-      angular.forEach($scope.productIds, function(val, index){
-        productIds.push(val.id);
-      });
-      ProductAPI.getCartProduct({
-        productIds:productIds,
-        memberCode:''
+      var member = $cookieStore.get('member');
+      CartAPI.query({
+        memberId:member.memberId
       }, function(data){
         $scope.products = data;
-        angular.forEach($scope.products, function(val ,index){
-          angular.forEach($scope.productIds, function(cval, cindex){
-            if(val.id == cval.id){
-              if(val.itemQty){
-                val.itemQty++;
-              }else{
-                val.itemQty = 1;
-              }
-            }
-          })
-        });
       })
     };
     $scope.changeNumber = function(product){
@@ -43,18 +24,33 @@ define(function(require){
       CartAPI.resetProduct(items);
     };
     $scope.addNumber = function(product){
+      var member = $cookieStore.get('member');
       product.itemQty = product.itemQty + 1;
-      CartAPI.pushProduct(product);
+      CartAPI.create({
+        memberId:member.memberId,
+        itemId:product.id,
+        itemQty:product.itemQty
+      });
     };
     $scope.subNumber = function(item){
       if(item.itemQty > 1){
         item.itemQty = item.itemQty - 1;
-        CartAPI.removeProduct(item);
+        var member = $cookieStore.get('member');
+        CartAPI.create({
+          memberId:member.memberId,
+          itemId:item.id,
+          itemQty:item.itemQty
+        });
       }
     };
     $scope.remove = function(index){
       $dialog.confirm('是否删除该商品').then(function(){
-        CartAPI.removeProductByItemId($scope.products[index].id);
+        var member = $cookieStore.get('member');
+        CartAPI.create({
+          memberId:member.memberId,
+          itemId:$scope.products[index].id,
+          itemQty: 0
+        });
         $scope.products.splice(index, 1);
       })
     };
@@ -84,7 +80,7 @@ define(function(require){
         }
     });
     var init = function(){
-      $scope.getCartData();
+      $scope.getProductCart();
     };
     init();
   }]

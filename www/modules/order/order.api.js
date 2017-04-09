@@ -7,7 +7,12 @@ define(function (require) {
     "ngResource"
   ]).factory("OrderAPI", ["Resource", function(Resource){
     return Resource("/wx/order/:id", { id:"@id" }, {
-      query : { isArray:true }
+      query : { isArray:true , params:{
+        memberId:"@memberId"
+      }},
+      getCouponProduct: { url: '/api/wx/order/coupon', method:'GET', isArray:true},
+      confirm: { url: '/api/wx/order/confirm', method:'POST', isArray:true},
+      pay: { url: '/api/wx/order/pay', method:'POST', isArray:true}
     });
   }]);
 });

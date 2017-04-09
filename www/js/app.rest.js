@@ -7,7 +7,10 @@ define(function (require) {
     "ngResource"
   ]).factory("AppAPI", ["Resource", function(Resource){
     return Resource("/account/:id", { id:"@id" }, {
-      getAccount : { method:"GET", url:"/api/account/setting", isArray:false},
+      getAccount : { method:"GET", url:"/api/wx/userInfo", isArray:false, params:{
+        memberId:'@memberId',
+        openId:'@openId'
+      }},
       login: { method:'GET', url : "/api/", isArray:false}
     });
   }]).factory("BindAPI", ["Resource", function(Resource){

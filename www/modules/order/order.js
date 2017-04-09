@@ -2,7 +2,7 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'OrderAPI','$state', '$stateParams', function($scope, OrderAPI, $state, $stateParams){
+  return ['$scope', 'OrderAPI','$state', '$stateParams', '$cookieStore', function($scope, OrderAPI, $state, $stateParams, $cookieStore){
     $scope.queryParams = {
       timeType:1
     };
@@ -20,8 +20,9 @@ define(function(require){
         $scope.queryParams.minOrderTime = null;
         $scope.queryParams.maxOrderTime = new Date().getTime() - (180 * 24 * 3600000);
       }
+      var member = $cookieStore.get('member');
       OrderAPI.query({
-        memberCode:'',
+        memberId:member.memberId,
         status:$scope.queryParams.status,
         maxOrderTime:$scope.queryParams.maxOrderTime,
         minOrderTime:$scope.queryParams.minOrderTime

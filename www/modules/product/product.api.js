@@ -22,8 +22,8 @@ define(function (require) {
       query : { isArray:false }
     })
   }]).factory("CartAPI", ["localStorage", 'Resource', function(localStorage, Resource){
-    return Resource("/cart/:id", { id:"@id" }, {
-      query : { isArray:false }
+    return Resource("/wx/cart/:id", { id:"@id" }, {
+      query : { isArray:true }
     });
     //return {
     //  //获取产品

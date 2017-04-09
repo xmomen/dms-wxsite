@@ -2,7 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'AddressAPI', '$stateParams', '$state', '$dialog', function($scope, AddressAPI, $stateParams, $state, $dialog){
+  return ['$scope', 'AddressAPI', '$stateParams', '$state', '$dialog', '$cookieStore',
+  function($scope, AddressAPI, $stateParams, $state, $dialog, $cookieStore){
     $scope.pageSettingInfo = {
       title:"收货地址"
     };
@@ -14,6 +15,8 @@ define(function(require){
     $scope.addressForm = {};
     $scope.save = function(){
       if($scope.addressForm.validator.form()){
+        var member = $cookieStore.get('member');
+        $scope.address.cdMemberId = member.memberId;
         if($scope.address.id){
           AddressAPI.update($scope.address, function(data){
             $state.go('address');

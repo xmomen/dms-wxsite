@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(){
-  return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', '$stateParams', 'CartAPI', 'pubSub', '$dialog',
-  function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate, $stateParams, CartAPI, pubSub, $dialog){
+  return ['$scope', 'ProductAPI', 'CategoryAPI', '$ionicSlideBoxDelegate', '$stateParams', 'CartAPI', 'pubSub', '$dialog','$cookieStore',
+  function($scope, ProductAPI, CategoryAPI, $ionicSlideBoxDelegate, $stateParams, CartAPI, pubSub, $dialog, $cookieStore){
     $scope.queryParams = {
       style:'col'
     };
@@ -79,11 +79,14 @@ define(function(){
       $scope.getProducts();
     };
     $scope.pushCarts = function(item){
+      var member = $cookieStore.get('member');
       CartAPI.create({
-        memberId:'',
+        memberId:member.memberId,
         itemId:item.id
+      }, function(){
+        pubSub.publish('changeCart');
       });
-      pubSub.publish('changeCart');
+
       $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
     };
     var init = function(){

@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI','CartAPI',
-  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI, CartAPI){
+  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI','$cookieStore',
+  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI, $cookieStore){
     $scope.payment = {};
     $ionicModal.fromTemplateUrl('chose-address.html', {
       scope: $scope,
@@ -12,11 +12,13 @@ define(function(require){
       $scope.addressModal = modal;
     });
     $scope.getAddressInfo = function(){
+      var member = $cookieStore.get('member');
       AddressAPI.query({
+        memberId:member.memberId,
         limit:10,
         offset:1
       }, function(data){
-        $scope.address = data.data;
+        $scope.address = data;
       })
     };
     $scope.payment = {};
@@ -42,8 +44,9 @@ define(function(require){
           itemQty:obj.itemQty
         });
       }
+      var member = $cookieStore.get('member');
+      order.createUserId = member.memberId;
       OrderAPI.create(order, function(data){
-        CartAPI.remove(CartAPI.removeProduct(item))
         $state.go('order_detail', {id:data.id});
       });
     };
@@ -83,16 +86,31 @@ define(function(require){
       var amount = 0;
       for (var i = 0; i < $scope.payment.products.length; i++) {
         var obj = $scope.payment.products[i];
-        if(obj.checked){
-          amount = amount + (obj.sellPrice * obj.itemQty);
-        }
+        amount = amount + (obj.sellPrice * obj.itemQty);
       }
       return amount;
+    };
+    $scope.getDefaultAddress = function(){
+      var member = $cookieStore.get('member');
+      AddressAPI.getDefaultAddress({
+        memberId:member.memberId
+      }, function(data){
+        if(data){
+          $scope.payment.address = data;
+          $scope.payment.consigneePhone = data.mobile;
+          $scope.payment.consigneeName = data.name;
+          $scope.payment.consigneeAddress = data.fullAddress;
+        }
+      })
     };
     var init = function(){
       if($stateParams.products){
         $scope.payment.products = $stateParams.products;
       }
+      if($stateParams.couponNo){
+        $scope.payment.paymentRelationNo = $stateParams.couponNo;
+      }
+      $scope.getDefaultAddress();
     };
     init();
   }]

@@ -1,0 +1,16 @@
+<ion-header-bar align-title="center" class="bar-positive">
+  <button type="button" class="button button-icon icon ion-ios-arrow-left" ui-sref="tab.account"></button>
+  <h1 class="title">一键下单</h1>
+</ion-header-bar>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <input type="text" ng-model="coupon.number" placeholder="请输入券号">
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer-bar>
+  <div class="button-bar">
+    <a class="button button-positive" ng-click="getCouponProduct()">我要下单</a>
+  </div>
+</ion-footer-bar>
