@@ -2,7 +2,7 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'OrderAPI','$state', '$stateParams', '$cookieStore', function($scope, OrderAPI, $state, $stateParams, $cookieStore){
+  return ['$scope', 'OrderAPI','$state', '$stateParams', '$cookieStore', '$dialog', function($scope, OrderAPI, $state, $stateParams, $cookieStore, $dialog){
     $scope.queryParams = {
       timeType:1
     };
@@ -35,7 +35,21 @@ define(function(require){
       $scope.queryParams.timeType = type;
       $scope.getOrders();
     };
-
+    $scope.confirm = function(order){
+      var member = $cookieStore.get('member');
+      OrderAPI.confirm({
+        id: order.id,
+        memberId:member.memberId
+      }, function(){
+        $scope.getOrder();
+        $dialog.alert("确认收货成功");
+      })
+    };
+    $scope.goPay = function(order){
+      $state.go('order_payment', {
+        id:order.id
+      });
+    };
     $scope.confirmTracking = function(){
       $state.go('tracking');
     };

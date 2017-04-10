@@ -39,6 +39,7 @@ define(function(){
         $dialog.alert("付款成功");
       })
     };
+
     $scope.tracking = function(){
       $state.go('tracking', {id:$scope.order.id});
     };

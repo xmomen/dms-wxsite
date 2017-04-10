@@ -6,7 +6,7 @@ define(function(require){
     $scope.getAccountInfo = function(){
       var member = $cookieStore.get('member');
       AppAPI.getAccount(member, function(data){
-        $scope.account = data;
+        $scope.account = data.content;
       })
     };
     var init = function(){
