@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/31.
  */
 define(function(){
-  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI',
-  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI){
+  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI', '$urlRouter',
+  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI, $urlRouter){
     $scope.$on('$stateChangePermissionDenied', function(event, toState, toParams, options) {
       console.log("未登录");
       $scope.loginModal.show();
@@ -26,6 +26,8 @@ define(function(){
         mobile:$scope.user.phone
       }, function(data){
         $scope.loginModal.hide();
+        $urlRouter.sync();
+        $urlRouter.listen();
         $cookieStore.put('member', {
           memberId:data.id,
           openId:member.openId

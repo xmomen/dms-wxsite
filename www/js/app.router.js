@@ -30,7 +30,12 @@ define(function (require) {
         url: '/tab',
         abstract: true,
         templateUrl: 'modules/tabs.html',
-        controller: tabsCtrl
+        controller: tabsCtrl,
+        data: {
+          permissions: {
+            only: 'isAuthorized'
+          }
+        }
       })
 
       // Each tab has its own nav history stack:
@@ -40,7 +45,12 @@ define(function (require) {
         views: {
           'tab-home': {
             templateUrl: 'modules/home.html',
-            controller:homeCtrl
+            controller:homeCtrl,
+            data: {
+              permissions: {
+                only: 'isAuthorized'
+              }
+            }
           }
         }
       })
@@ -53,6 +63,11 @@ define(function (require) {
             controller: cartCtrl,
             params:{
               products:null
+            },
+            data: {
+              permissions: {
+                only: 'isAuthorized'
+              }
             }
           }
         }
@@ -63,10 +78,15 @@ define(function (require) {
         views: {
           'tab-account': {
             templateUrl: 'modules/account.html',
-            controller: accountCrtl
+            controller: accountCrtl,
+            data: {
+              permissions: {
+                only: 'isAuthorized'
+              }
+            }
           }
         }
-      })
+      });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/home');
 

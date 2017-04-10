@@ -27,17 +27,32 @@ define([
         'tab-product': {
           templateUrl: 'modules/product/product.html',
           controller: product,
-          params:{ "type":null }
+          params:{ "type":null },
+          data: {
+            permissions: {
+              only: 'isAuthorized'
+            }
+          }
         }
       }
     }).state('product_detail', {
       url:'/product/{id}',
       templateUrl: 'modules/product/product.detail.html',
-      controller: detail
+      controller: detail,
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      }
     }).state('product_category', {
       url:'/product/category/:type',
       templateUrl: 'modules/product/product.category.html',
-      controller: product
+      controller: product,
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      }
     });
   }]);
 

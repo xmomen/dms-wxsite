@@ -65,13 +65,13 @@ define([
       getParams:getParams
     }
   }])
-    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter", "$q", '$UrlUtils', '$cookieStore',
-    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter, $q, $UrlUtils , $cookieStore) {
+    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter", "$q", '$UrlUtils', '$cookieStore', '$filter',
+    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter, $q, $UrlUtils , $cookieStore, $filter) {
       var params = {
         openId:$UrlUtils.getParams('openId'),
         memberId:$UrlUtils.getParams('memberId')
       };
-
+      //alert($filter('json')(params));
       var member = $cookieStore.get('member');
       if(!member && params.openId){
         $cookieStore.put('member', params);
