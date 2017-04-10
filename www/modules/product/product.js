@@ -7,18 +7,6 @@ define(function(){
     $scope.queryParams = {
       style:'col'
     };
-    pubSub.subscribe("tab.products.filterProduct", function(data){
-      if(data.type){
-        $scope.queryParams.categoryId = data.type;
-      }
-      for (var i = 0; i < $scope.categorys.length; i++) {
-        var obj = $scope.categorys[i];
-        if(obj.id == data.type){
-          $scope.slideIndex = i;
-        }
-      }
-      $scope.getProducts();
-    });
     $scope.switchStyle = function(){
       if($scope.queryParams.style == 'row'){
         $scope.queryParams.style = 'col';
@@ -44,6 +32,7 @@ define(function(){
       ProductAPI.query({
         limit:100,
         offset:1,
+        keyword:$scope.queryParams.keyword,
         orderField:$scope.queryParams.orderField,
         isAsc:$scope.queryParams.isAsc,
         labels: labels,
@@ -90,6 +79,21 @@ define(function(){
       $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
     };
     var init = function(){
+      if($stateParams.keyword){
+        $scope.queryParams.keyword = $stateParams.keyword;
+      }
+      if($stateParams.type){
+        $scope.queryParams.categoryId = $stateParams.type;
+      }
+      if($stateParams.label){
+        $scope.queryParams.label = $stateParams.label;
+      }
+      for (var i = 0; i < $scope.categorys.length; i++) {
+        var obj = $scope.categorys[i];
+        if(obj.id == data.type){
+          $scope.slideIndex = i;
+        }
+      }
       $scope.getProducts();
       $scope.getCategory();
     };

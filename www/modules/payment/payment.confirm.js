@@ -92,12 +92,16 @@ define(function(require){
       }
       return amount;
     };
+    $scope.goAddress = function(){
+      $scope.addressModal.hide();
+      $state.go('address_detail');
+    };
     $scope.getDefaultAddress = function(){
       var member = $cookieStore.get('member');
       AddressAPI.getDefaultAddress({
         memberId:member.memberId
       }, function(data){
-        if(data){
+        if(data.id){
           $scope.payment.address = data;
           $scope.payment.consigneePhone = data.mobile;
           $scope.payment.consigneeName = data.name;

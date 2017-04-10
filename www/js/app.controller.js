@@ -2,10 +2,9 @@
  * Created by tanxinzheng on 17/3/31.
  */
 define(function(){
-  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI', '$urlRouter',
-  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI, $urlRouter){
+  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI', '$urlRouter','$dialog',
+  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI, $urlRouter, $dialog){
     $scope.$on('$stateChangePermissionDenied', function(event, toState, toParams, options) {
-      console.log("未登录");
       $scope.loginModal.show();
     });
     $scope.user = {};
@@ -20,6 +19,10 @@ define(function(){
       })
     };
     $scope.bind = function(){
+      if(!$scope.user.phone){
+        $dialog.alert('请输入手机号');
+        return;
+      }
       var member = $cookieStore.get('member');
       BindAPI.bindMember({
         openId:member.openId,
@@ -39,11 +42,11 @@ define(function(){
       animation: 'slide-in-up'
     }).then(function(modal) {
       $scope.loginModal = modal;
+      var member = $cookieStore.get('member');
+      if(!member.memberId){
+        $scope.loginModal.show();
+      }
     });
-    var params = {
-      openId:$UrlUtils.getParams('openId'),
-      memberId:$UrlUtils.getParams('memberId')
-    };
-    console.log(params);
+
   }]
 });

@@ -15,6 +15,7 @@ define(function (require) {
     //权限
     //$urlRouterProvider.deferIntercept();
     //兼容ios android
+    $ionicConfigProvider.views.maxCache(0);// 禁用页面缓存
     $ionicConfigProvider.platform.ios.tabs.style('standard');
     $ionicConfigProvider.platform.ios.tabs.position('bottom');
     $ionicConfigProvider.platform.android.tabs.style('standard');
@@ -31,11 +32,7 @@ define(function (require) {
         abstract: true,
         templateUrl: 'modules/tabs.html',
         controller: tabsCtrl,
-        data: {
-          permissions: {
-            only: 'isAuthorized'
-          }
-        }
+        params:{ "type":null, label:null , keyword:null}
       })
 
       // Each tab has its own nav history stack:
@@ -45,12 +42,7 @@ define(function (require) {
         views: {
           'tab-home': {
             templateUrl: 'modules/home.html',
-            controller:homeCtrl,
-            data: {
-              permissions: {
-                only: 'isAuthorized'
-              }
-            }
+            controller:homeCtrl
           }
         }
       })
@@ -63,11 +55,6 @@ define(function (require) {
             controller: cartCtrl,
             params:{
               products:null
-            },
-            data: {
-              permissions: {
-                only: 'isAuthorized'
-              }
             }
           }
         }
@@ -78,12 +65,7 @@ define(function (require) {
         views: {
           'tab-account': {
             templateUrl: 'modules/account.html',
-            controller: accountCrtl,
-            data: {
-              permissions: {
-                only: 'isAuthorized'
-              }
-            }
+            controller: accountCrtl
           }
         }
       });

@@ -36,10 +36,8 @@
     </ion-item>
   </ion-list>
 </ion-content>
-<ion-footer-bar>
-  <div style="display: inline-block;float: right;">
+<ion-footer-bar class="bar bar-footer">
     <button class="button button-small button-assertive" ng-if="order.orderStatus == 5" style="width: 58px;" ng-click="confirm()" type="button">确认收货</button>
-    <button class="button button-small button-assertive" ng-if="order.payStatus == 0" style="width: 58px;" ng-click="pay()" type="button">付款</button>
+    <button class="button button-small button-assertive button-full" ng-if="order.payStatus == 0" ng-click="pay()" type="button">付款</button>
     <!--<button class="button button-small button-assertive" ng-if="order.payStatus == 1" type="button" ng-click="tracking()">物流追踪</button>-->
-  </div>
 </ion-footer-bar>

@@ -1,9 +1,14 @@
-<ion-header-bar align-title="center" class="bar-positive">
-  <h1 class="title">商品分类</h1>
+<ion-header-bar align-title="center" class="bar-positive item-input-inset">
   <button type="button" class="button button-icon"
           ng-click="switchStyle()">
     <i class="icon" ng-class="{'ion-navicon':queryParams.style=='row','ion-grid':queryParams.style=='col'}"></i>
   </button>
+  <!--<h1 class="title">商品分类</h1>-->
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" ng-model="queryParams.keyword" placeholder="请输入商品名称">
+  </label>
+  <button type="button" class="button button-clear" ng-click="getProducts()">筛选</button>
 </ion-header-bar>
 <div class="bar bar-subheader">
   <div class="row row-text-center">

@@ -11,10 +11,7 @@ define(['wechat-api'], function (wx) {
         init();
       };
       $scope.goProducts = function (data) {
-        pubSub.publish("tab.products.filterProduct", {
-          type: data.type
-        });
-        $state.go('tab.product');
+        $state.go('tab.product', data);
       };
       $scope.getQiangGouProducts = function () {
         ProductAPI.query({

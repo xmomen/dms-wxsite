@@ -40,7 +40,7 @@ define([
         }
       }
     }).state('order_payment', {
-      url:'/order_payment',
+      url:'/order_payment/{id}',
       templateUrl:'modules/order/order.payment.html',
       controller:orderPayment,
       data: {

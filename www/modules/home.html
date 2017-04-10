@@ -9,14 +9,14 @@
   <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval=2000 show-pager="true" pager-click="pageClick(index)" active-slide="model.activeIndex" delegate-handle="delegateHandler">
     <ion-slide>
       <div class="box blue">
-        <a ui-sref="product_category({type:'7'})">
+        <a>
           <img src="../img/banner-01.png" width="100%" />
         </a>
       </div>
     </ion-slide>
     <ion-slide>
       <div class="box yellow">
-        <a ui-sref="product_category({type:'7'})">
+        <a>
           <img src="../img/banner-02.png"  width="100%" />
         </a>
       </div>
@@ -25,28 +25,28 @@
   <!--运单查询-->
   <div class="floatl" style="padding:0">
     <div class="search_core">
-      <input type="text" name="conNo" id="conNo" ng-model="conNo" class="search_input" placeholder="搜索优选商品" />
-      <div class="searchicon"><span class="ion-ios-search-strong" style="font-size: 24px"></span></div>
+      <input type="text" name="conNo" ng-model="keyword" class="search_input" placeholder="搜索优选商品" />
+      <div class="searchicon"><span class="ion-ios-search-strong" ng-click="goProducts({keyword:keyword})" style="font-size: 24px"></span></div>
     </div>
   </div>
   <div class="navbar_bg">
     <div class="row hp_line floatl" style="margin-top:10px">
       <div class="col-20 homecol">
-        <a ng-click="goProducts({type:'1'})">
+        <a ng-click="goProducts({label:'xianShiQiangGou'})">
           <div class="hp_icon icon_xyvip"></div>
-          <p class="list_txt">优选会员</p>
+          <p class="list_txt">热门抢购</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ng-click="goProducts({type:'1'})">
+        <a ng-click="goProducts({label:'xinPinChangXian'})">
           <div class="hp_icon icon_new"></div>
           <p class="list_txt">新品尝鲜</p>
         </a>
       </div>
       <div class="col-20 homecol">
-        <a ng-click="goProducts({type:'0'})">
+        <a ng-click="goProducts({label:'reMaiTuiJian'})">
           <div class="hp_icon icon_1time"></div>
-          <p class="list_txt">一小时达</p>
+          <p class="list_txt">热门推荐</p>
         </a>
       </div>
       <div class="col-20 homecol">
@@ -149,18 +149,4 @@
       </li>
     </ul>
   </div>
-  <!--<div class="banner-publicity wl">-->
-    <!--<img src="../img/publicity/timg.jpg" class="img" />-->
-  <!--</div>-->
-  <!--<div class="row">-->
-    <!--<div class="col-lg-12 banner-publicity">-->
-      <!--<img src="../img/publicity/t-p-01.jpg" class="img" />-->
-      <!--<div class="">-->
-        <!--<b class="wl mt10">原装进口红葡萄酒 500ML</b>-->
-        <!--<span class="wl mt10">源自澳洲 品质稳定</span>-->
-        <!--<span class="wl mt10 color_red">￥<strong>180.00</strong></span>-->
-        <!--<button type="button" class="shopping-button fr"><span class="ion-ios-cart shopping-cart"></span></button>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
 </ion-content>
