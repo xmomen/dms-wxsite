@@ -26,6 +26,7 @@ define(function(){
       });
     };
     $scope.buy = function(){
+      $scope.product.itemQty = 1;
       $state.go('payment_confirm', {
         products:[$scope.product]
       });

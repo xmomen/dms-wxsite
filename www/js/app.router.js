@@ -8,8 +8,9 @@ define(function (require) {
   var cartCtrl = require('../modules/cart');
   var homeCtrl = require('../modules/home');
 
-  angular.module('app.router',['ui.router', 'ionic']).config(['$stateProvider', '$urlRouterProvider', '$qProvider','$ionicConfigProvider','$locationProvider',
-  function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $locationProvider) {
+  angular.module('app.router',['ui.router', 'ionic']).config(['$stateProvider', '$urlRouterProvider', '$qProvider','$ionicConfigProvider','$httpProvider',
+  function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $httpProvider) {
+    $httpProvider.interceptors.push('HttpInterceptor');
     //$locationProvider.html5Mode(true);
     //权限
     //$urlRouterProvider.deferIntercept();
