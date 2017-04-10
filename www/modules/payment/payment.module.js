@@ -16,7 +16,8 @@ define([
         }
       },
       params:{
-        products:null
+        products:null,
+        couponNo:null
       }
     });
   }]);

@@ -35,6 +35,8 @@ define(function(require){
         consigneeName:$scope.payment.consigneeName,
         consigneePhone:$scope.payment.consigneePhone,
         consigneeAddress:$scope.payment.consigneeAddress,
+        orderType:$scope.payment.orderType,
+        paymentRelationNo:$scope.payment.paymentRelationNo,
         orderItemList:[]
       };
       for (var i = 0; i < $scope.payment.products.length; i++) {
@@ -109,6 +111,7 @@ define(function(require){
       }
       if($stateParams.couponNo){
         $scope.payment.paymentRelationNo = $stateParams.couponNo;
+        $scope.payment.orderType = 2;
       }
       $scope.getDefaultAddress();
     };

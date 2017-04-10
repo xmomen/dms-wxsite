@@ -1,6 +1,6 @@
 <ion-header-bar align-title="center" class="bar-positive">
   <button type="button" class="button button-icon icon ion-ios-arrow-left" ui-sref="order({type:'0'})"></button>
-  <h1 class="title">订单详情</h1>
+  <h1 class="title">订单支付</h1>
 </ion-header-bar>
 <ion-content>
   <ion-list>
@@ -40,6 +40,6 @@
   <div style="display: inline-block;float: right;">
     <button class="button button-small button-assertive" ng-if="order.orderStatus == 5" style="width: 58px;" ng-click="confirm()" type="button">确认收货</button>
     <button class="button button-small button-assertive" ng-if="order.payStatus == 0" style="width: 58px;" ng-click="pay()" type="button">付款</button>
-    <!--<button class="button button-small button-assertive" ng-if="order.payStatus == 1" type="button" ng-click="tracking()">物流追踪</button>-->
+    <button class="button button-small button-assertive" ng-if="order.payStatus == 1" type="button" ng-click="tracking()">物流追踪</button>
   </div>
 </ion-footer-bar>
