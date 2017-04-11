@@ -2,8 +2,8 @@
   <ion-content class="bg-ff">
     <ion-list>
       <div class="item item-avatar about-meq">
-        <img ng-src="{{account.headimgurl}}" class="item-avatar" permission permission-only="'isAuthorized'" width="64px" height="64px" />
-        <img src="../img/user_easyicon.png" permission class="item-avatar" width="64px" height="64px" />
+        <img ng-src="{{account.headimgurl}}" class="item-header" permission permission-only="'isAuthorized'" width="64px" height="64px" />
+        <img src="../img/user_easyicon.png" permission class="item-header" width="64px" height="64px" />
         <button permission permission-except="'isAuthorized'" class="button ng-binding register">登录</button>
         <span ng-bind="account.name" permission permission-only="'isAuthorized'"></span>
         <span class=" wl ft12 mt10"  permission permission-only="'isAuthorized'" >{{account.username}}</span>

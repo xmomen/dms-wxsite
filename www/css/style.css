@@ -419,7 +419,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 .bottom-save{position: fixed;z-index: 1;bottom:50px; border-top:1px solid #eee;line-height:40px;box-shadow:0 0 10px rgba(233, 233, 233, .5);}
 .goods-info img{width:100%;margin-top:-1px}
-
+.item-header{padding-left: 0;  min-height: 64px;  margin: 0 auto;  display: block; border-radius: 50%}
 /*标题背景*/
 .form_lid{height:70px;padding:0 10px;overflow: hidden}
 .form_lid.red{background: #ff6666;background: radial-gradient(#ff6666,#ff6666);}
