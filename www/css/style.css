@@ -34,19 +34,25 @@ textarea{border:0;width: 62%;}
 p, form, ol, ul, li, h3, menu {
   list-style: outside none none;
 }
-/*@font-face {*/
-  /*font-family: Lovelo-Black;*/
-/*src: url('../font/汉仪魏碑简.ttf')*/
-/*}*/
-
 
 /*ionic*/
 .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
   background: #e74c3c;
   border-color: #e74c3c;
 }
-
-
+.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content {
+   padding-left:0;
+  min-height:64px;
+  margin: 0 auto;
+  display: block;
+}
+.new-icon-md{font-size:30px}
+.new-color-vip{color:#ff9933}
+.new-color-xd{color:#ff9999}
+.new-color-address{color:#66cc66}
+.new-color-sc{color:#9999cc}
+.new-color-tj{color:#c0a16b}
+.new-color-ll{color:#66ccff}
 .wl{width: 100%;float:left}
 .fr{float: right}
 .fl{float: left}
@@ -64,6 +70,8 @@ p, form, ol, ul, li, h3, menu {
 .mt5{margin-top:5px;}
 .mt-2{margin-top:-2px;}
 .mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.mt40{margin-top:40px;}
 .ft12{font-size:12px}
 .ft14{font-size:14px}
 .ft16{font-size:16px}
@@ -89,7 +97,8 @@ p, form, ol, ul, li, h3, menu {
    font-size:20px;
   line-height: 32px;
 }
-
+.button.button-positive{border-color: transparent; background-color: #e74c3c;color: #fff;}
+.button.button-positive:hover,.button.button-positive.activated{border-color: transparent; background-color: #e74c3c;color: #fff;}
 .tab-item .icon{font-size:28px}
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{color: #e74c3c}
 .item{border-color: #eee}
@@ -193,8 +202,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
 /*.item-divider{padding:0;height:10px;min-height:10px}*/
 /**我的账户**/
-.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding: 40px 0 0  110px;color:#fff}
+.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding:10px 0 0  0;color:#fff}
 .about-meq.item-avatar > img:first-child{max-width:50px;max-height:50px;border-radius:6px;}
+.register{line-height:24px;border:1px solid #fff;border-radius:20px;min-height:24px;background:none;margin:5px auto;display:block;color:#fff;font-size:12px}
 .about-column{padding:12px}
 .about-column li{padding:5px;text-align: center;line-height:20px;position: relative}
 .about-column li img{width:90%}
@@ -305,7 +315,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 
 .active-red {
   color: #fdf9f9;
-  background-color: red;
+  background-color: #e74c3c;
 }
 /*两列展示*/
 .one_omit{word-break:break-all;
@@ -423,12 +433,11 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   border-top: 120px solid #ff7373;
   border-left: 60px solid transparent;
   border-right: 60px solid transparent;margin-top: -140px}
-.form_lid h2{font-size: 26px;line-height:70px;text-align:center;color:white;font-family: Lovelo-Black;margin-top:-10px}
+.form_lid h2{font-size: 26px;line-height:70px;text-align:center;color:white;margin-top:-10px}
 .form_lid h2 .rectangle {
   padding:3px 20px;
   height: 100px;
-  background: #990000;
-  border:1px solid #990000;border-bottom-left-radius:33px;border-top-right-radius:33px;box-shadow: 1px 1px 3px #ffcccc;
+  border-bottom-left-radius:33px;border-top-right-radius:33px;box-shadow: 1px 1px 3px #ffcccc;
 }
 /**物流追踪**/
 #mohe-kuaidi_new .mh-wrap {margin: 6px 0}
@@ -493,7 +502,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   margin-left: -2em;
   margin-top: -10px;
 }
-#mohe-kuaidi_new .mh-form-wrap .mh-error {display: none;color: #c00}
+#mohe-kuaidi_new .mh-form-wrap .mh-error {display: none;color: #e74c3c}
 #mohe-kuaidi_new .mh-form-wrap .mh-error label {visibility: hidden}
 #mohe-kuaidi_new .mh-list-wrap {max-height: 0;_height: 0;}
 #mohe-kuaidi_new .mh-list-wrap.mh-unfold {max-height: 281px;_height: 281px;}
@@ -529,7 +538,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 
 #mohe-kuaidi_new .mh-list-wrap .mh-list li.first .after {
-  background: #3eaf0e;
+  background: #e74c3c;
 }
 #mohe-kuaidi_new .mh-icon {
   background: url("../img/kuaidi_new.png") no-repeat 0 0;
