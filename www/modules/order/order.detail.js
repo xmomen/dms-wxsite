@@ -30,14 +30,9 @@ define(function(){
       })
     };
     $scope.pay = function(){
-      var member = $cookieStore.get('member');
-      OrderAPI.pay({
-        orderId:$scope.order.id,
-        paymentNo:$scope.payment.paymentNo
-      }, function(){
-        $scope.getOrder();
-        $dialog.alert("付款成功");
-      })
+      $state.go('order_payment', {
+        id:$scope.order.id
+      });
     };
 
     $scope.tracking = function(){
