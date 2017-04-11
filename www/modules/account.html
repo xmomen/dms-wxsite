@@ -2,8 +2,9 @@
   <ion-content class="bg-ff">
     <ion-list>
       <div class="item item-avatar about-meq">
-        <h3 permission permission-except="'isAuthorized'">登录</h3>
-        <!--<img ng-src="{{account.headimgurl}}" class="item-avatar" permission permission-only="'isAuthorized'" style="top:35px;left: 45px;" />-->
+        <img ng-src="{{account.headimgurl}}" class="item-header" permission permission-only="'isAuthorized'" width="64px" height="64px" />
+        <img src="../img/user_easyicon.png" permission class="item-header" width="64px" height="64px" />
+        <button permission permission-except="'isAuthorized'" class="button ng-binding register">登录</button>
         <span ng-bind="account.name" permission permission-only="'isAuthorized'"></span>
         <span class=" wl ft12 mt10"  permission permission-only="'isAuthorized'" >{{account.username}}</span>
       </div>
@@ -33,27 +34,27 @@
         </ul>
       </div>
 
-      <div class="about-lid wl mt10">
+      <div class="about-lid wl mt10" style="border-top:10px solid #f8f8f8">
         <ul class="row wl">
           <li class="col-33" ui-sref="card">
-            <i class="icon ion-card icon-md"></i><br>
+            <i class="icon ion-ribbon-b new-icon-md new-color-vip"></i><br>
             会员卡</li>
           <li class="col-33" ui-sref="order_fast">
-            <i class="icon ion-social-usd-outline icon-md"></i><br>
+            <i class="icon ion-archive new-icon-md new-color-xd"></i><br>
             一键下单</li>
           <li class="col-33" ui-sref="address">
-            <i class="icon ion-location icon-md"></i><br>
+            <i class="icon ion-earth new-icon-md new-color-address"></i><br>
             收货地址</li>
         </ul>
         <ul class="row wl">
           <li class="col-33">
-            <i class="icon ion-ios-folder-outline icon-md"></i><br>
+            <i class="icon ion-pricetags new-icon-md new-color-sc"></i><br>
             收藏</li>
           <li class="col-33">
-            <i class="icon ion-ios-star-outline icon-md"></i><br>
+            <i class="icon ion-android-locate new-icon-md new-color-tj"></i><br>
             为你推荐</li>
           <li class="col-33">
-            <i class="icon ion-ios-paw-outline icon-md"></i><br>
+            <i class="icon ion-ios-paw new-icon-md new-color-ll"></i><br>
             历史浏览</li>
         </ul>
       </div>
