@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI','$cookieStore',
-  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI, $cookieStore){
+  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI','$cookieStore','ionicDatePicker',
+  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI, $cookieStore, ionicDatePicker){
     $scope.payment = {};
     $ionicModal.fromTemplateUrl('chose-address.html', {
       scope: $scope,
@@ -37,6 +37,7 @@ define(function(require){
         consigneeAddress:$scope.payment.consigneeAddress,
         orderType:$scope.payment.orderType,
         paymentRelationNo:$scope.payment.paymentRelationNo,
+        appointmentTime:$scope.payment.appointmentTime,
         orderItemList:[]
       };
       for (var i = 0; i < $scope.payment.products.length; i++) {
@@ -50,6 +51,18 @@ define(function(require){
       order.createUserId = member.memberId;
       OrderAPI.create(order, function(data){
         $state.go('order_detail', {id:data.id});
+      });
+    };
+    $scope.openDatePicker = function(){
+      ionicDatePicker.openDatePicker({
+        callback: function (val) {  //Mandatory
+          $scope.payment.appointmentTime = new Date(val);
+        },
+        //inputDate: new Date(),      //Optional
+        //mondayFirst: true,          //Optional
+        //disableWeekdays: [0],       //Optional
+        //closeOnSelect: false,       //Optional
+        templateType: 'modal'       //Optional
       });
     };
     $scope.openAddressModal = function() {

@@ -10,6 +10,7 @@ require(['require'], function(require){
         'permission.ui',
         "app.module",
         "LocalStorageModule",
+        'ionic-datepicker',
         "ngCookies",
         "PubSubModule",
         'ionic',

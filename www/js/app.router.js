@@ -8,8 +8,29 @@ define(function (require) {
   var cartCtrl = require('../modules/cart');
   var homeCtrl = require('../modules/home');
 
-  angular.module('app.router',['ui.router', 'ionic']).config(['$stateProvider', '$urlRouterProvider', '$qProvider','$ionicConfigProvider','$httpProvider',
-  function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $httpProvider) {
+  angular.module('app.router',[
+    'ui.router', 'ionic' , 'ionic-datepicker'
+  ]).config(['$stateProvider', '$urlRouterProvider', '$qProvider','$ionicConfigProvider','$httpProvider', 'ionicDatePickerProvider',
+  function ($stateProvider, $urlRouterProvider, $qProvider, $ionicConfigProvider, $httpProvider, ionicDatePickerProvider) {
+
+    var datePickerObj = {
+      inputDate: new Date(),
+      setLabel: '确定',
+      todayLabel: '今日',
+      closeLabel: '关闭',
+      mondayFirst: false,
+      weeksList: ["S", "M", "T", "W", "T", "F", "S"],
+      monthsList: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+      templateType: 'popup',
+      from: new Date(2012, 8, 1),
+      to: new Date(2018, 8, 1),
+      showTodayButton: true,
+      dateFormat: 'yyyy-MM-dd',
+      closeOnSelect: false,
+      disableWeekdays: [6]
+    };
+    ionicDatePickerProvider.configDatePicker(datePickerObj);
+
     $httpProvider.interceptors.push('HttpInterceptor');
     //$locationProvider.html5Mode(true);
     //权限

@@ -5,11 +5,11 @@
 <ion-content>
   <form name="addressFormName" class="pd-b50">
   <div class="list">
-    <a class="item payment_pay" ng-if="!payment.address" ng-click="openAddressModal()">
+    <ion-item ng-if="!payment.address" ng-click="openAddressModal()">
       收货地址
       <i class="icon ion-chevron-right item-note"></i>
       <span class="item-note">请选择&nbsp;&nbsp;</span>
-    </a>
+    </ion-item>
     <a class="item payment_pay item-address" ng-if="payment.address" ng-click="openAddressModal()">
         <div class="ft16">
           {{payment.address.name}}
@@ -17,6 +17,12 @@
         </div>
         <div class="mt10 ft12">{{payment.address.fullAddress}}</div>
     </a>
+    <ion-item ng-click="openDatePicker()">
+      预约时间
+      <i class="icon ion-chevron-right item-note"></i>
+      <span class="item-note" ng-if="!payment.appointmentTime">请选择&nbsp;&nbsp;</span>
+      <span class="item-note">{{payment.appointmentTime | date:'yyyy-MM-dd'}}&nbsp;&nbsp;</span>
+    </ion-item>
     <!--<div class="item item-divider"></div>-->
     <!--<a class="item payment_pay">-->
       <!--支付方式-->
