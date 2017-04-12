@@ -3,10 +3,9 @@
     <ion-list>
       <div class="item item-avatar about-meq">
         <img ng-src="{{account.headimgurl}}" class="item-header" permission permission-only="'isAuthorized'" width="64px" height="64px" />
-        <img src="../img/user_easyicon.png" permission class="item-header" width="64px" height="64px" />
+        <img src="../img/user_easyicon.png" permission permission-except="'isAuthorized'" class="item-header" width="64px" height="64px" />
         <button permission permission-except="'isAuthorized'" class="button ng-binding register">登录</button>
-        <span ng-bind="account.name" permission permission-only="'isAuthorized'"></span>
-        <span class=" wl ft12 mt10"  permission permission-only="'isAuthorized'" >{{account.username}}</span>
+        <span class=" wl ft12 mt10"  permission permission-only="'isAuthorized'" >{{account.name}}</span>
       </div>
       <div class="about-column">
         <ul class="row wl">
@@ -37,8 +36,8 @@
       <div class="about-lid wl mt10" style="border-top:10px solid #f8f8f8">
         <ul class="row wl">
           <li class="col-33" ui-sref="card">
-            <i class="icon ion-ribbon-b new-icon-md new-color-vip"></i><br>
-            会员卡</li>
+            <i class="icon ion-ribbon-b new-icon-md new-color-vip" ui-sref="account_card"></i><br>
+            购物卡</li>
           <li class="col-33" ui-sref="order_fast">
             <i class="icon ion-archive new-icon-md new-color-xd"></i><br>
             一键下单</li>

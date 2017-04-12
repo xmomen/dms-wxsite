@@ -7,12 +7,14 @@ define([
   'modules/address/address.module',
   'modules/product/product.module',
   'modules/payment/payment.module',
+  'modules/account/account.module',
   'modules/order/order.module',
   'modules/tracking/tracking.module'
 ], function(angular, appCtrl){
   angular.module('app.module', [
      'address.module',
      'product.module',
+     'account.module',
      'order.module',
      'tracking.module',
      'payment.module',

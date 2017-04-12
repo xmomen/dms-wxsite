@@ -1,0 +1,14 @@
+<ion-header-bar>
+  <button class="button button-icon icon ion-ios-plus-outline" ng-click="addCard()"></button>
+  <h1 class="title">购物卡</h1>
+</ion-header-bar>
+<ion-content>
+  <div class="card" ng-repeat="item in coupons" ng-click="choseCoupon(item)">
+    <div class="item item-divider" ng-bind="item.couponNumber"></div>
+    <div class="item item-text-wrap small">
+      面值：
+      <span ng-bind="item.couponValue | currency:'¥'"></span>
+      <span style="float: right">余额：{{item.userPrice | currency:'¥'}}</span>
+    </div>
+  </div>
+</ion-content>
