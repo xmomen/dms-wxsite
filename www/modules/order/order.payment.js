@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function () {
-  return ['$scope', 'OrderAPI', '$state', '$stateParams', '$dialog', '$ionicModal', 'CouponAPI', '$cookieStore', '$filter',
-    function ($scope, OrderAPI, $state, $stateParams, $dialog, $ionicModal, CouponAPI, $cookieStore, $filter) {
+  return ['$scope', 'OrderAPI', '$state', '$stateParams', '$dialog', '$ionicModal', 'CouponAPI', '$cookieStore', '$filter', '$ionicPopup',
+    function ($scope, OrderAPI, $state, $stateParams, $dialog, $ionicModal, CouponAPI, $cookieStore, $filter, $ionicPopup) {
       $scope.getOrder = function () {
         OrderAPI.get({
           id: $stateParams.id
@@ -11,7 +11,9 @@ define(function () {
           $scope.order = data;
         })
       };
-      $scope.payment = {};
+      $scope.payment = {
+        paymentModeText:'请选择'
+      };
       $ionicModal.fromTemplateUrl('chose-card.html', {
         scope: $scope,
         animation: 'slide-in-up'
@@ -40,10 +42,6 @@ define(function () {
           $dialog.alert('请输入购物卡编号');
           return;
         }
-        if (!$scope.coupon.password) {
-          $dialog.alert('请输入VIP会员卡密码');
-          return;
-        }
         var member = $cookieStore.get('member');
         CouponAPI.bindCard({
           couponNumber: $scope.coupon.number,
@@ -53,6 +51,47 @@ define(function () {
           $scope.closeAddCard();
           $scope.queryCard();
         });
+      };
+      $scope.paymentType = {};
+      $ionicModal.fromTemplateUrl('chose-paymentMode.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.choseModal = modal;
+      });
+      $scope.closeChoseModal = function(){
+        $scope.choseModal.hide();
+      };
+      $scope.chosePaymentMode = function(){
+        $scope.choseModal.show();
+      };
+      $scope.changePayMode = function(type){
+        $scope.paymentType.cardPay = false;
+        $scope.paymentType.wechatPay = false;
+        $scope.paymentType.afterPay = false;
+        $scope.paymentType[type] = true;
+        $scope.payment.paymentMode = type;
+        if($scope.paymentType.cardPay){
+          $scope.payment.orderType = 1;
+          $scope.payment.paymentModeText = '会员卡支付';
+          $scope.payText = '请选择购物卡付款';
+          $scope.choseModal.hide();
+          return;
+        }
+        if($scope.paymentType.wechatPay){
+          $scope.payment.paymentNo = null;
+          $scope.payment.paymentModeText = '微信支付';
+          $scope.choseModal.hide();
+          return;
+        }
+        if($scope.paymentType.afterPay){
+          $scope.payment.paymentNo = null;
+          $scope.payment.orderType = 3;
+          $scope.payment.paymentModeText = '货到付款';
+          $scope.payText = "我要货到付款";
+          $scope.choseModal.hide();
+          return;
+        }
       };
       $scope.choseCoupon = function (item) {
         $scope.payment.card = item;
@@ -79,12 +118,13 @@ define(function () {
         });
       };
       $scope.cardPay = function () {
-        if (!$scope.payment.paymentNo) {
+        if($scope.paymentType.cardPay && !$scope.payment.paymentNo) {
           $dialog.alert('请选择购物卡');
           return;
         }
         var member = $cookieStore.get('member');
         OrderAPI.pay({
+          orderType: $scope.payment.orderType,
           orderId: $scope.payment.orderId,
           paymentNo: $scope.payment.paymentNo
         }, function () {
@@ -93,12 +133,15 @@ define(function () {
         })
       };
       $scope.isActiveBtn = function(){
-        if($scope.order && $scope.payment.card && $scope.order.totalAmount <= $scope.payment.card.userPrice){
+        if($scope.paymentType.afterPay){
+          return false;
+        }
+        if($scope.paymentType.cardPay && ($scope.order && $scope.payment.card && $scope.order.totalAmount <= $scope.payment.card.userPrice)){
           return false;
         }
         return true;
       };
-      $scope.payText = '请选择购物卡付款';
+      $scope.payText = '请选择支付方式';
       $scope.changePayText = function(){
         if(!$scope.payment.card){
           $scope.payText = "请选择购物卡付款";
