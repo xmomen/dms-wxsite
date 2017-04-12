@@ -39,7 +39,7 @@
   <ion-list>
     <ion-item class="item-icon-left" ng-click="openCardModel()">
       <i class="icon ion-card"></i>
-      会员卡
+      VIP会员卡
       <span class="item-note" ng-bind="showCardInfo()"></span>
     </ion-item>
   </ion-list>
@@ -53,7 +53,7 @@
   <ion-modal-view>
     <ion-header-bar>
       <button class="button button-icon icon ion-ios-plus-outline" ng-click="openAddCard()"></button>
-      <h1 class="title">购物卡</h1>
+      <h1 class="title">VIP会员卡</h1>
       <button class="button button-icon icon ion-ios-close-outline" ng-click="closeCouponModal()"></button>
     </ion-header-bar>
     <ion-content>
@@ -73,12 +73,15 @@
 <script id="add-card.html" type="text/ng-template">
   <ion-modal-view>
     <ion-header-bar>
-      <h1 class="title">激活购物卡</h1>
+      <h1 class="title">激活VIP会员卡</h1>
       <button class="button button-icon icon ion-ios-close-outline" ng-click="closeAddCard()"></button>
     </ion-header-bar>
     <ion-content>
       <ion-item>
-        <input type="text" ng-model="coupon.number" placeholder="请输入购物卡编号">
+        <input type="text" ng-model="coupon.number" placeholder="请输入VIP会员卡编号">
+      </ion-item>
+      <ion-item>
+        <input type="password" ng-model="coupon.password" placeholder="请输入VIP会员卡密码">
       </ion-item>
       <button class="button button-block button-positive" ng-click="activeCard()">激活</button>
     </ion-content>

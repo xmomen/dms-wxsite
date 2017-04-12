@@ -24,9 +24,9 @@ define(function(toaster){
                 //type, title, body, timeout, bodyOutputType, clickHandler)
                 angular.extend(defaultConfig, option);
                 var alertPopup = $ionicPopup.alert({
-                  title: option.title,
+                  title: '提示',
                   okText: '确定', // String (默认: 'OK')。OK按钮的文字。
-                  okType: '',
+                  okType: 'button-small button-assertive',
                   template: option.text
                 });
                 alertPopup.then(function(res) {

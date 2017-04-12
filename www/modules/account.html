@@ -35,8 +35,8 @@
 
       <div class="about-lid wl mt10" style="border-top:10px solid #f8f8f8">
         <ul class="row wl">
-          <li class="col-33" ui-sref="card">
-            <i class="icon ion-ribbon-b new-icon-md new-color-vip" ui-sref="account_card"></i><br>
+          <li class="col-33" ui-sref="account_card">
+            <i class="icon ion-ribbon-b new-icon-md new-color-vip"></i><br>
             购物卡</li>
           <li class="col-33" ui-sref="order_fast">
             <i class="icon ion-archive new-icon-md new-color-xd"></i><br>
@@ -46,13 +46,13 @@
             收货地址</li>
         </ul>
         <ul class="row wl">
-          <li class="col-33">
+          <li class="col-33" ng-click="showInfo()">
             <i class="icon ion-pricetags new-icon-md new-color-sc"></i><br>
             收藏</li>
-          <li class="col-33">
+          <li class="col-33" ng-click="showInfo()">
             <i class="icon ion-android-locate new-icon-md new-color-tj"></i><br>
             为你推荐</li>
-          <li class="col-33">
+          <li class="col-33" ng-click="showInfo()">
             <i class="icon ion-ios-paw new-icon-md new-color-ll"></i><br>
             历史浏览</li>
         </ul>

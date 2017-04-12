@@ -40,9 +40,14 @@ define(function () {
           $dialog.alert('请输入购物卡编号');
           return;
         }
+        if (!$scope.coupon.password) {
+          $dialog.alert('请输入VIP会员卡密码');
+          return;
+        }
         var member = $cookieStore.get('member');
         CouponAPI.bindCard({
           couponNumber: $scope.coupon.number,
+          password: $scope.coupon.password,
           memberId: member.memberId
         }, function (data) {
           $scope.closeAddCard();

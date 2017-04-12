@@ -6,7 +6,7 @@ define(function(require){
     $scope.coupon = {};
     $scope.activeCard = function () {
       if (!$scope.coupon.number) {
-        $dialog.alert('请输入购物卡编号');
+        $dialog.alert('请输入VIP会员卡编号');
         return;
       }
       var member = $cookieStore.get('member');
@@ -27,7 +27,7 @@ define(function(require){
       });
     };
     var init = function(){
-      $scope.getAccountInfo();
+      $scope.queryCard();
     };
     init();
   }]

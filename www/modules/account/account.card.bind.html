@@ -1,0 +1,15 @@
+<ion-header-bar>
+  <button class="button button-icon icon ion-ios-arrow-left" ui-sref="account_card"></button>
+  <h1 class="title">绑定VIP会员卡</h1>
+</ion-header-bar>
+<ion-content>
+  <ion-item>
+    <input type="text" ng-model="coupon.number" placeholder="请输入VIP会员卡编号">
+  </ion-item>
+  <ion-item>
+    <input type="password" ng-model="coupon.password" placeholder="请输入VIP会员卡密码">
+  </ion-item>
+</ion-content>
+<ion-footer-bar>
+  <button class="button button-block button-positive" ng-click="activeCard()">绑定</button>
+</ion-footer-bar>

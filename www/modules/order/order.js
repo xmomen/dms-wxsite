@@ -50,6 +50,16 @@ define(function(require){
         id:order.id
       });
     };
+    $scope.cancel = function(order){
+      var member = $cookieStore.get('member');
+      OrderAPI.cancel({
+        id: order.id,
+        memberId:member.memberId
+      }, function(){
+        $scope.getOrder();
+        $dialog.alert("已取消该订单");
+      })
+    };
     $scope.confirmTracking = function(){
       $state.go('tracking');
     };

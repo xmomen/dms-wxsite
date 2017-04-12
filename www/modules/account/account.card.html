@@ -1,6 +1,7 @@
 <ion-header-bar>
-  <button class="button button-icon icon ion-ios-plus-outline" ng-click="addCard()"></button>
-  <h1 class="title">购物卡</h1>
+  <button class="button button-icon icon ion-ios-arrow-left" ui-sref="tab.account"></button>
+  <h1 class="title">VIP会员卡</h1>
+  <button class="button button-icon icon ion-ios-plus-outline" ui-sref="account_card_bind"></button>
 </ion-header-bar>
 <ion-content>
   <div class="card" ng-repeat="item in coupons" ng-click="choseCoupon(item)">
