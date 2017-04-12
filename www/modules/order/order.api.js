@@ -10,7 +10,10 @@ define(function (require) {
       query : { isArray:true , params:{
         memberId:"@memberId"
       }},
-      cancel: { url:'/api/wx/order/cancel', method:"POST" },
+      cancel: { url:'/api/wx/order/cancel', method:"POST" , params:{
+        id:"@id",
+        memberId:"@memberId"
+      }},
       getCouponProduct: { url: '/api/wx/order/coupon', method:'GET', isArray:true},
       confirm: { url: '/api/wx/order/confirm', method:'POST', isArray:true},
       pay: { url: '/api/wx/order/pay', method:'POST'}

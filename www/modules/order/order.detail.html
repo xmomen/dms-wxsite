@@ -14,8 +14,8 @@
       </div>
     </ion-item>
     <ion-item>订单状态：
-      <span class="assertive" ng-if="order.payStatus == 1" ng-bind="order.orderStatusDesc"></span>
-      <span class="assertive" ng-if="order.payStatus != 1" ng-bind="order.payStatusDesc"></span>
+      <span class="assertive" ng-if="order.payStatus == 1 || order.orderStatus == '9'" ng-bind="order.orderStatusDesc"></span>
+      <span class="assertive" ng-if="order.payStatus != 1 && order.orderStatus != '9' " ng-bind="order.payStatusDesc"></span>
     </ion-item>
     <ion-item>
       <div class="row">
@@ -23,6 +23,9 @@
       </div>
       <div class="row">
         <div class="col" style="font-size: 10px;">下单时间：{{order.createTime | date:'yyyy-MM-dd hh:mm:ss'}}</div>
+      </div>
+      <div class="row">
+        <div class="col" style="font-size: 10px;">预约时间：{{order.appointmentTime | date:'yyyy-MM-dd'}}</div>
       </div>
       <div class="row">
         <div class="col" style="font-size: 10px;">订单金额：<span class="assertive" ng-bind="order.totalAmount | currency:'¥'"></span></div>
@@ -38,6 +41,6 @@
 </ion-content>
 <ion-footer-bar class="bar bar-footer">
     <button class="button button-small button-assertive" ng-if="order.orderStatus == 5" style="width: 58px;" ng-click="confirm()" type="button">确认收货</button>
-    <button class="button button-small button-assertive button-full" ng-if="order.payStatus == 0" ng-click="pay()" type="button">付款</button>
+    <button class="button button-small button-assertive button-full" ng-if="order.payStatus == 0  && order.orderStatus != 9" ng-click="pay()" type="button">付款</button>
     <!--<button class="button button-small button-assertive" ng-if="order.payStatus == 1" type="button" ng-click="tracking()">物流追踪</button>-->
 </ion-footer-bar>

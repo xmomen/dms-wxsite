@@ -56,7 +56,7 @@ define(function(require){
         id: order.id,
         memberId:member.memberId
       }, function(){
-        $scope.getOrder();
+        $scope.getOrders();
         $dialog.alert("已取消该订单");
       })
     };
