@@ -177,9 +177,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 
 /*下单支付*/
 .payment{position: fixed;bottom:48px;border-top:1px solid #ccc;}
-.payment .money{padding:17px 5px}
+.payment .money{padding:14px 5px}
 .pay{
-  background: #e74c3c;color:#fff;padding:13px 0;width:100%;text-align: center;
+  background: #e74c3c;color:#fff;padding:8px 0;width:100%;text-align: center;
   border:1px solid #e74c3c;
   font-size: large;
 }
