@@ -15,6 +15,7 @@ define(function(require){
         password: $scope.coupon.password,
         memberId: member.memberId
       }, function (data) {
+        $dialog.alert('VIP会员卡绑定成功。');
         $state.go('account_card');
       });
     };
