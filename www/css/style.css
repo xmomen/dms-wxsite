@@ -97,6 +97,9 @@ p, form, ol, ul, li, h3, menu {
    font-size:20px;
   line-height: 32px;
 }
+/*弹出按钮*/
+.popup-buttons{min-height:45px}
+.popup-buttons .button{min-height: 36px}
 .button.button-positive{border-color: transparent; background-color: #e74c3c;color: #fff;}
 .button.button-positive:hover,.button.button-positive.activated{border-color: transparent; background-color: #e74c3c;color: #fff;}
 .tab-item .icon{font-size:28px}
@@ -107,7 +110,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .search_core{width:100%;padding:9px 20px;background:#f0f0f0;margin-top:-8px;position:relative}
 .search_core .search_input{width:96%;padding:10px;margin:0 auto;border-radius:25px;text-align:center;
   border:1px solid #e7e7e7;}
-.searchicon{width:20px;height:20px;position:absolute;top:13px;left:300px;z-index:100;background-size:20px 20px;color: #333;cursor: pointer}
+.searchicon{width:20px;height:20px;position:absolute;top:13px;right:35px;z-index:100;background-size:20px 20px;color: #333;cursor: pointer}
 
 .navbar_bg{width:100%;float:left;background:#fff;border-bottom:1px solid #d4d4d4;}
 .navbar{height:50px;left:0;top:0;background:#f6f8f8;border-bottom:0}
@@ -150,7 +153,12 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .shopping-list li{width:33.333%;display: block;background:#fff}
 .product-list li{width: 49.999999%;display: block;border:5px solid #f8f8f8}
 .product-list .banner-publicity{padding:0}
-
+/*****************
+主要样式
+***************************************************************************
+************************************************************************************/
+.citybox-shortcuts a{color:#e74c3c!important;}
+.citybox .citybox-content li span.label{color: #e74c3c!important;border-bottom: 2px solid #e74c3c!important;}
 /*购物车*/
 .cart{border-bottom:1px solid #eee;}
 .cart .item{border-right:0}
@@ -168,10 +176,10 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .ion-trash-a{margin-top:-5px}
 
 /*下单支付*/
-.payment{position: fixed;bottom:50px;border-top:1px solid #ccc;}
-.payment .money{padding:17px}
+.payment{position: fixed;bottom:48px;border-top:1px solid #ccc;}
+.payment .money{padding:14px 5px}
 .pay{
-  background: #e74c3c;color:#fff;padding:13px 0;width:100%;text-align: center;
+  background: #e74c3c;color:#fff;padding:8px 0;width:100%;text-align: center;
   border:1px solid #e74c3c;
   font-size: large;
 }
@@ -422,10 +430,12 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .item-header{
   padding-left: 0;
   min-height: 64px;
-  min-width: 64px;
   margin: 0 auto;
   display: block;
-  border-radius: 50% !important;
+  border:0;
+  border-radius: 50%;
+  background: url("../img/user_easyicon.png") center center no-repeat;
+  background-size: 100%
 }
 /*标题背景*/
 .form_lid{height:70px;padding:0 10px;overflow: hidden}
