@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(['wechat-api'], function (wx) {
-  return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', 'ProductAPI', 'pubSub', '$state',
-    function ($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate, ProductAPI, pubSub, $state) {
+  return ['$scope', 'AppAPI', '$stateParams', '$ionicModal', '$ionicTabsDelegate', 'ProductAPI', 'pubSub', '$state', 'CartAPI', '$dialog', '$cookieStore',
+    function ($scope, AppAPI, $stateParams, $ionicModal, $ionicTabsDelegate, ProductAPI, pubSub, $state, CartAPI, $dialog, $cookieStore) {
       $scope.currentCity = {};
       // 获取用户当前位置
       $scope.getLocation = function () {
@@ -85,6 +85,16 @@ define(['wechat-api'], function (wx) {
               console.log("用户取消拉出地址", data);
             }
           });
+        });
+      };
+      $scope.pushCarts = function(item){
+        var member = $cookieStore.get('member');
+        CartAPI.create({
+          memberId:member.memberId,
+          itemId:item.id
+        }, function(){
+          $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
+          pubSub.publish('changeCart');
         });
       };
       var init = function () {

@@ -8,6 +8,8 @@ require.config({
         "ionic":"lib/ionic/js/ionic",
         "ionic-angular":"lib/ionic/js/ionic-angular",
         "ionic-datepicker":"lib/ionic-datepicker/dist/ionic-datepicker.bundle.min",
+        //"ionic-datepicker-service":"lib/ionic-datepicker/src/ionic-datepicker.bundle.min",
+        //"ionic-datepicker-provider":"lib/ionic-datepicker/dist/ionic-datepicker.bundle.min",
         "angular": "lib/angular/angular",
         "angularAMD": "lib/angularAMD/angularAMD",
         "angular-ui-router": "lib/angular-ui-router/release/angular-ui-router",

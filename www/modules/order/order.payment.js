@@ -80,7 +80,9 @@ define(function () {
         }
         if($scope.paymentType.wechatPay){
           $scope.payment.paymentNo = null;
+          $scope.payment.orderType = 1;
           $scope.payment.paymentModeText = '微信支付';
+          $scope.payText = "微信支付";
           $scope.choseModal.hide();
           return;
         }
@@ -117,12 +119,18 @@ define(function () {
           $scope.coupons = data;
         });
       };
-      $scope.cardPay = function () {
+      $scope.payLoading = false;
+      $scope.orderPay = function () {
+        if($scope.paymentType.weixinPay){
+          $scope.weixinPay();
+          return;
+        }
         if($scope.paymentType.cardPay && !$scope.payment.paymentNo) {
           $dialog.alert('请选择购物卡');
           return;
         }
         var member = $cookieStore.get('member');
+        $scope.payLoading = true;
         OrderAPI.pay({
           orderType: $scope.payment.orderType,
           orderId: $scope.payment.orderId,
@@ -130,10 +138,12 @@ define(function () {
         }, function () {
           $dialog.alert("付款成功");
           $state.go('order', {type: 0});
+        }).finally(function(){
+          $scope.payLoading = false;
         })
       };
       $scope.isActiveBtn = function(){
-        if($scope.paymentType.afterPay){
+        if($scope.paymentType.afterPay || $scope.paymentType.wechatPay){
           return false;
         }
         if($scope.paymentType.cardPay && ($scope.order && $scope.payment.card && $scope.order.totalAmount <= $scope.payment.card.userPrice)){
@@ -153,6 +163,38 @@ define(function () {
         }else{
           $scope.payText = '付款金额：￥ ' + $scope.order.totalAmount + '，卡内余额不足';
         }
+      };
+      $scope.weixinPay = function(){
+        var member = $cookieStore.get('member');
+        $scope.payLoading = true;
+        OrderAPI.weixinPay({
+          outTradeNo:$scope.payment.orderNo,
+          totalFee:$scope.payment.totalAmount,
+          openId:member.openId
+        }, function(data){
+          if(data.success){
+            wx.chooseWXPay({
+              appId: data.appId,
+              timestamp: data.timestamp,
+              nonceStr: data.nonce_str,
+              package: data.packageStr,
+              signType: 'MD5',
+              paySign: data.sign,
+              success: function(res){
+                $scope.payLoading = false;
+                $dialog.alert("付款成功");
+                $state.go('order', {type: 0});
+              },
+              error: function(){
+                $scope.payLoading = false;
+              }
+            })
+          }else{
+            $scope.payLoading = false;
+          }
+        }, function(){
+          $scope.payLoading = false;
+        });
       };
       var init = function () {
         if ($stateParams.id) {

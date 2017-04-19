@@ -21,13 +21,12 @@ define(function (require) {
       mondayFirst: false,
       weeksList: ["S", "M", "T", "W", "T", "F", "S"],
       monthsList: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-      templateType: 'popup',
-      from: new Date(2012, 8, 1),
-      to: new Date(2018, 8, 1),
+      templateType: 'modal',
+      //from: new Date(2012, 8, 1),
+      //to: new Date(2018, 8, 1),
       showTodayButton: true,
       dateFormat: 'yyyy-MM-dd',
-      closeOnSelect: false,
-      disableWeekdays: [6]
+      closeOnSelect: true
     };
     ionicDatePickerProvider.configDatePicker(datePickerObj);
 

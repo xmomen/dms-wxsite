@@ -27,6 +27,10 @@ define(function(require){
         $dialog.alert('请选择收货人');
         return;
       }
+      if(!$scope.payment.appointmentTime){
+        $dialog.alert('请选择预约时间');
+        return;
+      }
       if(!$scope.payment.products || $scope.payment.products.length == 0){
         $dialog.alert('订单不存在商品，请选择商品后重新提交');
         return;
@@ -58,11 +62,7 @@ define(function(require){
         callback: function (val) {  //Mandatory
           $scope.payment.appointmentTime = new Date(val);
         },
-        //inputDate: new Date(),      //Optional
-        //mondayFirst: true,          //Optional
-        //disableWeekdays: [0],       //Optional
-        //closeOnSelect: false,       //Optional
-        templateType: 'modal'       //Optional
+        from: new Date()
       });
     };
     $scope.openAddressModal = function() {

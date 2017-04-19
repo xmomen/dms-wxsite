@@ -56,7 +56,7 @@
 
 </ion-content>
 <ion-footer-bar>
-  <button class="button button-full button-assertive" ng-click="cardPay()" ng-disabled="isActiveBtn()" type="button" ng-bind="payText"></button>
+  <button class="button button-full button-assertive" ng-click="orderPay()" ng-disabled="isActiveBtn()" type="button" ng-bind="payText"></button>
 </ion-footer-bar>
 
 <!--  优惠券  -->
@@ -107,7 +107,7 @@
     </ion-header-bar>
     <ion-content>
       <ion-checkbox ng-model="paymentType.cardPay" ng-click="changePayMode('cardPay')">会员卡支付</ion-checkbox>
-      <!--<ion-checkbox ng-model="paymentType.wechatPay" ng-click="changePayMode('wechatPay')">微信支付</ion-checkbox>-->
+      <ion-checkbox ng-model="paymentType.wechatPay" ng-click="changePayMode('wechatPay')">微信支付</ion-checkbox>
       <ion-checkbox ng-model="paymentType.afterPay" ng-click="changePayMode('afterPay')">货到付款</ion-checkbox>
     </ion-content>
   </ion-modal-view>

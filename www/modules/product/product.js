@@ -73,10 +73,9 @@ define(function(){
         memberId:member.memberId,
         itemId:item.id
       }, function(){
+        $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
         pubSub.publish('changeCart');
       });
-
-      $dialog.alert("商品［" +item.itemName+ "］已放入购物车");
     };
     var init = function(){
       if($stateParams.keyword){

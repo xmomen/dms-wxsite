@@ -46,5 +46,29 @@ define([
     }]).config(["$httpProvider", function($httpProvider){
         $httpProvider.interceptors.push('HttpInterceptor');
         $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    }]).directive('btnLoading', [function() {
+      return {
+        restrict: 'A',
+        link: function(scope, el, attr) {
+          var defaultLoadingText = attr.btnLoadingText;
+          if(!defaultLoadingText){
+            defaultLoadingText = "<i class='icon-refresh'>&nbsp;稍等</i>"
+          }
+          scope.prevText = el.html();
+          scope.$watch(function(){
+            return scope.$eval(attr.btnLoading)
+          }, function(value){
+            if(angular.isDefined(value)){
+              if(value){
+                el.attr("disabled", true);
+                el.html(defaultLoadingText);
+              }else{
+                el.removeAttr("disabled");
+                el.html(scope.prevText);
+              }
+            }
+          })
+        }
+      }
     }]);
 });

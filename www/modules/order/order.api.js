@@ -14,9 +14,13 @@ define(function (require) {
         id:"@id",
         memberId:"@memberId"
       }},
+      getStatistic: { url:'/api/wx/order/statistic', method:"GET" , params:{
+        memberId:"@memberId"
+      }},
       getCouponProduct: { url: '/api/wx/order/coupon', method:'GET', isArray:true},
       confirm: { url: '/api/wx/order/confirm', method:'POST', isArray:true},
-      pay: { url: '/api/wx/order/pay', method:'POST'}
+      pay: { url: '/api/wx/order/pay', method:'POST'},
+      weixinPay: { url: '/api/wx/api/payOrder', method:'POST'}
     });
   }]).factory("CouponAPI", ["Resource", function(Resource){
     return Resource("/wx/coupon/:id", { id:"@id" }, {

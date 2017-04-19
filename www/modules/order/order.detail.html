@@ -32,10 +32,12 @@
       </div>
     </ion-item>
     <ion-item class="item-thumbnail-left" ng-repeat="product in order.products">
-      <img ng-src="{{product.picUrl}}">
-      <h2 ng-bind="product.itemName"></h2>
-      <p class="assertive" ng-bind="product.itemPrice * product.itemQty | currency:'¥'"></p>
-      <span class="item-note small"> x <b ng-bind="product.itemQty"></b></span>
+      <!--<div ui-sref="product_detail({id:product.id})">-->
+        <img ng-src="{{product.picUrl}}">
+        <h2 ng-bind="product.itemName"></h2>
+        <p class="assertive" ng-bind="product.itemPrice * product.itemQty | currency:'¥'"></p>
+        <span class="item-note small"> x <b ng-bind="product.itemQty"></b></span>
+      <!--</div>-->
     </ion-item>
   </ion-list>
 </ion-content>
