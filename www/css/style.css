@@ -151,6 +151,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .shopping-button{background:0;border:0;margin-top: -35px}
 .shopping-cart{font-size:20px;color:#e74c3c;margin-top:5px;display: block}
 .shopping-list li{width:33.333%;display: block;background:#fff}
+
 .product-list li{width: 49.999999%;display: block;border:5px solid #f8f8f8}
 .product-list .banner-publicity{padding:0}
 /*****************
@@ -561,4 +562,25 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   margin-left: -41px;
   margin-top: -9px;
   background-position: 0 -58px;
+}
+@media only screen and (max-width: 320px){
+  .shopping-list li{width:50%;display: block;background:#fff}
+
+  .form_lid{height:50px;padding:0 10px;overflow: hidden}
+  .form_lid .triangle1{height: 0;
+    width: 120px;
+    border-bottom: 120px solid #ff7373;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;}
+  .form_lid .triangle2{height: 0;
+    width: 120px;
+    border-top: 120px solid #ff7373;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;margin-top: -140px}
+  .form_lid h2{font-size:18px;line-height:50px;text-align:center;color:white;margin-top:-10px}
+  .form_lid h2 .rectangle {
+    padding:3px 20px;
+    height: 100px;
+    border-bottom-left-radius:20px;border-top-right-radius:20px;box-shadow: 1px 1px 3px #ffcccc;
+  }
 }
