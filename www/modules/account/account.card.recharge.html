@@ -1,0 +1,14 @@
+<ion-header-bar>
+  <button class="button button-icon icon ion-ios-arrow-left" ui-sref="account_card"></button>
+  <h1 class="title">VIP会员卡充值</h1>
+</ion-header-bar>
+<ion-content>
+  <ion-list>
+    <ion-item class="item-input">
+      <input type="number" placeholder="请输入充值金额" ng-model="card.amount">
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer-bar>
+  <button type="button" btn-loading="payLoading" btn-loading-text="请稍等" ng-disabled="!card.amount" class="button button-full button-assertive" ng-click="recharge()">充值</button>
+</ion-footer-bar>

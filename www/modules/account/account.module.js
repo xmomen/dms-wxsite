@@ -1,8 +1,9 @@
 define([
   'angular',
   'modules/account/account.card',
-  'modules/account/account.card.bind'
-], function(angular, card, cardBind){
+  'modules/account/account.card.bind',
+  'modules/account/account.card.recharge'
+], function(angular, card, cardBind, cardRecharge){
   angular.module('account.module', [
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     $stateProvider.state('account_card', {
@@ -23,6 +24,19 @@ define([
         }
       },
       controller: cardBind
+    }).state('account_card_recharge', {
+      url: '/account/card/recharge',
+      templateUrl: 'modules/account/account.card.recharge.html',
+      params:{
+        cardNo:null,
+        id:null
+      },
+      data: {
+        permissions: {
+          only: 'isAuthorized'
+        }
+      },
+      controller: cardRecharge
     });
   }]);
 

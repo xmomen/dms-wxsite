@@ -74,10 +74,11 @@ define([
         memberId:$UrlUtils.getParams('memberId')
       };
       //alert($filter('json')(params));
-      var member = $cookieStore.get('member');
-      if(!member && params.openId){
-        $cookieStore.put('member', params);
-      }
+      //var member = $cookieStore.get('member');
+      //if(!member && params.openId){
+      //  $cookieStore.put('member', params);
+      //}
+      $cookieStore.put('member', params);
 
       PermPermissionStore
         .definePermission('isAuthorized', function () {

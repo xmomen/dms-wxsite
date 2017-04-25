@@ -5,7 +5,10 @@
 </ion-header-bar>
 <ion-content>
   <div class="card" ng-repeat="item in coupons" ng-click="choseCoupon(item)">
-    <div class="item item-divider" ng-bind="item.couponNumber"></div>
+    <div class="item item-divider">
+      <span ng-bind="item.couponNumber"></span>
+      <span style="float: right" ui-sref="account_card_recharge({id:item.id, cardNo:item.couponNumber})">充值</span>
+    </div>
     <div class="item item-text-wrap small">
       面值：
       <span ng-bind="item.couponValue | currency:'¥'"></span>

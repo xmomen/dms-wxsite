@@ -1,7 +1,7 @@
 /**
  * Created by tanxinzheng on 17/3/3.
  */
-define(function () {
+define(['wechat-api'], function (wx) {
   return ['$scope', 'OrderAPI', '$state', '$stateParams', '$dialog', '$ionicModal', 'CouponAPI', '$cookieStore', '$filter', '$ionicPopup',
     function ($scope, OrderAPI, $state, $stateParams, $dialog, $ionicModal, CouponAPI, $cookieStore, $filter, $ionicPopup) {
       $scope.getOrder = function () {
@@ -121,7 +121,7 @@ define(function () {
       };
       $scope.payLoading = false;
       $scope.orderPay = function () {
-        if($scope.paymentType.weixinPay){
+        if($scope.paymentType.wechatPay){
           $scope.weixinPay();
           return;
         }
@@ -168,14 +168,15 @@ define(function () {
         var member = $cookieStore.get('member');
         $scope.payLoading = true;
         OrderAPI.weixinPay({
-          outTradeNo:$scope.payment.orderNo,
-          totalFee:$scope.payment.totalAmount,
+          type:1,
+          outTradeNo:$scope.order.orderNo,
+          totalFee:$scope.order.totalAmount,
           openId:member.openId
         }, function(data){
-          if(data.success){
+          if(data.result_code == 'SUCCESS'){
             wx.chooseWXPay({
-              appId: data.appId,
-              timestamp: data.timestamp,
+              appId: data.appid,
+              timestamp: data.timeStamp,
               nonceStr: data.nonce_str,
               package: data.packageStr,
               signType: 'MD5',

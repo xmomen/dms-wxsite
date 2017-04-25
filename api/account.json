@@ -1,5 +1,6 @@
 {
-  "username":"15000084483",
-  "nickname":"张三",
-  "headLink":"/img/user.png"
+  "totalFee":123,
+  "openId":"34234",
+  "outTradeNo":"234",
+  "type":1
 }
