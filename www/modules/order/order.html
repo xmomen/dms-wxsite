@@ -44,7 +44,7 @@
       <div style="display: inline-block;float: right;">
         <button class="button button-small button-assertive" style="width: 58px;" ui-sref="order_detail({id:order.id})" type="button">详情</button>
         <button class="button button-small button-assertive" ng-if="order.orderStatus == 5" style="width: 58px;" ng-click="confirm(order)" type="button">确认收货</button>
-        <button class="button button-small button-assertive" ng-if="order.payStatus == 0 && order.orderStatus != 9" style="width: 58px;" ng-click="cancel(order)" type="button">取消订单</button>
+        <button class="button button-small button-assertive" ng-if="order.orderStatus == 0 || order.orderStatus==1" style="width: 58px;" ng-click="cancel(order)" type="button">取消订单</button>
         <button class="button button-small button-assertive" ng-if="order.payStatus == 0 && order.orderStatus != 9" style="width: 58px;" ng-click="goPay(order)" type="button">付款</button>
         <!--<button class="button button-small button-assertive" ng-if="order.payStatus == 1" type="button" ng-click="confirmTracking(order)">物流追踪</button>-->
       </div>

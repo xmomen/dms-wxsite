@@ -102,7 +102,7 @@ define(['wechat-api'], function (wx) {
         $scope.getQiangGouProducts();
         $scope.getXinPinProducts();
         $scope.getTuiJianProducts();
-        $scope.getLocalAddress();
+        //$scope.getLocalAddress();
       };
       init();
     }]
