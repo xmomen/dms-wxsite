@@ -25,7 +25,7 @@ define(function (require) {
       getJsSDKConfig: function(){
         return $http.get("/api/wx/api/jsapi_ticket", {
           params:{
-            url:"http://wx-test.xmomen.com/index.html"
+            url:"http://wechat.1g3h.com/index.html"
           }
         });
       }
