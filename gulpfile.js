@@ -76,7 +76,7 @@ gulp.task('git-check', function(done) {
 //web服务器
 gulp.task('server', function() {
   var environment = require("./environments.json");
-  var ENV = environment['development'];
+  var ENV = environment['production'];
   gulp.src(ENV.serverPath) // 服务器目录（./代表根目录）
     .pipe(webserver({ // 运行gulp-webserver
       port: ENV.port, //端口，默认8000
@@ -143,7 +143,8 @@ gulp.task('htmlmin', function() {
 
 // fonts
 gulp.task('fonts', function() {
-  return gulp.src(['www/fonts/**'])
+  return gulp.src(['www/**/*.{eot,svg,ttf,woff,woff2}'])
+    .pipe(rename({dirname: ''}))
     .pipe(gulp.dest('build/fonts'))
     .pipe(notify({ message: 'fonts task ok' }));
 
@@ -167,7 +168,7 @@ gulp.task('css', function(){
 
 // images
 gulp.task('img', function () {
-  return gulp.src('www/img/detail/*.{png,jpg,gif,ico}')
+  return gulp.src('www/img/**')
     .pipe(imagemin({
       optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
       progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
