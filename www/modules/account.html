@@ -2,10 +2,14 @@
   <ion-content class="bg-ff">
     <ion-list>
       <div class="item about-meq">
-        <img ng-src="{{account.headimgurl}}" permission permission-only="'isAuthorized'" class="item-header header" width="64px" height="64px" />
-        <img src="../img/user_easyicon.png" permission permission-except="'isAuthorized'" class="item-header" width="64px" height="64px" />
-        <button permission permission-except="'isAuthorized'" class="button ng-binding register">登录</button>
-        <button permission permission-only="'isAuthorized'" style="border: none;" class="button ng-binding register">{{account.name}}</button>
+        <div ui-sref="account_info">
+          <img ng-src="{{account.headimgurl}}" permission permission-only="'isAuthorized'" class="item-header header" width="64px" height="64px" />
+          <button permission permission-only="'isAuthorized'" style="border: none;" class="button ng-binding register">{{account.name}}</button>
+        </div>
+        <div>
+          <img src="../img/user_easyicon.png" permission permission-except="'isAuthorized'" class="item-header" width="64px" height="64px" />
+          <button permission permission-except="'isAuthorized'" class="button ng-binding register">登录</button>
+        </div>
       </div>
       <div class="about-column">
         <ul class="row wl">
@@ -68,7 +72,7 @@
   </ion-content>
   <div class="bottom-save wl bg-ff">
         <span class="wl text-right pr12">
-          客服电话：4008-670-558（时间：10：00至7：00）
+          客服电话：4008-670-558（时间：10：00至19：00）
         </span>
   </div>
 </ion-view>

@@ -13,6 +13,13 @@ define(function (require) {
       }},
       login: { method:'GET', url : "/api/", isArray:false}
     });
+  }]).factory("MemberAPI", ["Resource", function(Resource){
+    return Resource("/wx/member/:id", { id:"@id" }, {
+      update : { method:"PUT", url:"/api/wx/member/:id", params:{
+        id:'@id',
+        mobile:'@mobile'
+      }}
+    });
   }]).factory("BindAPI", ["Resource", function(Resource){
     return Resource("/wx/:memberId", { id:"@id" }, {
       bindMember : { method:"PUT", url:"/api/wx/bindMember", params:{

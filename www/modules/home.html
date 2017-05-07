@@ -90,7 +90,7 @@
         <div class="col-20 homecol">
           <a ng-click="goProducts({type:'7'})">
             <div class="hp_icon icon_yp"></div>
-            <p class="list_txt">后院农人</p>
+            <p class="list_txt">益盒农人</p>
           </a>
         </div>
     </div>
@@ -107,7 +107,7 @@
         <a>
           <img ng-src="{{item.picUrl}}" style="width:100%" ui-sref="product_detail({id:item.id})"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
-          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-price"><strong ng-bind="item.sellPrice | currency:'￥'"></strong></span>
           <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
         </a>
@@ -126,7 +126,7 @@
         <a>
           <img ng-src="{{item.picUrl}}" style="width:100%" ui-sref="product_detail({id:item.id})"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
-          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-price"><strong ng-bind="item.sellPrice | currency:'￥'"></strong></span>
           <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
         </a>
@@ -145,7 +145,7 @@
         <a>
           <img ng-src="{{item.picUrl}}" ui-sref="product_detail({id:item.id})" style="width:100%"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
-          <span class="trade-price"><strong ng-bind="item.basePrice | currency:'￥'"></strong></span>
+          <span class="trade-price"><strong ng-bind="item.sellPrice | currency:'￥'"></strong></span>
           <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
         </a>
