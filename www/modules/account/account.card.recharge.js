@@ -1,7 +1,7 @@
 /**
  * Created by tanxinzheng on 17/3/3.
  */
-define(function(require){
+define(['wechat-api'], function(wx){
   return ['$scope', 'OrderAPI', '$cookieStore', '$dialog', '$stateParams', '$state', function($scope, OrderAPI, $cookieStore, $dialog, $stateParams, $state){
     $scope.card = {};
     $scope.payLoading = false;
@@ -16,7 +16,8 @@ define(function(require){
         type:2,
         outTradeNo:$scope.card.number,
         totalFee:$scope.card.amount,
-        openId:member.openId
+        openId:member.openId,
+        memberId:member.memberId
       }, function(data){
         if(data.result_code == 'SUCCESS'){
           wx.chooseWXPay({

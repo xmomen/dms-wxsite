@@ -171,7 +171,8 @@ define(['wechat-api'], function (wx) {
           type:1,
           outTradeNo:$scope.order.orderNo,
           totalFee:$scope.order.totalAmount,
-          openId:member.openId
+          openId:member.openId,
+          memberId:member.memberId
         }, function(data){
           if(data.result_code == 'SUCCESS'){
             wx.chooseWXPay({
