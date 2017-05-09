@@ -91,6 +91,7 @@ p, form, ol, ul, li, h3, menu {
 .bar .title.title-left{text-align: center}
 .bar.bar-positive .title{color: #444}
 .bar-positive .button{color: #64b204 !important;}
+.bar-positive img{height: 100%;}
 .bar .button.button-icon, .bar button.button-icon{font-size:14px}
 .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
   vertical-align: top;
