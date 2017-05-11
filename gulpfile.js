@@ -89,12 +89,14 @@ gulp.task('server', function() {
       proxies: [
           {
               //source: '/api', target: 'http://127.0.0.1:8700'
-              source: '/api', target: 'http://121.40.156.26:8188'
+              //source: '/api', target: 'http://121.40.156.26:8188'
+            source: '/api', target: 'http://system.1g3h.com'
           },
-        {
-          //source: '/ueditor/jsp/upload/image', target: 'http://127.0.0.1:8700/ueditor/jsp/upload/image',
-          source: '/ueditor/jsp/upload/image', target: 'http://121.40.156.26:8188/ueditor/jsp/upload/image'
-        }
+          {
+            //source: '/ueditor/jsp/upload/image', target: 'http://127.0.0.1:8700/ueditor/jsp/upload/image',
+            //source: '/ueditor/jsp/upload/image', target: 'http://121.40.156.26:8188/ueditor/jsp/upload/image',
+            source: '/ueditor/jsp/upload/image', target: 'http://system.1g3h.com/ueditor/jsp/upload/image'
+          }
       ],
       middleware: function(req, res, next) {
         var urlObj = url.parse(req.url, true),
