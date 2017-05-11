@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/3.
  */
 define(function(require){
-  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI','$cookieStore','ionicDatePicker',
-  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI, $cookieStore, ionicDatePicker){
+  return ['$scope', 'PaymentAPI', 'AddressAPI', '$stateParams', '$ionicModal', '$state','$dialog','OrderAPI','$cookieStore','ionicDatePicker', '$filter',
+  function($scope, PaymentAPI, AddressAPI, $stateParams, $ionicModal, $state, $dialog, OrderAPI, $cookieStore, ionicDatePicker, $filter){
     $scope.payment = {};
     $ionicModal.fromTemplateUrl('chose-address.html', {
       scope: $scope,
@@ -58,11 +58,13 @@ define(function(require){
       });
     };
     $scope.openDatePicker = function(){
+      var curDate = new Date();
+      var startDate = new Date((curDate/1000+86400)*1000);
       ionicDatePicker.openDatePicker({
         callback: function (val) {  //Mandatory
           $scope.payment.appointmentTime = new Date(val);
         },
-        from: new Date()
+        from: startDate
       });
     };
     $scope.openAddressModal = function() {

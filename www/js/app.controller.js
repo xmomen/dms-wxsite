@@ -23,9 +23,15 @@ define(function(){
         $dialog.alert('请输入手机号');
         return;
       }
+      if(!$scope.user.name){
+        $dialog.alert('请输入姓名');
+        return;
+      }
       var member = $cookieStore.get('member');
       BindAPI.bindMember({
         openId:member.openId,
+        name:$scope.user.name,
+        memberId:member.memberId,
         mobile:$scope.user.phone
       }, function(data){
         $scope.loginModal.hide();
@@ -35,6 +41,10 @@ define(function(){
           memberId:data.id,
           openId:member.openId
         });
+        PermPermissionStore
+          .definePermission('isAuthorized', function () {
+            return true;
+          });
       })
     };
     $ionicModal.fromTemplateUrl('login-modal.html', {

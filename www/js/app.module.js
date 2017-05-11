@@ -84,36 +84,29 @@ define([
         .definePermission('isAuthorized', function () {
           var defer = $q.defer();
           var cmember = $cookieStore.get('member');
-          if(cmember && cmember.memberId){
+          if(cmember && cmember.phone){
             defer.resolve();
           }else{
             defer.reject();
           }
           return defer.promise;
         });
-      //$http
-      //  .get('/api/account/setting')
-      //  .then(function(permissions){
-      //    // Use RoleStore and PermissionStore to define permissions and roles
-      //    // or even set up whole session
-      //    PermPermissionStore
-      //      .definePermission('isAuthorized', function () {
-      //        return true;
-      //      });
-      //
-      //  }, function(){
-      //    PermPermissionStore
-      //      .definePermission('isAuthorized', function () {
-      //        return false;
-      //      });
-      //  })
-      //  .then(function(){
-      //    // Once permissions are set-up
-      //    // kick-off router and start the application rendering
-      //    $urlRouter.sync();
-      //    // Also enable router to listen to url changes
-      //    $urlRouter.listen();
-      //  });
+      $http
+        .get('/api/wx/userInfo', {
+          params:params
+        })
+        .then(function(data){
+          data.data.content = {
+            //phone:15000084483
+          }
+          if(data.data && data.data.content && data.data.content.phone){
+            $cookieStore.put('member', {
+              memberId:params.memberId,
+              openId:params.openId,
+              phone:15000084483
+            });
+          }
+        });
 
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

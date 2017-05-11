@@ -24,6 +24,8 @@ define(function (require) {
     return Resource("/wx/:memberId", { id:"@id" }, {
       bindMember : { method:"PUT", url:"/api/wx/bindMember", params:{
         openId:"@openId",
+        memberId:"@memberId",
+        name:"@name",
         mobile:"@mobile"
       }, isArray:false}
     });
