@@ -72,6 +72,8 @@ p, form, ol, ul, li, h3, menu {
 .mt10{margin-top:10px;}
 .mt20{margin-top:20px;}
 .mt40{margin-top:40px;}
+.mr10{margin-right:10px;}
+.mr20{margin-right:20px;}
 .ft12{font-size:12px}
 .ft14{font-size:14px}
 .ft16{font-size:16px}
@@ -616,3 +618,5 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 /*销量 库存*/
 .stock{padding:5px 0}
 .stock li{width:100%;text-align:right;margin-top:0;color:#aaa;border:0}
+/*快报*/
+.kuaibao .button.button-light.active, .button.button-light.activated{background:#fff;border-color:#ccc}
