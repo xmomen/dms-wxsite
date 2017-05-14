@@ -30,7 +30,7 @@ define(function (require) {
     };
     ionicDatePickerProvider.configDatePicker(datePickerObj);
 
-    $httpProvider.interceptors.push('HttpInterceptor');
+    //$httpProvider.interceptors.push('HttpInterceptor');
     //$locationProvider.html5Mode(true);
     //权限
     //$urlRouterProvider.deferIntercept();

@@ -96,14 +96,11 @@ define([
           params:params
         })
         .then(function(data){
-          data.data.content = {
-            //phone:15000084483
-          }
           if(data.data && data.data.content && data.data.content.phone){
             $cookieStore.put('member', {
               memberId:params.memberId,
               openId:params.openId,
-              phone:15000084483
+              phone:data.data.content.phone
             });
           }
         });
