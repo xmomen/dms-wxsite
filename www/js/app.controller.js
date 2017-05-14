@@ -2,8 +2,8 @@
  * Created by tanxinzheng on 17/3/31.
  */
 define(function(){
-  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI', '$urlRouter','$dialog',
-  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI, $urlRouter, $dialog){
+  return ['$scope', '$ionicModal', '$http', '$location', '$state', '$UrlUtils', '$cookieStore', 'BindAPI', '$urlRouter','$dialog','PermPermissionStore',
+  function($scope, $ionicModal, $http, $location, $state, $UrlUtils, $cookieStore, BindAPI, $urlRouter, $dialog, PermPermissionStore){
     $scope.$on('$stateChangePermissionDenied', function(event, toState, toParams, options) {
       $scope.loginModal.show();
     });
@@ -34,7 +34,6 @@ define(function(){
         memberId:member.memberId,
         mobile:$scope.user.phone
       }, function(data){
-        $scope.loginModal.hide();
         $urlRouter.sync();
         $urlRouter.listen();
         $cookieStore.put('member', {
@@ -45,6 +44,7 @@ define(function(){
           .definePermission('isAuthorized', function () {
             return true;
           });
+        $scope.loginModal.hide();
       })
     };
     $ionicModal.fromTemplateUrl('login-modal.html', {
