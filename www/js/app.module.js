@@ -71,7 +71,8 @@ define([
     function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter, $q, $UrlUtils , $cookieStore) {
       var params = {
         openId:$UrlUtils.getParams('openId'),
-        memberId:$UrlUtils.getParams('memberId')
+        memberId:$UrlUtils.getParams('memberId'),
+        accessToken:$UrlUtils.getParams('accessToken')
       };
       //alert($filter('json')(params));
       //var member = $cookieStore.get('member');

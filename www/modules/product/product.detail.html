@@ -21,18 +21,18 @@
   <div class="product_info wl">
     <div class="product_about wl">
       <h2 ng-bind="product.itemName" class="fl"></h2>
-      <ul class="row mt10 fr">
-        <li class="col-lg-6 ft12" style="border:0;">销量 200</li>
-        <li class="col-lg-6 ft12" style="border:0;">库存 200件</li>
-      </ul>
+      <!--<ul class="row mt10 fr">-->
+        <!--<li class="col-lg-6 ft12" style="border:0;">销量 200</li>-->
+        <!--<li class="col-lg-6 ft12" style="border:0;">库存 200件</li>-->
+      <!--</ul>-->
       <br>
       <div class="color_red fr" style="margin-top:-45px"><span class="ft24" ng-bind="product.sellPrice | currency:'¥'"></span></div>
     </div>
-    <!--<ul class="row product_norms wl mt10">-->
-      <!--<li class="col-33">产地：上海</li>-->
+    <ul class="row product_norms wl mt10">
+      <li class="col-33">销量：{{product.sellNum}}</li>
       <!--<li class="col-33">品牌：清美</li>-->
-      <!--<li class="col-33">规格：1.5KG</li>-->
-    <!--</ul>-->
+      <li class="col-33">库存：{{product.stockNum}}</li>
+    </ul>
   </div>
   <!--<div class="wl padding">-->
     <!--<ul class="info product_count fr" style="margin-bottom: 0;">-->

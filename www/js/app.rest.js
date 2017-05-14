@@ -9,7 +9,8 @@ define(function (require) {
     return Resource("/account/:id", { id:"@id" }, {
       getAccount : { method:"GET", url:"/api/wx/userInfo", isArray:false, params:{
         memberId:'@memberId',
-        openId:'@openId'
+        openId:'@openId',
+        accessToken:'@accessToken'
       }},
       login: { method:'GET', url : "/api/", isArray:false}
     });
