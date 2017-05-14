@@ -120,17 +120,17 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .hp_line{margin-bottom:20px}
 .hp_line .list_txt{bottom: 8px;color:#666666;margin-bottom: 0;width: 100%;text-align: center}
 .twoline .list_txt{bottom: 0}
-.icon_xyvip{background: url("../img/rmtj.png") no-repeat center center;background-size: 40px 40px;}
-.icon_1time{background: url("../img/icon_1time.png") no-repeat center center;background-size: 40px 40px;}
-.icon_lh{background: url("../img/lh.png") no-repeat center center;background-size: 40px 40px;}
-.icon_ls{background: url("../img/lpkq.png") no-repeat center center;background-size: 40px 40px;}
-.icon_ly{background: url("../img/ly.png") no-repeat center center;background-size: 40px 40px;}
-.icon_sc{background: url("../img/sc.png") no-repeat center center;background-size: 40px 40px;}
-.icon_new{background: url("../img/xpcx.png") no-repeat center center;background-size: 40px 40px;}
-.icon_rs{background: url("../img/qdr.png") no-repeat center center;background-size: 40px 40px;}
-.icon_sg{background: url("../img/lh.png") no-repeat center center;background-size: 40px 40px;}
-.icon_sx{background: url("../img/gggc.png") no-repeat center center;background-size: 40px 40px;}
-.icon_yp{background: url("../img/yhnr.png") no-repeat center center;background-size: 40px 40px;}
+.icon_xyvip{background: url("../img/rmtj.png") no-repeat center center;background-size: 48px 48px;}
+.icon_1time{background: url("../img/icon_1time.png") no-repeat center center;background-size: 48px 48px;}
+.icon_lh{background: url("../img/lh.png") no-repeat center center;background-size: 48px 48px;}
+.icon_ls{background: url("../img/lpkq.png") no-repeat center center;background-size: 48px 48px;}
+.icon_ly{background: url("../img/ly.png") no-repeat center center;background-size: 48px 48px;}
+.icon_sc{background: url("../img/sc.png") no-repeat center center;background-size: 48px 48px;}
+.icon_new{background: url("../img/xpcx.png") no-repeat center center;background-size: 48px 48px;}
+.icon_rs{background: url("../img/qdr.png") no-repeat center center;background-size: 48px 48px;}
+.icon_sg{background: url("../img/lh.png") no-repeat center center;background-size: 48px 48px;}
+.icon_sx{background: url("../img/gggc.png") no-repeat center center;background-size: 48px 48px;}
+.icon_yp{background: url("../img/yhnr.png") no-repeat center center;background-size: 48px 48px;}
 @media screen and (max-width:320px) {
   .icon_wdbg,.icon_rkyb,.icon_wlzz,.icon_shdz,.icon_hwdz,.icon_zhcz,.icon_yhq,.icon_tjyl,.icon_more,.icon_xfyl,.icon_kfzx{background-size:48px 48px;}
   .hp_line .list_txt{font-size:13px}
@@ -148,11 +148,11 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
 .banner-publicity{background:#fff;padding:10px;height: auto;}
-.banner-publicity-row{margin-top:5px;}
-.banner-publicity .img{width:100%;height:105px}
-.shopping-button{background:0;border:0;margin-top: -8px}
+.banner-publicity .img{width:100%}
+.icon_new.banner-publicity .img{width:100%;height:144px}
+.shopping-button{background:0;border:0;margin-top: -2px}
 .shopping-cart{font-size:20px;color:#64b204;display: block}
-.shopping-list li{width:33.333%;display: block;background:#fff;margin-top:10px}
+.shopping-list li{width:33.333%;display: block;background:#fff;border: 5px solid #fbfbfb;}
 
 .product-list li{width: 49.999999%;display: block;border:5px solid #f8f8f8}
 .product-list .banner-publicity{padding:0}
@@ -213,7 +213,8 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
     #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
 /*.item-divider{padding:0;height:10px;min-height:10px}*/
-.product_info.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:127px;padding:10px 0 0  0;color:#fff}
+/**我的账户**/
+.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:127px;padding:10px 0 0  0;color:#fff}
 .about-meq.item-avatar > img:first-child{max-width:50px;max-height:50px;border-radius:6px;}
 .register{line-height:24px;border:1px solid #fff;border-radius:20px;min-height:24px;background:none;margin:5px auto;display:block;color:#fff;font-size:12px}
 .about-column{padding:12px}
@@ -614,4 +615,4 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   color: #fff; }
 /*销量 库存*/
 .stock{padding:5px 0}
-.stock li{text-align:center;line-height:50px;color:#aaa;margin-right:-1px}
+.stock li{width:100%;text-align:right;margin-top:0;color:#aaa;border:0}
