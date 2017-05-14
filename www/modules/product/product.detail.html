@@ -20,8 +20,13 @@
   <!--商品图------>
   <div class="product_info wl">
     <div class="product_about wl">
-      <h2 ng-bind="product.itemName"></h2>
-      <div class="color_red mt10 fr"><span class="ft24" ng-bind="product.sellPrice | currency:'¥'"></span></div>
+      <h2 ng-bind="product.itemName" class="fl"></h2>
+      <ul class="row mt10 fr">
+        <li class="col-lg-6 ft12" style="border:0;">销量 200</li>
+        <li class="col-lg-6 ft12" style="border:0;">库存 200件</li>
+      </ul>
+      <br>
+      <div class="color_red fr" style="margin-top:-45px"><span class="ft24" ng-bind="product.sellPrice | currency:'¥'"></span></div>
     </div>
     <!--<ul class="row product_norms wl mt10">-->
       <!--<li class="col-33">产地：上海</li>-->
@@ -61,7 +66,7 @@
       <!--<div class="mt10 ft12">2017-03-21</div>-->
     <!--</a>-->
 
-    <a class="item mt10" ng-if="product.detailContent">
+    <a class="item mt10 wl" ng-if="product.detailContent">
       图文详情
     </a>
     <div ng-if="product.detailContent" class="goods-info" ng-bind-html="product.detailContent"></div>

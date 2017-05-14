@@ -97,14 +97,18 @@
   </div>
   <!--  抢购  -->
   <div class="wl">
-    <div class="form_lid red wl">
-      <img src="../img/buying.png" />
+    <div class="red wl">
+      <img src="../img/buying.png" width="100%" />
     </div>
     <ul class="shopping-list">
       <li class="pd5-10 fl" ng-repeat="item in qiangGouProducts">
         <a>
           <img ng-src="{{item.picUrl}}" style="width:100%" ui-sref="product_detail({id:item.id})"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
+          <ul class="row stock">
+            <li class="col-lg-6">销量 200 <em class="fr">|</em></li>
+            <li class="col-lg-6">库存 1200</li>
+          </ul>
           <span class="trade-price"><strong ng-bind="item.sellPrice | currency:'￥'"></strong></span>
           <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
@@ -114,14 +118,18 @@
   </div>
   <!--  新品  -->
   <div class="wl">
-    <div class="form_lid red wl">
-      <img src="../img/new.png" />
+    <div class="red wl">
+      <img src="../img/new.png" width="100%" />
     </div>
     <ul class="shopping-list">
       <li class="pd5-10 fl" ng-repeat="item in xinPinProducts">
         <a>
           <img ng-src="{{item.picUrl}}" style="width:100%" ui-sref="product_detail({id:item.id})"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
+          <ul class="row stock">
+            <li class="col-lg-6">销量 200 <em class="fr">|</em></li>
+            <li class="col-lg-6">库存 1200</li>
+          </ul>
           <span class="trade-price"><strong ng-bind="item.sellPrice | currency:'￥'"></strong></span>
           <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
@@ -131,14 +139,18 @@
   </div>
   <!--  推荐  -->
   <div class="wl">
-    <div class="form_lid red wl">
-      <img src="../img/rec.png" />
+    <div class="red wl">
+      <img src="../img/rec.png" width="100%" />
     </div>
     <ul class="shopping-list">
       <li class="pd5-10 fl" ng-repeat="item in tuiJianProducts">
         <a>
           <img ng-src="{{item.picUrl}}" ui-sref="product_detail({id:item.id})" style="width:100%"/>
           <span class="trade-name" ng-bind="item.itemName"></span>
+          <ul class="row stock">
+            <li class="col-lg-6">销量 200 <em class="fr">|</em></li>
+            <li class="col-lg-6">库存 1200</li>
+          </ul>
           <span class="trade-price"><strong ng-bind="item.sellPrice | currency:'￥'"></strong></span>
           <span class="trade-vip" ng-if="item.memberPrice">VIP <p ng-bind="item.memberPrice | currency:'￥'"></p></span>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>

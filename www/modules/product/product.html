@@ -51,11 +51,15 @@
             <span class="col-33"><img ng-src="{{item.picUrl}}" class="img fl" /></span>
             <span class="col-67">
               <span class="product-name ft14" ng-bind="item.itemName"></span>
+              <ul class="row mt10">
+                  <li class="col-lg-6 ft12" style="border:0;">销量 200</li>
+                  <li class="col-lg-6 ft12" style="border:0;">库存 200件</li>
+              </ul>
               <span class="wl mt10" ng-bind="item.brandSlogan"></span>
-              <span class="wl mt10 color_red"><strong ng-bind="item.sellPrice | currency:'¥'"></strong><span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
+              <span class="wl mt10 color_red"><strong class="ft18" ng-bind="item.sellPrice | currency:'¥'"></strong><span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
             </span>
           </a>
-          <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
+          <button type="button" class="shopping-button fr" style="margin-top:-29px" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart" style="font-size:24px"></span></button>
         </li>
       </ul>
       <div class="wl" ng-if="queryParams.style=='col'">
@@ -65,11 +69,15 @@
               <img ng-src="{{item.picUrl}}" class="img fl" />
               <div class="pd10 wl">
                 <b class="one_omit wl" ng-bind="item.itemName"></b>
+                <ul class="row">
+                  <li class="col-lg-6 ft12" style="border:0;">销量 200</li>
+                  <li class="col-lg-6 ft12" style="border:0;">库存 200件</li>
+                </ul>
                 <span class="wl mt10 one_omit" ng-bind="item.brandSlogan"></span>
-                <span class="wl mt10 color_red"><strong ng-bind="item.sellPrice | currency:'¥'"></strong><span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
+                <span class="wl mt10 color_red"><strong class="ft18" ng-bind="item.sellPrice | currency:'¥'"></strong><span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
               </div>
             </a>
-            <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
+            <button type="button" class="shopping-button fr" style="margin-top:-35px" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
           </li>
         </ul>
       </div>

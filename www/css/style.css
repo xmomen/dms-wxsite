@@ -140,19 +140,19 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
    margin-top:0;
   padding-top: 0;}
 .home .search_input{width: 95%;position: absolute;top:23px;left:10px;border-radius: 3px;padding: 5px;}
-.trade-name,.trade-price{text-align:center;font-size:12px;display: block;line-height:24px}
+.trade-name,.trade-price{text-align:left;font-size:12px;display: block;line-height:24px}
 .trade-name{font-weight: bold;color:#000;}
 .trade-price{color:#64b204}
-.trade-price strong{font-weight: bold;font-size:14px}
+.trade-price strong{font-weight: bold;font-size:14px;float:left}
 .trade-vip{color:#000;border-radius:7px;background:#eb9316;text-align:center;font-size:12px;margin: 0 auto;display: table;padding:3px 7px}
 .trade-vip strong{font-size:14px}
 .box_border-5{border-bottom:5px solid #e7e7e7}
 .banner-publicity{background:#fff;padding:10px;height: auto;}
 .banner-publicity-row{margin-top:5px;}
-.banner-publicity .img{width:100%}
-.shopping-button{background:0;border:0;margin-top: -35px}
-.shopping-cart{font-size:20px;color:#64b204;margin-top:5px;display: block}
-.shopping-list li{width:33.333%;display: block;background:#fff}
+.banner-publicity .img{width:100%;height:105px}
+.shopping-button{background:0;border:0;margin-top: -8px}
+.shopping-cart{font-size:20px;color:#64b204;display: block}
+.shopping-list li{width:33.333%;display: block;background:#fff;margin-top:10px}
 
 .product-list li{width: 49.999999%;display: block;border:5px solid #f8f8f8}
 .product-list .banner-publicity{padding:0}
@@ -168,7 +168,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .cart .shopping-img{width:60px;height:60px}
 .cart .title{font-size:14px}
 .cart .info{margin-top: 20px}
-.info-price{font-weight:300;color:#64b204;line-height:24px}
+.info-price{font-weight:300;color:#64b204;line-height:24px;float:left;text-align:left}
 .info-kg{font-weight:300;color:#ccc;}
 .info-num{width:24px;border:1px solid #ccc !important;height:24px!important;text-align: center}
 .btn-num{height:24px;border:1px solid #ccc;background:#fff}
@@ -179,12 +179,13 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .ion-trash-a{margin-top:-5px}
 
 /*下单支付*/
-.payment{position: fixed;bottom:48px;border-top:1px solid #ccc;}
-.payment .money{padding:14px 5px}
+.payment{position: fixed;bottom:48px;border-top:1px solid #ccc;background:#fff;overflow:hidden}
+.payment .money{}
+.payment .money div{line-height:50px}
 .pay{
-  background: #64b204;color:#fff;padding:8px 0;width:100%;text-align: center;
+  background: #64b204;color:#fff;width:100%;text-align: center;
   border:1px solid #64b204;
-  font-size: large;
+  font-size: large;height:52px;line-height:48px;
 }
 .pay-disabled {
   background-color: #f8f8f8;
@@ -212,8 +213,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%,
     #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 6em 6em;font: 100%/1.6 Baskerville, Palatino, serif;}
 /*.item-divider{padding:0;height:10px;min-height:10px}*/
-/**我的账户**/
-.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:120px;padding:10px 0 0  0;color:#fff}
+.product_info.about-meq{background: url("../img/account.jpg") center top;background-size: 100%;height:127px;padding:10px 0 0  0;color:#fff}
 .about-meq.item-avatar > img:first-child{max-width:50px;max-height:50px;border-radius:6px;}
 .register{line-height:24px;border:1px solid #fff;border-radius:20px;min-height:24px;background:none;margin:5px auto;display:block;color:#fff;font-size:12px}
 .about-column{padding:12px}
@@ -240,7 +240,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .icon_img-browse:hover{width:35px;height:35px;display:block;margin:0 auto;background:url("../img/browse-hover.png") left top no-repeat;background-size:100%}
 
 /*商品详情*/
-.product_info{padding-top:40px;background: #fff}
+.product_info{padding:20px 0;background: #fff}
 .product_about{padding: 0 20px}
 .product_about h2{font-size:20px}
 .product_norms{border-top:1px solid #eee;border-bottom:1px solid #eee;text-align: center;line-height:45px}
@@ -566,7 +566,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   background-position: 0 -58px;
 }
 @media only screen and (max-width: 320px){
-  .shopping-list li{width:50%;display: block;background:#fff}
+  .shopping-list li{width:49.999999%;display: block;background:#fff}
 
   .form_lid{height:50px;padding:0 10px;overflow: hidden}
   .form_lid .triangle1{height: 0;
@@ -612,3 +612,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   background-color: #64b204;
   box-shadow: none;
   color: #fff; }
+/*销量 库存*/
+.stock{padding:5px 0}
+.stock li{text-align:center;line-height:50px;color:#aaa;margin-right:-1px}
