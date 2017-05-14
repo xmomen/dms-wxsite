@@ -120,17 +120,17 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .hp_line{margin-bottom:20px}
 .hp_line .list_txt{bottom: 8px;color:#666666;margin-bottom: 0;width: 100%;text-align: center}
 .twoline .list_txt{bottom: 0}
-.icon_xyvip{background: url("../img/icon_xyvip.png") no-repeat center center;background-size: 40px 40px;}
+.icon_xyvip{background: url("../img/rmtj.png") no-repeat center center;background-size: 40px 40px;}
 .icon_1time{background: url("../img/icon_1time.png") no-repeat center center;background-size: 40px 40px;}
-.icon_lh{background: url("../img/icon_lh.png") no-repeat center center;background-size: 40px 40px;}
-.icon_ls{background: url("../img/icon_ls.png") no-repeat center center;background-size: 40px 40px;}
-.icon_ly{background: url("../img/icon_ly.png") no-repeat center center;background-size: 40px 40px;}
-.icon_sc{background: url("../img/icon_sc.png") no-repeat center center;background-size: 40px 40px;}
-.icon_new{background: url("../img/icon_new.png") no-repeat center center;background-size: 40px 40px;}
-.icon_rs{background: url("../img/icon_rs.png") no-repeat center center;background-size: 40px 40px;}
-.icon_sg{background: url("../img/icon_sg.png") no-repeat center center;background-size: 40px 40px;}
-.icon_sx{background: url("../img/icon_sx.png") no-repeat center center;background-size: 40px 40px;}
-.icon_yp{background: url("../img/icon_yp.png") no-repeat center center;background-size: 40px 40px;}
+.icon_lh{background: url("../img/lh.png") no-repeat center center;background-size: 40px 40px;}
+.icon_ls{background: url("../img/lpkq.png") no-repeat center center;background-size: 40px 40px;}
+.icon_ly{background: url("../img/ly.png") no-repeat center center;background-size: 40px 40px;}
+.icon_sc{background: url("../img/sc.png") no-repeat center center;background-size: 40px 40px;}
+.icon_new{background: url("../img/xpcx.png") no-repeat center center;background-size: 40px 40px;}
+.icon_rs{background: url("../img/qdr.png") no-repeat center center;background-size: 40px 40px;}
+.icon_sg{background: url("../img/lh.png") no-repeat center center;background-size: 40px 40px;}
+.icon_sx{background: url("../img/gggc.png") no-repeat center center;background-size: 40px 40px;}
+.icon_yp{background: url("../img/yhnr.png") no-repeat center center;background-size: 40px 40px;}
 @media screen and (max-width:320px) {
   .icon_wdbg,.icon_rkyb,.icon_wlzz,.icon_shdz,.icon_hwdz,.icon_zhcz,.icon_yhq,.icon_tjyl,.icon_more,.icon_xfyl,.icon_kfzx{background-size:48px 48px;}
   .hp_line .list_txt{font-size:13px}
@@ -433,7 +433,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .item-header{padding-left: 0;  min-height: 64px;  margin: 0 auto;  display: block;border:0;border-radius: 50%;background: url("../img/user_easyicon.png") center center no-repeat;background-size: 100%}
 /*标题背景*/
 .form_lid{height:70px;padding:0 10px;overflow: hidden}
-.form_lid.red{background: #64b204;background: radial-gradient(#64b204,#64b204);}
+.form_lid.red{background: #fff;}
 .form_lid .triangle1{height: 0;
   width: 120px;
   border-bottom: 120px solid #abd011;
