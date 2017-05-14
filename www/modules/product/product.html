@@ -52,7 +52,12 @@
             <span class="col-67">
               <span class="product-name ft14" ng-bind="item.itemName"></span>
               <span class="wl mt10" ng-bind="item.brandSlogan"></span>
-              <span class="wl mt10 color_red"><strong ng-bind="item.sellPrice | currency:'¥'"></strong><span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
+              <span class="wl mt10 color_red">
+                <strong ng-bind="item.sellPrice | currency:'¥'"></strong>
+                <span ng-if="item.memberPrice">
+                  <div ng-bind="item.memberPrice | currency:'¥'"></div>
+                </span>
+              </span>
             </span>
           </a>
           <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>
@@ -66,7 +71,12 @@
               <div class="pd10 wl">
                 <b class="one_omit wl" ng-bind="item.itemName"></b>
                 <span class="wl mt10 one_omit" ng-bind="item.brandSlogan"></span>
-                <span class="wl mt10 color_red"><strong ng-bind="item.sellPrice | currency:'¥'"></strong><span ng-if="item.memberPrice"><div ng-bind="item.memberPrice | currency:'¥'"></div></span></span>
+                <span class="wl mt10 color_red">
+                  <strong ng-bind="item.sellPrice | currency:'¥'"></strong>
+                  <span ng-if="item.memberPrice">
+                    <div ng-bind="item.memberPrice | currency:'¥'"></div>
+                  </span>
+                </span>
               </div>
             </a>
             <button type="button" class="shopping-button fr" ng-click="pushCarts(item)"><span class="ion-ios-cart shopping-cart"></span></button>

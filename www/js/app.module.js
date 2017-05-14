@@ -67,8 +67,8 @@ define([
       getParams:getParams
     }
   }])
-    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter", "$q", '$UrlUtils', '$cookieStore', '$filter',
-    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter, $q, $UrlUtils , $cookieStore, $filter) {
+    .run(["$ionicPlatform", "$rootScope", "PermPermissionStore", "AppAPI", "$http", "$urlRouter", "$q", '$UrlUtils', '$cookieStore',
+    function ($ionicPlatform, $rootScope, PermPermissionStore, AppAPI, $http, $urlRouter, $q, $UrlUtils , $cookieStore) {
       var params = {
         openId:$UrlUtils.getParams('openId'),
         memberId:$UrlUtils.getParams('memberId')
